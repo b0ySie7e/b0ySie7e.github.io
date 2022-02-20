@@ -1,7 +1,7 @@
 ---
 layout: single
 title: HACKING WIRELESS
-excerpt: "Conceptos basicos sobre como obtener la clave de unas red wifi"
+excerpt: "Conceptos basicos sobre como obtener la clave de una red wifi"
 date: 2022-02-19
 classes: wide
 header:
@@ -12,6 +12,8 @@ categories:
   - hacking wireless
 tags:
   - linux
+  - wireless 
+  - notes
 ---
 
 ## REQUISITOS
@@ -100,7 +102,7 @@ tags:
     .
     .
     ```
-    Se tiene una larga lista de MAC de dispositivos, el cual se le pueden asignar a nuestra tarjet de red de la siguiente manera:
+    Se tiene una larga lista de MAC de dispositivos, el cual se le pueden asignar a nuestra tarjeta de red de la siguiente manera:
     ```bash
     macchanger <tarjeta de red> -m XX:XX:XX:XX:XX:XX
     macchanger <tarjeta de red> --mac=XX:XX:XX:XX:XX:XX
@@ -237,8 +239,8 @@ tags:
   - BSSID que representa la MAC del router
   - PWR que indica lo lejos o cerca que esta la red wifi
   - ENC la encriptación 
-  - CIPHER el cifrado 
-  - ESSID que es el nombre de la red wifi
+  - CIPHER el tipo de cifrado 
+  - ESSID indica el nombre de la red wifi
 
   Solo nos centraremos en la red objetivo la que es "SieteLand"
 
@@ -472,6 +474,14 @@ tags:
     ```
     password: 123456789
 
-    Una vez obtenido el handshake, se puede crackear la contraseña de distintas maneras, como ya lo dije se debe de tener un diccionario bien potente y ademas, depende de la complejidad contraseña. 
+  Para reestablecer la conexion debemos iniciar los servicios que detuvimos para poder entrar en el modo monitor de nuestra tarjeta de red:
+
+  ```bash
+  service wpa_supplicant start 
+	service NetworkManager start
+
+  ```
+  Una vez obtenido el handshake, se puede crackear la contraseña de distintas maneras, como ya lo dije se debe de tener un diccionario bien potente y ademas, depende de la complejidad contraseña. 
+
 
 ---
