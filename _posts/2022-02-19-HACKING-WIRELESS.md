@@ -1,11 +1,12 @@
 ---
 layout: single
 title: HACKING WIRELESS
-excerpt: "Conceptos basicos sobre como obtener la clave de una red wifi"
+excerpt: "Consiste en acceder a la red WLAN de otro usuario y utilizar su ancho de banda para conectarse a internet. Acceder a los recursos compartidos de los demás ordenadores de la red y sustraer datos confidenciales de todo tipo."
+
 date: 2022-02-19
 classes: wide
 header:
-  teaser: "Hacking a redes inalambricas"
+  teaser: /assets/images/hackingWireless/logo-wireless.png
   teaser_home_page: true
   icon: ""
 categories:

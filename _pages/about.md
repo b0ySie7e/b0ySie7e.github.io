@@ -1,18 +1,32 @@
 ---
-layout: about
+layout: splash
 title: "About"
 permalink: /about/
-date: 2021-09-17
-clases: wide
+date: 
+clases: 
 header:
     teaser_home_page: true
 ---
-## <center>INFORMACION PERSONAL</center>
 
-- Hola, soy b0ySie7e. Este es el nickname con el que se me conoce en la red, en realidad mi nombre verdadero es ROLAND. Soy un entusiasta y amante de la informatica y todo lo que tenga que ver con la tecnologia de la actualidad y la del futuro, en especial por el campo de la ciberseguridad el cual me atrae y me encantaria dedicarme a esto profesionalmente. En cual estoy adquiriendo nuevos conocimientos de manera autodidacta.
+<br><br><br>
+<center>
+<img src="/assets/images/avatar.png" alt="avatar" border="0">
+</center>
+<br><br>
 
-- En este blog encontraras resoluciones de maquinas de [Tryhackme](https://tryhackme.com/) y de [Hakcthebox](https://www.hackthebox.eu/) y muchas informacion(notas) del conocimiento de vaya adquiriendo, asi mismo informacion de herramientas que son utiles, basicamente recursos orientados a la ciberseguridad
-    
-- - -
+Hola, mi nombre es Roland (A.K.A "boySie7e") soy un estudiante de ingeniería de sistemas y apasionado por la tecnología.
 
-<br>" La Informática y la gente son las cosas que me mantienen vivo ```Que comience el hacking```  "
+Mi curiosidad y pasión por la tecnología y la programación me llevo a estudiar una carrera destinada a esta, descubriendo una de mis pasiones que es la ciberseguridad. Me enfoqué en buscar y adquerir conocimiento de que trata la cibersegurida, descubriendo un fabuloso mundo que es el pentesting. 
+
+Lamentablemente, la la universidad no me brindaba una enseñanza sobre este campo, así que decidí investigar por mi cuenta, al início me costo trabajo encontrar las plataformas adecuadas. En este proceso me tope con dos muy buenas :
+
+## Competidor de CTF:
+
+|[Tryhackme](https://tryhackme.com/)|[Hakcthebox](https://www.hackthebox.eu/)|
+|----------|----------|
+|<script src="https://tryhackme.com/badge/207517"></script>  |<img src="http://www.hackthebox.eu/badge/image/417609" alt="Hack The Box">|
+|          |           |
+
+Ahora me he propuesto en marcha en la creación de un blog personal en la que publicó el conocimiento que voy adquiriendo
+
+

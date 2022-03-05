@@ -123,19 +123,19 @@
                 
         <ul class="visible-links">
 <li class="masthead__menu-item">
-              <a href="/">Home</a>
+              <a href="/">Inicio</a>
             </li>
 <li class="masthead__menu-item">
-              <a href="/year-archive/">Posts</a>
+              <a href="/year-archive/">Publicaciones</a>
             </li>
 <li class="masthead__menu-item">
-              <a href="/categories/">Categories</a>
+              <a href="/categories/">Categorías</a>
             </li>
 <li class="masthead__menu-item">
-              <a href="/tags/">Tags</a>
+              <a href="/tags/">Etiquetas</a>
             </li>
 <li class="masthead__menu-item">
-              <a href="/about/">About</a>
+              <a href="/about/">Sobre mí</a>
             </li>
 </ul>
         
@@ -392,8 +392,9 @@ vamos a revisar el sitio web:</p>
     <a href="https://ibb.co/KWTXfW0"><img src="https://i.ibb.co/YhH31hR/web-cap.png" alt="web-cap" border="0"></a>
 </center>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vemos que podemos descargar archivos ".pcap", estos archivos son paquetes de red en las cuales se capturaron y muchas veces puden capturar informacion como usuarios y contraseñas.
-</code></pre></div></div>
+<ul>
+  <li>vemos que podemos descargar archivos “.pcap”, estos archivos son paquetes de red en las cuales se capturaron y muchas veces puden capturar informacion como usuarios y contraseñas.</li>
+</ul>
 
 <hr>
 
@@ -406,10 +407,12 @@ vamos a revisar el sitio web:</p>
     <center>
 <a href="https://ibb.co/jJWvTvP"><img src="https://i.ibb.co/tLxM4MT/wireshark-cap.png" alt="wireshark-cap" border="0"></a>
 </center>
+  </li>
+</ul>
 
-    <p>Observamos que tenemos las un usuario una contraseña, y el servicio en las cuales se usaron es FTP por lo que vamos a probar a conectarnos por ftp</p>
-    <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>  Sie7e&gt;<span class="nv">$ </span>ftp cap.htb
+<p>Observamos que tenemos las un usuario una contraseña, y el servicio en las cuales se usaron es FTP por lo que vamos a probar a conectarnos por ftp</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Sie7e&gt;<span class="nv">$ </span>ftp cap.htb
   Connected to cap.htb.
   220 <span class="o">(</span>vsFTPd 3.0.3<span class="o">)</span>
   Name <span class="o">(</span>cap.htb:kali<span class="o">)</span>: nathan
@@ -423,10 +426,9 @@ vamos a revisar el sitio web:</p>
   150 Here comes the directory listing.
   <span class="nt">-r--------</span>    1 1001     1001           33 Oct 04 09:04 user.txt
   226 Directory send OK.
-</code></pre></div>    </div>
-    <p>Ingresamos con éxito, ahora enuramos un poco y nos encontramos con  un archivo “user.txt” donde veremos la flag. Nos lo descargamos a nuestra equipo.</p>
-  </li>
-</ul>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Ingresamos con éxito, ahora enuramos un poco y nos encontramos con  un archivo "user.txt" donde veremos la flag. Nos lo descargamos a nuestra equipo.
+</code></pre></div></div>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ftp&gt; get user.txt
 </code></pre></div></div>
@@ -593,7 +595,8 @@ vamos a revisar el sitio web:</p>
 ">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/HACKING-WIRELESS/" class="pagination--pager" title="HACKING WIRELESS
+">Next</a>
     
   </nav>
 
@@ -624,7 +627,7 @@ vamos a revisar el sitio web:</p>
   </ul>
 </div>
 
-<div class="page__footer-copyright">© 2021 B0ySie7e</div>
+<div class="page__footer-copyright">© 2022 B0ySie7e</div>
 
       </footer>
     </div>
