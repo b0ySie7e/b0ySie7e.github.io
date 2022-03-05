@@ -22,8 +22,6 @@ Conceptos básicos y a grandes rasgos de las vulnerabilidades asi como recursos 
 |[LOG POISONING](#log-poisoning)|[REMOTE FILE INCLUSION (RFI)](#remote-file-inclusion-rfi)|- [HTML INJECTION](#html-injection)|
 |- [CROSS-SITE SCRIPTING (XSS)](#cross-site-scripting-xss)|- [BLIND CROSS-SITE SCRIPTING (BLIND XSS)](#blind-cross-site-scripting-blind-xss)|- [CROSS-SITE REQUEST FORGERY(CSRF)](#cross-site-request-forgerycsrf)|
 |- [SERVER-SIDE REQUEST FORGERY (SSRF)](#server-side-request-forgery-ssrf)|- [SQL INJECTION / ERROR BASED](#sql-injection--error-based)|- [SQL INJECTION / TIME BASED (BLIND)](#sql-injection--time-based)|
-- [PADDING ORACLE ATTACK (PADBUSTER)](#padding-oracle-attack-padbuster)|- [XML EXTERNAL ENTITY INJECTION (XXE)](#xml-external-entity-injection-xxe)|- [BLIND XML EXTERNAL ENTITY INJECTION (BLIND XXE)](#blind-xml-external-entity-injection-blind-xxe)|
-|- [DOMAIN ZONE TRANFER (AXFR)](#domain-zone-tranfer-axfr)|- [DESERIALIZACION ATTACKS](#deserializacion-attacks)|- [TYPE JUGGLING](#type-juggling)|
 
 ## SHELLSHOCK
 Esto esta presente principalmente en los servidores Web HTTP, es una vulnerabilidad en el shell de bash de los sistemas operativos Linux/Unix. Aquellos servidores que ejecutan FastCGI o CGI son capaces de exponer el bash al vector de petición de HTTP. Así permitiendo que un atacante pueda ejecutar comandos en el servidor y el bash pueda ser ejecutado.

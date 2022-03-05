@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-05T16:53:54-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">B0ySie7e</title><subtitle>Posts about security, CTFs and networking</subtitle><author><name>B0Y-SIE7E</name></author><entry><title type="html">Vulnerabilidades Web</title><link href="http://localhost:4000/Vulnerabilidades-web/" rel="alternate" type="text/html" title="Vulnerabilidades Web" /><published>2022-02-26T00:00:00-05:00</published><updated>2022-02-26T00:00:00-05:00</updated><id>http://localhost:4000/Vulnerabilidades-web</id><content type="html" xml:base="http://localhost:4000/Vulnerabilidades-web/">&lt;p&gt;Conceptos básicos y a grandes rasgos de las vulnerabilidades asi como recursos de como explotarlas cada uno de estas&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-05T17:06:08-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">B0ySie7e</title><subtitle>Posts about security, CTFs and networking</subtitle><author><name>B0Y-SIE7E</name></author><entry><title type="html">Vulnerabilidades Web</title><link href="http://localhost:4000/Vulnerabilidades-web/" rel="alternate" type="text/html" title="Vulnerabilidades Web" /><published>2022-02-26T00:00:00-05:00</published><updated>2022-02-26T00:00:00-05:00</updated><id>http://localhost:4000/Vulnerabilidades-web</id><content type="html" xml:base="http://localhost:4000/Vulnerabilidades-web/">&lt;p&gt;Conceptos básicos y a grandes rasgos de las vulnerabilidades asi como recursos de como explotarlas cada uno de estas&lt;/p&gt;
 
 &lt;table&gt;
   &lt;tbody&gt;
@@ -21,16 +21,6 @@
       &lt;td&gt;- &lt;a href=&quot;#server-side-request-forgery-ssrf&quot;&gt;SERVER-SIDE REQUEST FORGERY (SSRF)&lt;/a&gt;&lt;/td&gt;
       &lt;td&gt;- &lt;a href=&quot;#sql-injection--error-based&quot;&gt;SQL INJECTION / ERROR BASED&lt;/a&gt;&lt;/td&gt;
       &lt;td&gt;- &lt;a href=&quot;#sql-injection--time-based&quot;&gt;SQL INJECTION / TIME BASED (BLIND)&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;- &lt;a href=&quot;#padding-oracle-attack-padbuster&quot;&gt;PADDING ORACLE ATTACK (PADBUSTER)&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;- &lt;a href=&quot;#xml-external-entity-injection-xxe&quot;&gt;XML EXTERNAL ENTITY INJECTION (XXE)&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;- &lt;a href=&quot;#blind-xml-external-entity-injection-blind-xxe&quot;&gt;BLIND XML EXTERNAL ENTITY INJECTION (BLIND XXE)&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;- &lt;a href=&quot;#domain-zone-tranfer-axfr&quot;&gt;DOMAIN ZONE TRANFER (AXFR)&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;- &lt;a href=&quot;#deserializacion-attacks&quot;&gt;DESERIALIZACION ATTACKS&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;- &lt;a href=&quot;#type-juggling&quot;&gt;TYPE JUGGLING&lt;/a&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
