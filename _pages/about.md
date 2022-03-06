@@ -24,7 +24,7 @@ Lamentablemente, la la universidad no me brindaba una enseñanza sobre este camp
 
 |[Tryhackme](https://tryhackme.com/)|[Hakcthebox](https://www.hackthebox.eu/)|
 |----------|----------|
-|<script src="https://tryhackme.com/badge/207517"></script>  |<img src="http://www.hackthebox.eu/badge/image/417609" alt="Hack The Box">|
+|<script src="https://tryhackme.com/badge/207517"></script> | <script src="https://www.hackthebox.eu/badge/417609"></script>|
 |          |           |
 
 Ahora me he propuesto en marcha en la creación de un blog personal en la que publicó el conocimiento que voy adquiriendo
