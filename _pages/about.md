@@ -16,7 +16,7 @@ header:
 
 Hola, mi nombre es Roland (A.K.A "boySie7e") soy un estudiante de ingeniería de sistemas y apasionado por la tecnología.
 
-Mi curiosidad y pasión por la tecnología y la programación me llevo a estudiar una carrera destinada a esta, descubriendo una de mis pasiones que es la ciberseguridad. Me enfoqué en buscar y adquerir conocimiento de que trata la cibersegurida, descubriendo un fabuloso mundo que es el pentesting. 
+Mi curiosidad y pasión por la tecnología, me llevo a estudiar una carrera destinada a esta,así descubriendo una de mis pasiones que es la ciberseguridad. Me enfoqué en buscar información sobre la cibersegurida, descubriendo un fabuloso mundo que es el hacking (pentesting). 
 
 Lamentablemente, la la universidad no me brindaba una enseñanza sobre este campo, así que decidí investigar por mi cuenta, al início me costo trabajo encontrar las plataformas adecuadas. En este proceso me tope con dos muy buenas :
 
