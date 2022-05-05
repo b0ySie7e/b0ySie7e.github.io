@@ -20,6 +20,7 @@ Mi curiosidad y pasión por la tecnología, me llevo a estudiar una carrera dest
 
 Lamentablemente, la la universidad no me brindaba una enseñanza sobre este campo, así que decidí investigar por mi cuenta, al início me costo trabajo encontrar las plataformas adecuadas. En este proceso me tope con dos muy buenas :
 
+
 ## Competidor de CTF:
 
 |[Tryhackme](https://tryhackme.com/)|[Hakcthebox](https://www.hackthebox.eu/)|
@@ -29,4 +30,10 @@ Lamentablemente, la la universidad no me brindaba una enseñanza sobre este camp
 
 Ahora me he propuesto en marcha en la creación de un blog personal en la que publicó el conocimiento que voy adquiriendo
 
+--- 
 
+# Certificaciones que poseo actualmente
+
+- **eJPT** -> Certificación para profesionales de TI avanzados que acaban de comenzar su viaje en las pruebas de penetración. [eLearnSecurity](https://elearnsecurity.com/product/ejpt-certification/)
+
+---

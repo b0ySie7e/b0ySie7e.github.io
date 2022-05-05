@@ -28,4 +28,9 @@ var store = [{
         "excerpt":"NOMBRE Plataforma OS CMSpit TRYHACKME LINUX ESCANEO DE PUERTOS Realizamos un escaneo de puertos con la herramienta nmap, en esta caso lo podemos realizar con muchas otras pero yo la realizaré con nmap (kali㉿Hacknet)-[~/…/tryhackme/maquinas/CMSpit/recognition] Sie7e&gt;$ nmap -p- --open -min-rate 5000 -vvv -n -Pn 10.10.207.156 -p- : Es el rango de...","categories": ["tryhackme"],
         "tags": ["linux","write up","xxe","medium"],
         "url": "http://localhost:4000/CMSpit/",
-        "teaser":"http://localhost:4000/assets/images/CMSpit/logo.png"}]
+        "teaser":"http://localhost:4000/assets/images/CMSpit/logo.png"},{
+        "title": "Bounty",
+        "excerpt":"NOMBRE Plataforma OS BOUNTY HACKTHEBOX WINDOWS Enumeración del OS Realizamos un simple ping, esto nos ayudara a identificar el ttl y esto nos indica el OS al cual nos estamos enfrentado. Esto a veces varia, pero normalmente se tiene que en : Linux -&gt; ttl -&gt; 64 Windows -&gt; ttl...","categories": ["hackthebox"],
+        "tags": ["windows","write up","Patato Exploits","easy"],
+        "url": "http://localhost:4000/bounty/",
+        "teaser":"http://localhost:4000/assets/images/bounty/logoBounty.png"}]
