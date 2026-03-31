@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # No necesario se lastUpdated no estuviera habilitado
       # - uses: pnpm/action-setup@v4 # Desconecte eso si estuviera usando pnpm
@@ -37,9 +37,9 @@ jobs:
       #     version: 9
       # - uses: oven-sh/setup-bun@v1 # Desconecte eso se estuviera usando Bun
       - name: Setup Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 20
           cache: npm # o pnpm / yarn
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -50,7 +50,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/.vitepress/dist
+          path: blog/.vitepress/dist
 
   # Trabajo de implantación
   deploy:
