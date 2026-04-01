@@ -487,8 +487,6 @@ Con esto hecho, vamos a actualizar los archivos bytearray que tenemos, para deci
 !mona bytearray -cpb "\x00"
 ```
 
-![20230324120344.png](20230324120344.png)
-
 Eliminamos el badchar del script `"\x00"`
 
 ![20231115022016.png](20231115022016.png)
