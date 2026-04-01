@@ -9,17 +9,19 @@ hero:
   actions:
     - theme: brand
       text: Ver Write-ups
-      link: /markdown-examples
+      link: /notas/pentesting.md
     - theme: alt
-      text: Ver 
-      link: /api-examples
+      text: Dev Malware 
+      link: /malware/malware.md
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Pentesting
+    details: Identificación y explotación de vulnerabilidades en entornos reales, más allá de teoría.
+
+  - title: Malware & Evasion
+    details: Desarrollo y análisis de malware enfocado en evasión de antivirus y técnicas ofensivas modernas.
+
+  - title: Investigación y Write-ups
+    details: Publicación de análisis técnicos, CTFs y vulnerabilidades explicadas paso a paso.
 ---
 

@@ -13,13 +13,13 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Notas', link: '/notas/pentesting' },
-      { text: 'Dev Malware', link: '/malware/keylogger' },
+      { text: 'Dev Malware', link: '/malware/malware' },
     ],
     sidebar: {
       '/notas/': [
         {
           text: 'WRITE-UP',
-          collapsed: true,
+          collapsed: false,
           items: [
             { 
               text: 'DockerLabs', 
@@ -157,9 +157,9 @@ export default defineConfig({
                     { text: 'Lab - 16: Reflected XSS with some SVG markup allowed', link: '/notas/PortSwigger/2.Cross-site_scripting/16.Reflected XSS with some SVG markup allowed/16.Reflected XSS with some SVG markup allowed'},
                     { text: 'Lab - 17: Reflected XSS in canonical link tag', link: '/notas/PortSwigger/2.Cross-site_scripting/17.Reflected XSS in canonical link tag/17.Reflected XSS in canonical link tag'},
                     { text: 'Lab - 18: Reflected XSS into a JavaScript string with single quote and backslash escaped', link: '/notas/PortSwigger/2.Cross-site_scripting/18.Reflected XSS into a JavaScript string with single quote and backslash escaped/18.Reflected XSS into a JavaScript string with single quote and backslash escaped'},
-                    { text: 'Lab - 19: Reflected XSS into a JavaScript string with angle brackets and double quotes HTML-encoded and single quotes escaped', link: '/notas/PortSwigger/2.Cross-site_scripting/19.Reflected XSS into a JavaScript string with angle brackets and double quotes HTML-encoded and single quotes escaped/19.Reflected XSS into a JavaScript string with angle brackets and double quotes HTML-encoded and single quotes escaped'},
-                    { text: 'Lab - 20: Stored XSS into onclick event with angle brackets and double quotes HTML-encoded and single quotes and backslash escaped', link: '/notas/PortSwigger/2.Cross-site_scripting/20.Stored XSS into onclick event with angle brackets and double quotes HTML-encoded and single quotes and backslash escaped/20.Stored XSS into onclick event with angle brackets and double quotes HTML-encoded and single quotes and backslash escaped'},
-                    { text: 'Lab - 21: Reflected XSS into a template literal with angle brackets, single, double quotes, backslash and backticks Unicode-escaped', link: '/notas/PortSwigger/2.Cross-site_scripting/21.Reflected XSS into a template literal with angle brackets, single, double quotes, backslash and backticks Unicode-escaped/21.Reflected XSS into a template literal with angle brackets, single, double quotes, backslash and backticks Unicode-escaped'},
+                    { text: 'Lab - 19: Reflected XSS into a JavaScript string with angle brackets and double quotes HTML-encoded and single quotes escaped', link: '/notas/PortSwigger/2.Cross-site_scripting/19.Lab/19.Reflected XSS into a JavaScript string with angle brackets and double quotes HTML-encoded and single quotes escaped'},
+                    { text: 'Lab - 20: Stored XSS into onclick event with angle brackets and double quotes HTML-encoded and single quotes and backslash escaped', link: '/notas/PortSwigger/2.Cross-site_scripting/20.Lab/20.Stored XSS into onclick event with angle brackets and double quotes HTML-encoded and single quotes and backslash escaped'},
+                    { text: 'Lab - 21: Reflected XSS into a template literal with angle brackets, single, double quotes, backslash and backticks Unicode-escaped', link: '/notas/PortSwigger/2.Cross-site_scripting/21.Lab/21.Reflected XSS into a template literal with angle brackets, single, double quotes, backslash and backticks Unicode-escaped'},
                     { text: 'Lab - 22: Exploiting cross-site scripting to steal cookies', link: '/notas/PortSwigger/2.Cross-site_scripting/22.Exploiting cross-site scripting to steal cookies/22.Exploiting cross-site scripting to steal cookies'},
                     { text: 'Lab - 23: Exploiting cross-site scripting to capture passwords', link: '/notas/PortSwigger/2.Cross-site_scripting/23.Exploiting cross-site scripting to capture passwords/23.Exploiting cross-site scripting to capture passwords'},
                     { text: 'Lab - 24: Exploiting XSS to bypass CSRF defenses', link: '/notas/PortSwigger/2.Cross-site_scripting/24.Exploiting XSS to bypass CSRF defenses/24.Exploiting XSS to bypass CSRF defenses'},
@@ -185,187 +185,317 @@ export default defineConfig({
                   ]
                 },
                 {
-                  text: 'Path Traversal',
+                  text: 'Path_Traversal',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : File path traversal, simple case', link: '/notas/PortSwigger/4.Path_Traversal/1.File path traversal, simple case/1.File path traversal, simple case' },
+                    { text: 'Lab - 2 : File path traversal, traversal sequences blocked with absolute path bypass', link: '/notas/PortSwigger/4.Path_Traversal/2.File path traversal, traversal sequences blocked with absolute path bypass/2.File path traversal, traversal sequences blocked with absolute path bypass' },
+                    { text: 'Lab - 3 : File path traversal, traversal sequences stripped non-recursively', link: '/notas/PortSwigger/4.Path_Traversal/3.File path traversal, traversal sequences stripped non-recursively/3.File path traversal, traversal sequences stripped non-recursively' },
+                    { text: 'Lab - 4 : File path traversal, traversal sequences stripped with superfluous URL-decode', link: '/notas/PortSwigger/4.Path_Traversal/4.File path traversal, traversal sequences stripped with superfluous URL-decode/4.File path traversal, traversal sequences stripped with superfluous URL-decode' },
+                    { text: 'Lab - 5 : File path traversal, validation of start of path', link: '/notas/PortSwigger/4.Path_Traversal/5.File path traversal, validation of start of path/5.File path traversal, validation of start of path' },
+                    { text: 'Lab - 6 : File path traversal, validation of file extension with null byte bypass', link: '/notas/PortSwigger/4.Path_Traversal/6.File path traversal, validation of file extension with null byte bypass/6.File path traversal, validation of file extension with null byte bypass' },
                   ]
                 },
                 {
                   text: 'Authentication vulnerabilities',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : Username enumeration via different responses', link: '/notas/PortSwigger/5.Authentication vulnerabilities/1.Username enumeration via different responses/1.Username enumeration via different responses' },
+                    { text: 'Lab - 2 : Username enumeration via subtly different responses', link: '/notas/PortSwigger/5.Authentication vulnerabilities/2.Username enumeration via subtly different responses/2.Username enumeration via subtly different responses' },
+                    { text: 'Lab - 3 : Username enumeration via response timing', link: '/notas/PortSwigger/5.Authentication vulnerabilities/3.Username enumeration via response timing/3.Username enumeration via response timing' },
+                    { text: 'Lab - 4 : Broken brute-force protection, IP block', link: '/notas/PortSwigger/5.Authentication vulnerabilities/4.Broken brute-force protection, IP block/4.Broken brute-force protection, IP block' },
+                    { text: 'Lab - 5 : Username enumeration via account lock', link: '/notas/PortSwigger/5.Authentication vulnerabilities/5.Username enumeration via account lock/5.Username enumeration via account lock' },
+                    { text: 'Lab - 6 : 2FA simple bypass', link: '/notas/PortSwigger/5.Authentication vulnerabilities/6.2FA simple bypass/6.2FA simple bypass' },
+                    { text: 'Lab - 7 : 2FA broken logic', link: '/notas/PortSwigger/5.Authentication vulnerabilities/7.2FA broken logic/7.2FA broken logic' },
+                    { text: 'Lab - 8 : Brute-forcing a stay-logged-in cookie', link: '/notas/PortSwigger/5.Authentication vulnerabilities/8.Brute-forcing a stay-logged-in cookie/8.Brute-forcing a stay-logged-in cookie' },
+                    { text: 'Lab - 9 : Offline password cracking', link: '/notas/PortSwigger/5.Authentication vulnerabilities/9.Offline password cracking/9.Offline password cracking' },
+                    { text: 'Lab - 10 : Password reset broken logic', link: '/notas/PortSwigger/5.Authentication vulnerabilities/10.Password reset broken logic/10.Password reset broken logic' },
+                    { text: 'Lab - 11 : Password reset poisoning via middleware', link: '/notas/PortSwigger/5.Authentication vulnerabilities/11.Password reset poisoning via middleware/11.Password reset poisoning via middleware' },
+                    { text: 'Lab - 12 : Password brute-force via password change', link: '/notas/PortSwigger/5.Authentication vulnerabilities/12.Password brute-force via password change/12.Password brute-force via password change' },
                   ]
                 },
                 {
                   text: 'SSRF',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : Basic SSRF against the local server', link: '/notas/PortSwigger/6.SSRF/1.Basic SSRF against the local server/1.Basic SSRF against the local server' },
+                    { text: 'Lab - 2 : Basic SSRF against another back-end system', link: '/notas/PortSwigger/6.SSRF/2.Basic SSRF against another back-end system/2.Basic SSRF against another back-end system' },
+                    { text: 'Lab - 3 : SSRF with blacklist-based input filter', link: '/notas/PortSwigger/6.SSRF/3.SSRF with blacklist-based input filter/3.SSRF with blacklist-based input filter' },
+                    { text: 'Lab - 4 : SSRF with filter bypass via open redirection vulnerability', link: '/notas/PortSwigger/6.SSRF/4.SSRF with filter bypass via open redirection vulnerability/4.SSRF with filter bypass via open redirection vulnerability' },
+                    { text: 'Lab - 5 : Blind SSRF with out-of-band detection', link: '/notas/PortSwigger/6.SSRF/5.Blind SSRF with out-of-band detection/5.Blind SSRF with out-of-band detection' },
                   ]
                 },
                 {
                   text: 'CORS',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
-                  ]
-                },
-                {
-                  text: 'Web Cache Poisoning',
-                  collapsed: true,
-                  items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : CORS vulnerability with basic origin reflection', link: '/notas/PortSwigger/7.CORS/1.CORS vulnerability with basic origin reflection/1.CORS vulnerability with basic origin reflection' },
+                    { text: 'Lab - 2 : CORS vulnerability with trusted null origin', link: '/notas/PortSwigger/7.CORS/2.CORS vulnerability with trusted null origin/2.CORS vulnerability with trusted null origin' },
+                    { text: 'Lab - 3 : CORS vulnerability with trusted insecure protocols', link: '/notas/PortSwigger/7.CORS/3.CORS vulnerability with trusted insecure protocols/3.CORS vulnerability with trusted insecure protocols' },
                   ]
                 },
                 {
                   text: 'Clickjacking',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : Basic clickjacking with CSRF token protection', link: '/notas/PortSwigger/9.Clickjacking/1.Basic clickjacking with CSRF token protection/1.Basic clickjacking with CSRF token protection' },
+                    { text: 'Lab - 2 : Clickjacking with form input data prefilled from a URL paramete', link: '/notas/PortSwigger/9.Clickjacking/2.Clickjacking with form input data prefilled from a URL paramete/2.Clickjacking with form input data prefilled from a URL paramete' },
+                    { text: 'Lab - 3 : lickjacking with a frame buster script', link: '/notas/PortSwigger/9.Clickjacking/3.lickjacking with a frame buster script/3.Clickjacking with a frame buster script' },
+                    { text: 'Lab - 4 : Exploiting clickjacking vulnerability to trigger DOM-based XSS', link: '/notas/PortSwigger/9.Clickjacking/4.Exploiting clickjacking vulnerability to trigger DOM-based XSS/4.Exploiting clickjacking vulnerability to trigger DOM-based XSS' },
+                    { text: 'Lab - 5 : Multistep clickjacking', link: '/notas/PortSwigger/9.Clickjacking/5.Multistep clickjacking/5. Multistep clickjacking' },
                   ]
                 },
                 {
-                  text: '10.DOM-based vulnerabilities',
+                  text: 'DOM-based vulnerabilities',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : DOM XSS using web messages', link: '/notas/PortSwigger/10.DOM-based vulnerabilities/1.DOM XSS using web messages/1.DOM XSS using web messages' },
+                    { text: 'Lab - 2 : DOM XSS using web messages and a JavaScript URL', link: '/notas/PortSwigger/10.DOM-based vulnerabilities/2.DOM XSS using web messages and a JavaScript URL/2.DOM XSS using web messages and a JavaScript URL' },
+                    { text: 'Lab - 3 : DOM XSS using web messages and JSON.parse', link: '/notas/PortSwigger/10.DOM-based vulnerabilities/3.DOM XSS using web messages and JSON.parse/3.DOM XSS using web messages and JSON.parse' },
+                    { text: 'Lab - 4 : DOM-based open redirection', link: '/notas/PortSwigger/10.DOM-based vulnerabilities/4.DOM-based open redirection/4.DOM-based open redirection' },
+                    { text: 'Lab - 5 : DOM-based cookie manipulation', link: '/notas/PortSwigger/10.DOM-based vulnerabilities/5.DOM-based cookie manipulation/5.DOM-based cookie manipulation' },
                   ]
                 },
                 {
-                  text: '11.OS Command injection',
+                  text: 'OS Command injection',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : OS command injection, simple case', link: '/notas/PortSwigger/11.OS Command injection/1.OS command injection, simple case/1.OS command injection, simple case' },
+                    { text: 'Lab - 2 : Blind OS command injection with time delays', link: '/notas/PortSwigger/11.OS Command injection/2.Blind OS command injection with time delays/2.Blind OS command injection with time delays' },
+                    { text: 'Lab - 3 : Blind OS command injection with output redirection', link: '/notas/PortSwigger/11.OS Command injection/3.Blind OS command injection with output redirection/3.Blind OS command injection with output redirection' },
+                    { text: 'Lab - 4 : Blind OS command injection with out-of-band interaction', link: '/notas/PortSwigger/11.OS Command injection/4.Blind OS command injection with out-of-band interaction/4.Blind OS command injection with out-of-band interaction' },
+                    { text: 'Lab - 5 : Blind OS command injection with out-of-band data exfiltration', link: '/notas/PortSwigger/11.OS Command injection/5.Blind OS command injection with out-of-band data exfiltration/5.Blind OS command injection with out-of-band data exfiltration' },
                   ]
                 },
                 {
-                  text: '12.Business logic vulnerabilities',
+                  text: 'Business logic vulnerabilities',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : Excessive trust in client-side controls', link: '/notas/PortSwigger/12.Business logic vulnerabilities/1.Excessive trust in client-side controls/1.Excessive trust in client-side controls' },
+                    { text: 'Lab - 2 : High-level logic vulnerability', link: '/notas/PortSwigger/12.Business logic vulnerabilities/2.High-level logic vulnerability/2.High-level logic vulnerability' },
+                    { text: 'Lab - 3 : Inconsistent security controls', link: '/notas/PortSwigger/12.Business logic vulnerabilities/3.Inconsistent security controls/3.Inconsistent security controls' },
+                    { text: 'Lab - 4 : Flawed enforcement of business rules', link: '/notas/PortSwigger/12.Business logic vulnerabilities/4.Flawed enforcement of business rules/4.Flawed enforcement of business rules' },
+                    { text: 'Lab - 5 : Low-level logic flaw', link: '/notas/PortSwigger/12.Business logic vulnerabilities/5.Low-level logic flaw/5.Low-level logic flaw' },
+                    { text: 'Lab - 6 : Inconsistent handling of exceptional input', link: '/notas/PortSwigger/12.Business logic vulnerabilities/6. Inconsistent handling of exceptional input/6.Inconsistent handling of exceptional input' },
+                    { text: 'Lab - 7 : Inconsistent handling of exceptional input', link: '/notas/PortSwigger/12.Business logic vulnerabilities/7.Inconsistent handling of exceptional input/7.Inconsistent handling of exceptional input' },
+                    { text: 'Lab - 8 : Insufficient workflow validation', link: '/notas/PortSwigger/12.Business logic vulnerabilities/8. Insufficient workflow validation/8. Insufficient workflow validation' },
+                    { text: 'Lab - 9 : Authentication bypass via flawed state machine', link: '/notas/PortSwigger/12.Business logic vulnerabilities/9.Authentication bypass via flawed state machine/9.Authentication bypass via flawed state machine' },
+                    { text: 'Lab - 10 : Infinite money logic flaw', link: '/notas/PortSwigger/12.Business logic vulnerabilities/10.Infinite money logic flaw/10.Infinite money logic flaw' },
+                    { text: 'Lab - 11 : Authentication bypass via encryption oracle', link: '/notas/PortSwigger/12.Business logic vulnerabilities/11.Authentication bypass via encryption oracle/11.Authentication bypass via encryption oracle' },
                   ]
                 },
                 {
-                  text: '13.File Upload Vulnerabilities',
+                  text: 'File Upload Vulnerabilities',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : Remote code execution via web shell upload', link: '/notas/PortSwigger/13.File Upload Vulnerabilities/1.Remote code execution via web shell upload/1.Remote code execution via web shell upload' },
+                    { text: 'Lab - 2 : Web shell upload via Content-Type restriction bypass', link: '/notas/PortSwigger/13.File Upload Vulnerabilities/2.Web shell upload via Content-Type restriction bypass/2.Web shell upload via Content-Type restriction bypass' },
+                    { text: 'Lab - 3 : Web shell upload via path traversal', link: '/notas/PortSwigger/13.File Upload Vulnerabilities/3.Web shell upload via path traversal/3.Web shell upload via path traversal' },
+                    { text: 'Lab - 4 : Web shell upload via extension blacklist bypass', link: '/notas/PortSwigger/13.File Upload Vulnerabilities/4.Web shell upload via extension blacklist bypass/4.Web shell upload via extension blacklist bypass' },
+                    { text: 'Lab - 5 : Web shell upload via obfuscated file extension', link: '/notas/PortSwigger/13.File Upload Vulnerabilities/5.Web shell upload via obfuscated file extension/5.Web shell upload via obfuscated file extension' },
+                    { text: 'Lab - 6 : Remote code execution via polyglot web shell upload', link: '/notas/PortSwigger/13.File Upload Vulnerabilities/6.Remote code execution via polyglot web shell upload/6.Remote code execution via polyglot web shell upload' },
                   ]
                 },
                 {
-                  text: '14.Race conditions',
+                  text: 'Race conditions',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : Limit overrun race conditions', link: '/notas/PortSwigger/14.Race conditions/1.Limit overrun race conditions/1.Limit overrun race conditions' },
+                    { text: 'Lab - 2 : Bypassing rate limits via race conditions', link: '/notas/PortSwigger/14.Race conditions/2.Bypassing rate limits via race conditions/2.Bypassing rate limits via race conditions' },
+                    { text: 'Lab - 3 : Multi-endpoint race conditions', link: '/notas/PortSwigger/14.Race conditions/3.Multi-endpoint race conditions/3.Multi-endpoint race conditions' },
+                    { text: 'Lab - 4 : Single-endpoint race conditions', link: '/notas/PortSwigger/14.Race conditions/4.Single-endpoint race conditions/4.Single-endpoint race conditions' },
+                    { text: 'Lab - 5 : Exploiting time-sensitive vulnerabilities', link: '/notas/PortSwigger/14.Race conditions/5.Exploiting time-sensitive vulnerabilities/5.Exploiting time-sensitive vulnerabilities' },
                   ]
                 },
                 {
-                  text: '15.XML external entity (XXE)',
+                  text: 'XML external entity (XXE)',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : Exploiting XXE using external entities to retrieve files', link: '/notas/PortSwigger/15.XML external entity (XXE)/1.Exploiting XXE using external entities to retrieve files/1.Exploiting XXE using external entities to retrieve files' },
+                    { text: 'Lab - 2 : Exploiting XXE to perform SSRF attacks', link: '/notas/PortSwigger/15.XML external entity (XXE)/2.Exploiting XXE to perform SSRF attacks/2.Exploiting XXE to perform SSRF attacks' },
+                    { text: 'Lab - 3 : Blind XXE with out-of-band interaction', link: '/notas/PortSwigger/15.XML external entity (XXE)/3.Blind XXE with out-of-band interaction/3.Blind XXE with out-of-band interaction' },
+                    { text: 'Lab - 4 : Blind XXE with out-of-band interaction via XML parameter entities', link: '/notas/PortSwigger/15.XML external entity (XXE)/4.Blind XXE with out-of-band interaction via XML parameter entities/4.Blind XXE with out-of-band interaction via XML parameter entities' },
+                    { text: 'Lab - 5 : Exploiting blind XXE to exfiltrate data using a malicious external DTD', link: '/notas/PortSwigger/15.XML external entity (XXE)/5.Exploiting blind XXE to exfiltrate data using a malicious external DTD/5.Exploiting blind XXE to exfiltrate data using a malicious external DTD' },
+                    { text: 'Lab - 6 : Exploiting blind XXE to retrieve data via error messages', link: '/notas/PortSwigger/15.XML external entity (XXE)/6.Exploiting blind XXE to retrieve data via error messages/6.Exploiting blind XXE to retrieve data via error messages' },
+                    { text: 'Lab - 7 : Exploiting XInclude to retrieve files', link: '/notas/PortSwigger/15.XML external entity (XXE)/7.Exploiting XInclude to retrieve files/7.Exploiting XInclude to retrieve files' },
+                    { text: 'Lab - 8 : Exploiting XXE via image file upload', link: '/notas/PortSwigger/15.XML external entity (XXE)/8.Exploiting XXE via image file upload/8.Exploiting XXE via image file upload' },
                   ]
                 },
                 {
-                  text: '16.Server-side template injection (SSTI)',
+                  text: 'Server-side template injection (SSTI)',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : Basic server-side template injection', link: '/notas/PortSwigger/16.Server-side template injection (SSTI)/1.Basic server-side template injection/1.Basic server-side template injection' },
+                    { text: 'Lab - 2 : Basic server-side template injection (code context)', link: '/notas/PortSwigger/16.Server-side template injection (SSTI)/2.Basic server-side template injection (code context)/2. Basic server-side template injection (code context)' },
+                    { text: 'Lab - 3 : Server-side template injection using documentation', link: '/notas/PortSwigger/16.Server-side template injection (SSTI)/3.Server-side template injection using documentation/3.Server-side template injection using documentation' },
+                    { text: 'Lab - 4 : Server-side template injection in an unknown language with a documented exploit', link: '/notas/PortSwigger/16.Server-side template injection (SSTI)/4.Server-side template injection in an unknown language with a documented exploit/4.Server-side template injection in an unknown language with a documented exploit' },
+                    { text: 'Lab - 5 : Server-side template injection with information disclosure via user-supplied objects', link: '/notas/PortSwigger/16.Server-side template injection (SSTI)/5.Server-side template injection with information disclosure via user-supplied objects/5.Server-side template injection with information disclosure via user-supplied objects' },
                   ]
                 },
                 {
-                  text: '17.HTTP request smuggling',
+                  text: 'HTTP request smuggling',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : HTTP request smuggling, confirming a CL.TE vulnerability via differential responses', link: '/notas/PortSwigger/17.HTTP request smuggling/1.HTTP request smuggling, confirming a CL.TE vulnerability via differential responses/1.HTTP request smuggling, confirming a CL.TE vulnerability via differential responses' },
+                    { text: 'Lab - 2 : HTTP request smuggling, confirming a TE.CL vulnerability via differential responses', link: '/notas/PortSwigger/17.HTTP request smuggling/2.HTTP request smuggling, confirming a TE.CL vulnerability via differential responses/2.HTTP request smuggling, confirming a TE.CL vulnerability via differential responses' },
+                    { text: 'Lab - 3 : Exploiting HTTP request smuggling to bypass front-end security controls, CL.TE vulnerability', link: '/notas/PortSwigger/17.HTTP request smuggling/3.Exploiting HTTP request smuggling to bypass front-end security controls, CL.TE vulnerability/3.Exploiting HTTP request smuggling to bypass front-end security controls, CL.TE vulnerability' },
+                    { text: 'Lab - 4 : Exploiting HTTP request smuggling to bypass front-end security controls, TE.CL vulnerability', link: '/notas/PortSwigger/17.HTTP request smuggling/4.Exploiting HTTP request smuggling to bypass front-end security controls, TE.CL vulnerability/4.Exploiting HTTP request smuggling to bypass front-end security controls, TE.CL vulnerability' },
+                    { text: 'Lab - 5 : Exploiting HTTP request smuggling to reveal front-end request rewriting', link: '/notas/PortSwigger/17.HTTP request smuggling/5.Exploiting HTTP request smuggling to reveal front-end request rewriting/5.Exploiting HTTP request smuggling to reveal front-end request rewriting' },
+                    { text: 'Lab - 6 : Exploiting HTTP request smuggling to capture other users requests', link: '/notas/PortSwigger/17.HTTP request smuggling/6.Exploiting HTTP request smuggling to capture other users requests/6.Exploiting HTTP request smuggling to capture other users requests'},
+                    { text: 'Lab - 7 : Exploiting HTTP request smuggling to deliver reflected XSS', link: '/notas/PortSwigger/17.HTTP request smuggling/7.Exploiting HTTP request smuggling to deliver reflected XSS/7.Exploiting HTTP request smuggling to deliver reflected XSS' },
+                    { text: 'Lab - 8 : Response queue poisoning via H2.TE request smuggling', link: '/notas/PortSwigger/17.HTTP request smuggling/8.Response queue poisoning via H2.TE request smuggling/8.Response queue poisoning via H2.TE request smuggling' },
+                    { text: 'Lab - 9 : H2.CL request smuggling', link: '/notas/PortSwigger/17.HTTP request smuggling/9.H2.CL request smuggling/9.H2.CL request smuggling' },
+                    { text: 'Lab - 10 : HTTP 2 request smuggling via CRLF injection', link: '/notas/PortSwigger/17.HTTP request smuggling/10.HTTP 2 request smuggling via CRLF injection/10. HTTP 2 request smuggling via CRLF injection' },
+                    { text: 'Lab - 11 : HTTP 2 request splitting via CRLF injection', link: '/notas/PortSwigger/17.HTTP request smuggling/11.HTTP 2 request splitting via CRLF injection/11. HTTP 2 request splitting via CRLF injection' },
+                    { text: 'Lab - 12 : CL.0 request smuggling', link: '/notas/PortSwigger/17.HTTP request smuggling/12.CL.0 request smuggling/12. CL.0 request smuggling' },
+                    { text: 'Lab - 13 : HTTP request smuggling, basic CL.TE vulnerability', link: '/notas/PortSwigger/17.HTTP request smuggling/13.HTTP request smuggling, basic CL.TE vulnerability/13.HTTP request smuggling, basic CL.TE vulnerability' },
+                    { text: 'Lab - 14 : HTTP request smuggling, basic TE.CL vulnerability', link: '/notas/PortSwigger/17.HTTP request smuggling/14.HTTP request smuggling, basic TE.CL vulnerability/14.HTTP request smuggling, basic TE.CL vulnerability' },
+                    { text: 'Lab - 15 : HTTP request smuggling, obfuscating the TE header', link: '/notas/PortSwigger/17.HTTP request smuggling/15.HTTP request smuggling, obfuscating the TE header/15.HTTP request smuggling, obfuscating the TE header' },
                   ]
                 },
                 {
-                  text: '18.Access control vulnerabilities',
+                  text: 'Access control vulnerabilities',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : Unprotected admin functionality', link: '/notas/PortSwigger/18.Access control vulnerabilities/1.Unprotected admin functionality/1.Unprotected admin functionality' },
+                    { text: 'Lab - 2 : Unprotected admin functionality with unpredictable URL', link: '/notas/PortSwigger/18.Access control vulnerabilities/2.Unprotected admin functionality with unpredictable URL/2.Unprotected admin functionality with unpredictable URL' },
+                    { text: 'Lab - 3 : User role controlled by request parameter', link: '/notas/PortSwigger/18.Access control vulnerabilities/3.User role controlled by request parameter/3.User role controlled by request parameter' },
+                    { text: 'Lab - 4 : User role can be modified in user profile', link: '/notas/PortSwigger/18.Access control vulnerabilities/4.User role can be modified in user profile/4.User role can be modified in user profile' },
+                    { text: 'Lab - 5 : User ID controlled by request parameter', link: '/notas/PortSwigger/18.Access control vulnerabilities/5.User ID controlled by request parameter/5.User ID controlled by request parameter' },
+                    { text: 'Lab - 6 : User ID controlled by request parameter, with unpredictable user IDs', link: '/notas/PortSwigger/18.Access control vulnerabilities/6.User ID controlled by request parameter, with unpredictable user IDs/6.User ID controlled by request parameter, with unpredictable user IDs' },
+                    { text: 'Lab - 7 : User ID controlled by request parameter with data leakage in redirect', link: '/notas/PortSwigger/18.Access control vulnerabilities/7.User ID controlled by request parameter with data leakage in redirect/7.User ID controlled by request parameter with data leakage in redirect' },
+                    { text: 'Lab - 8 : User ID controlled by request parameter with password disclosure', link: '/notas/PortSwigger/18.Access control vulnerabilities/8. User ID controlled by request parameter with password disclosure/8. User ID controlled by request parameter with password disclosure' },
+                    { text: 'Lab - 9 : Insecure direct object references', link: '/notas/PortSwigger/18.Access control vulnerabilities/9.Insecure direct object references/9.Insecure direct object references' },
+                    { text: 'Lab - 10 : URL-based access control can be circumvented', link: '/notas/PortSwigger/18.Access control vulnerabilities/10.URL-based access control can be circumvented/10.URL-based access control can be circumvented' },
+                    { text: 'Lab - 11 : Method-based access control can be circumvented', link: '/notas/PortSwigger/18.Access control vulnerabilities/11.Method-based access control can be circumvented/11.Method-based access control can be circumvented' },
+                    { text: 'Lab - 12 : Multi-step process with no access control on one step', link: '/notas/PortSwigger/18.Access control vulnerabilities/12.Multi-step process with no access control on one step/12.Multi-step process with no access control on one step' },
+                    { text: 'Lab - 13 : Referer-based access control', link: '/notas/PortSwigger/18.Access control vulnerabilities/13.Referer-based access control/13.Referer-based access control' },
                   ]
                 },
                 {
-                  text: '19.WebSockets',
+                  text: 'WebSockets',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : Manipulating WebSocket messages to exploit vulnerabilities', link: '/notas/PortSwigger/19.WebSockets/1.Manipulating WebSocket messages to exploit vulnerabilities/1.Manipulating WebSocket messages to exploit vulnerabilities' },
+                    { text: 'Lab - 2 : Cross-site WebSocket hijacking', link: '/notas/PortSwigger/19.WebSockets/2.Cross-site WebSocket hijacking/2.Cross-site WebSocket hijacking' },
+                    { text: 'Lab - 3 : Manipulating the WebSocket handshake to exploit vulnerabilities', link: '/notas/PortSwigger/19.WebSockets/3.Manipulating the WebSocket handshake to exploit vulnerabilities/3.Manipulating the WebSocket handshake to exploit vulnerabilities' },
                   ]
                 },
                 {
-                  text: '20.Insecure deserialization',
+                  text: 'Insecure deserialization',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : Modifying serialized objects', link: '/notas/PortSwigger/20.Insecure deserialization/1.Modifying serialized objects/1.Modifying serialized objects' },
+                    { text: 'Lab - 2 : Modifying serialized data types', link: '/notas/PortSwigger/20.Insecure deserialization/2.Modifying serialized data types/2.Modifying serialized data types' },
+                    { text: 'Lab - 3 : Using application functionality to exploit insecure deserialization', link: '/notas/PortSwigger/20.Insecure deserialization/3.Using application functionality to exploit insecure deserialization/3.Using application functionality to exploit insecure deserialization' },
+                    { text: 'Lab - 4 : Arbitrary object injection in PHP', link: '/notas/PortSwigger/20.Insecure deserialization/4.Arbitrary object injection in PHP/4.Arbitrary object injection in PHP' },
+                    { text: 'Lab - 5 : Exploiting Java deserialization with Apache Commons', link: '/notas/PortSwigger/20.Insecure deserialization/5.Exploiting Java deserialization with Apache Commons/5.Exploiting Java deserialization with Apache Commons' },
+                    { text: 'Lab - 6 : Exploiting PHP deserialization with a pre-built gadget chain', link: '/notas/PortSwigger/20.Insecure deserialization/6.Exploiting PHP deserialization with a pre-built gadget chain/6.Exploiting PHP deserialization with a pre-built gadget chain' },
+                    { text: 'Lab - 7 : Exploiting Ruby deserialization using a documented gadget chain', link: '/notas/PortSwigger/20.Insecure deserialization/7.Exploiting Ruby deserialization using a documented gadget chain/7.Exploiting Ruby deserialization using a documented gadget chain' },
                   ]
                 },
                 {
-                  text: '21.Information disclosure',
+                  text: 'Information disclosure',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : Information disclosure in error messages', link: '/notas/PortSwigger/21.Information disclosure/1.Information disclosure in error messages/1.Information disclosure in error messages' },
+                    { text: 'Lab - 2 : Information disclosure on debug page', link: '/notas/PortSwigger/21.Information disclosure/2.Information disclosure on debug page/2.Information disclosure on debug page' },
+                    { text: 'Lab - 3 : Source code disclosure via backup files', link: '/notas/PortSwigger/21.Information disclosure/3.Source code disclosure via backup files/3.Source code disclosure via backup files' },
+                    { text: 'Lab - 4 : Authentication bypass via information disclosure', link: '/notas/PortSwigger/21.Information disclosure/4.Authentication bypass via information disclosure/4.Authentication bypass via information disclosure' },
+                    { text: 'Lab - 5 : Information disclosure in version control history', link: '/notas/PortSwigger/21.Information disclosure/5.Information disclosure in version control history/5.Information disclosure in version control history' },
                   ]
                 },
                 {
-                  text: '22.HTTP Host header attacks',
+                  text: 'HTTP Host header attacks',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : HTTP Host header attacks', link: '/notas/PortSwigger/22.HTTP Host header attacks/1.HTTP Host header attacks/1.HTTP Host header attacks' },
+                    { text: 'Lab - 2 : Host header authentication bypass', link: '/notas/PortSwigger/22.HTTP Host header attacks/2.Host header authentication bypass/2.Host header authentication bypass' },
+                    { text: 'Lab - 3 : Web cache poisoning via ambiguous requests', link: '/notas/PortSwigger/22.HTTP Host header attacks/3.Web cache poisoning via ambiguous requests/3.Web cache poisoning via ambiguous requests' },
+                    { text: 'Lab - 4 : Routing-based SSRF', link: '/notas/PortSwigger/22.HTTP Host header attacks/4.Routing-based SSRF/4.Routing-based SSRF' },
+                    { text: 'Lab - 5 : SSRF via flawed request parsing', link: '/notas/PortSwigger/22.HTTP Host header attacks/5.SSRF via flawed request parsing/5.SSRF via flawed request parsing' },
+                    { text: 'Lab - 6 : Host validation bypass via connection state attack', link: '/notas/PortSwigger/22.HTTP Host header attacks/6.Host validation bypass via connection state attack/6.Host validation bypass via connection state attack' },
                   ]
                 },
                 {
-                  text: '23.OAuth authentication',
+                  text: 'OAuth authentication',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : Authentication bypass via OAuth implicit flow', link: '/notas/PortSwigger/23.OAuth authentication/1.Authentication bypass via OAuth implicit flow/1.Authentication bypass via OAuth implicit flow' },
+                    { text: 'Lab - 2 : SSRF via OpenID dynamic client registration', link: '/notas/PortSwigger/23.OAuth authentication/2.SSRF via OpenID dynamic client registration/2.SSRF via OpenID dynamic client registration' },
+                    { text: 'Lab - 3 : Forced OAuth profile linking', link: '/notas/PortSwigger/23.OAuth authentication/3.Forced OAuth profile linking/3.Forced OAuth profile linking' },
+                    { text: 'Lab - 4 : OAuth account hijacking via redirect_uri', link: '/notas/PortSwigger/23.OAuth authentication/4.OAuth account hijacking via redirect_uri/4.OAuth account hijacking via redirect_uri' },
+                    { text: 'Lab - 5 : Stealing OAuth access tokens via an open redirect', link: '/notas/PortSwigger/23.OAuth authentication/5.Stealing OAuth access tokens via an open redirect/5.Stealing OAuth access tokens via an open redirect' },
                   ]
                 },
                 {
-                  text: '24.Jwt',
+                  text: 'Jwt',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : JWT authentication bypass via unverified signature', link: '/notas/PortSwigger/24.Jwt/1.JWT authentication bypass via unverified signature/1.JWT authentication bypass via unverified signature' },
+                    { text: 'Lab - 2 : JWT authentication bypass via flawed signature verification', link: '/notas/PortSwigger/24.Jwt/2.JWT authentication bypass via flawed signature verification/2.JWT authentication bypass via flawed signature verification' },
+                    { text: 'Lab - 3 : JWT authentication bypass via weak signing key', link: '/notas/PortSwigger/24.Jwt/3.JWT authentication bypass via weak signing key/3.JWT authentication bypass via weak signing key' },
+                    { text: 'Lab - 4 : JWT authentication bypass via jwk header injection', link: '/notas/PortSwigger/24.Jwt/4.JWT authentication bypass via jwk header injection/4.JWT authentication bypass via jwk header injection' },
+                    { text: 'Lab - 5 : JWT authentication bypass via jku header injection', link: '/notas/PortSwigger/24.Jwt/5.JWT authentication bypass via jku header injection/5.JWT authentication bypass via jku header injection' },
+                    { text: 'Lab - 6 : JWT authentication bypass via kid header path traversal', link: '/notas/PortSwigger/24.Jwt/6.JWT authentication bypass via kid header path traversal/6.JWT authentication bypass via kid header path traversal' },
+                    { text: 'Lab - 7 : JWT authentication bypass via algorithm confusion', link: '/notas/PortSwigger/24.Jwt/7.JWT authentication bypass via algorithm confusion/7.JWT authentication bypass via algorithm confusion' },
+                    { text: 'Lab - 8 : JWT authentication bypass via algorithm confusion with no exposed key', link: '/notas/PortSwigger/24.Jwt/8.JWT authentication bypass via algorithm confusion with no exposed key/8.JWT authentication bypass via algorithm confusion with no exposed key' },
                   ]
                 },
                 {
-                  text: '25.Essential skills',
+                  text: 'Essential skills',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : Discovering vulnerabilities quickly with targeted scanning', link: '/notas/PortSwigger/25.Essential skills/1.Discovering vulnerabilities quickly with targeted scanning/1.Discovering vulnerabilities quickly with targeted scanning' },
+                    { text: 'Lab - 2 : Scanning non-standard data structures', link: '/notas/PortSwigger/25.Essential skills/2.Scanning non-standard data structures/2.Scanning non-standard data structures' },
                   ]
                 },
                 {
-                  text: '26.Prototype pollution',
+                  text: 'Prototype pollution',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : Client-side prototype pollution via browser APIs', link: '/notas/PortSwigger/26.Prototype pollution/1.Client-side prototype pollution via browser APIs/1.Client-side prototype pollution via browser APIs' },
+                    { text: 'Lab - 2 : DOM XSS via client-side prototype pollution', link: '/notas/PortSwigger/26.Prototype pollution/2.DOM XSS via client-side prototype pollution/2.DOM XSS via client-side prototype pollution' },
+                    { text: 'Lab - 3 : DOM XSS via an alternative prototype pollution vector', link: '/notas/PortSwigger/26.Prototype pollution/3.DOM XSS via an alternative prototype pollution vector/3.DOM XSS via an alternative prototype pollution vector' },
+                    { text: 'Lab - 4 : Client-side prototype pollution via flawed sanitization', link: '/notas/PortSwigger/26.Prototype pollution/4.Client-side prototype pollution via flawed sanitization/4.Client-side prototype pollution via flawed sanitization' },
+                    { text: 'Lab - 5 : Client-side prototype pollution in third-party libraries', link: '/notas/PortSwigger/26.Prototype pollution/5.Client-side prototype pollution in third-party libraries/5.Client-side prototype pollution in third-party libraries' },
+                    { text: 'Lab - 6 : Privilege escalation via server-side prototype pollution', link: '/notas/PortSwigger/26.Prototype pollution/6.Privilege escalation via server-side prototype pollution/6.Privilege escalation via server-side prototype pollution' },
+                    { text: 'Lab - 7 : Detecting server-side prototype pollution without polluted property reflection', link: '/notas/PortSwigger/26.Prototype pollution/7.Detecting server-side prototype pollution without polluted property reflection/7.Detecting server-side prototype pollution without polluted property reflection' },
+                    { text: 'Lab - 8 : Bypassing flawed input filters for server-side prototype pollution', link: '/notas/PortSwigger/26.Prototype pollution/8.Bypassing flawed input filters for server-side prototype pollution/8.Bypassing flawed input filters for server-side prototype pollution' },
+                    { text: 'Lab - 9 : Remote code execution via server-side prototype pollution', link: '/notas/PortSwigger/26.Prototype pollution/9.Remote code execution via server-side prototype pollution/9.Remote code execution via server-side prototype pollution' },
                   ]
                 },
                 {
-                  text: '27.GraphQL API vulnerabilities',
+                  text: 'GraphQL API vulnerabilities',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : Accessing private GraphQL posts', link: '/notas/PortSwigger/27.GraphQL API vulnerabilities/1.Accessing private GraphQL posts/1.Accessing private GraphQL posts' },
+                    { text: 'Lab - 2 : Accidental exposure of private GraphQL fields', link: '/notas/PortSwigger/27.GraphQL API vulnerabilities/2.Accidental exposure of private GraphQL fields/2.Accidental exposure of private GraphQL fields' },
+                    { text: 'Lab - 3 : Finding a hidden GraphQL endpoint', link: '/notas/PortSwigger/27.GraphQL API vulnerabilities/3.Finding a hidden GraphQL endpoint/3.Finding a hidden GraphQL endpoint' },
+                    { text: 'Lab - 4 : Bypassing GraphQL brute force protections', link: '/notas/PortSwigger/27.GraphQL API vulnerabilities/4.Bypassing GraphQL brute force protections/4.Bypassing GraphQL brute force protections' },
+                    { text: 'Lab - 5 : Performing CSRF exploits over GraphQL', link: '/notas/PortSwigger/27.GraphQL API vulnerabilities/5.Performing CSRF exploits over GraphQL/5.Performing CSRF exploits over GraphQL' },
                   ]
                 },
                 {
-                  text: '28.NoSQL injection',
+                  text: 'NoSQL injection',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : Detecting NoSQL injection', link: '/notas/PortSwigger/28.NoSQL injection/1.Detecting NoSQL injection/1.Detecting NoSQL injection' },
+                    { text: 'Lab - 2 : Exploiting NoSQL operator injection to bypass authentication', link: '/notas/PortSwigger/28.NoSQL injection/2.Exploiting NoSQL operator injection to bypass authentication/2.Exploiting NoSQL operator injection to bypass authentication' },
+                    { text: 'Lab - 3 : Exploiting NoSQL injection to extract data', link: '/notas/PortSwigger/28.NoSQL injection/3.Exploiting NoSQL injection to extract data/3.Exploiting NoSQL injection to extract data' },
+                    { text: 'Lab - 4 : Exploiting NoSQL operator injection to extract unknown fields', link: '/notas/PortSwigger/28.NoSQL injection/4.Exploiting NoSQL operator injection to extract unknown fields/4.Exploiting NoSQL operator injection to extract unknown fields' },
                   ]
                 },
                 {
-                  text: '29.Web cache deception',
+                  text: 'Web cache deception',
                   collapsed: true,
                   items: [
-                    { text: '', link: '' },
+                    { text: 'Lab - 1 : Exploiting path mapping for web cache deception', link: '/notas/PortSwigger/29.Web cache deception/1.Exploiting path mapping for web cache deception/1.Exploiting path mapping for web cache deception' },
+                    { text: 'Lab - 2 : Exploiting path delimiters for web cache deception', link: '/notas/PortSwigger/29.Web cache deception/2.Exploiting path delimiters for web cache deception/2.Exploiting path delimiters for web cache deception' },
+                    { text: 'Lab - 3 : Exploiting origin server normalization for web cache deception', link: '/notas/PortSwigger/29.Web cache deception/3.Exploiting origin server normalization for web cache deception/3.Exploiting origin server normalization for web cache deception' },
+                    { text: 'Lab - 4 : Exploiting cache server normalization for web cache deception', link: '/notas/PortSwigger/29.Web cache deception/4.Exploiting cache server normalization for web cache deception/4.Exploiting cache server normalization for web cache deception' },
                   ]
-                }
+                }               
 
               ]
             },
@@ -373,78 +503,217 @@ export default defineConfig({
         },
         {
           text: 'NOTAS',
-          collapsed: true,
+          collapsed: false,
           items: [
-            { 
-              text: 'Pentesting', 
+            {
+              text: 'Pentesting',
               collapsed: true,
               items: [
-                { text: 'Item ', link: '/notas/pentesting-item1' },
-                { text: 'Item 2', link: '/notas/pentesting-item2' },
+                { text: 'Comandos', link: '/notas/cheatsheet/1.pentesting/1.1.comandos/comandos-windows' },
+                { text: 'Enumeracion De Hosts', link: '/notas/cheatsheet/1.pentesting/1.2.enumeracion-de-hosts/Enumeración-de-Hosts' },
+                { text: 'Enumeracion de puertos', link: '/notas/cheatsheet/1.pentesting/1.3.enumeracion-de-puertos/Enumeración-de-Puertos' },
+                { text: 'Footprinting',
+                  collapsed: true,
+                  items: [
+                    { text: 'Domain Information', link: '/notas/cheatsheet/1.pentesting/1.4.footprinting/1.Domain-Information/Domain-information' },
+                    { text: 'FTP', link: '/notas/cheatsheet/1.pentesting/1.4.footprinting/2.FTP/FTP' },
+                    { text: 'SMB', link: '/notas/cheatsheet/1.pentesting/1.4.footprinting/3.SMB/SMB' },
+                    { text: 'NFS', link: '/notas/cheatsheet/1.pentesting/1.4.footprinting/4.NFS/NFS' },
+                    { text: 'DNS', link: '/notas/cheatsheet/1.pentesting/1.4.footprinting/5.DNS/DNS' },
+                    { text: 'SMTP', link: '/notas/cheatsheet/1.pentesting/1.4.footprinting/6.SMTP/SMTP' },
+                    { text: 'IMAP-POP3', link: '/notas/cheatsheet/1.pentesting/1.4.footprinting/7.IMAP-POP3/IMAP-POP3' },
+                    { text: 'SNMP', link: '/notas/cheatsheet/1.pentesting/1.4.footprinting/8.SNMP/SNMP' },
+                    { text: 'MySQL', link: '/notas/cheatsheet/1.pentesting/1.4.footprinting/9.MySQL/MySQL' },
+                    { text: 'MSSQL', link: '/notas/cheatsheet/1.pentesting/1.4.footprinting/10.MSSQL/MSSQL' },
+                    { text: 'OracleTNS', link: '/notas/cheatsheet/1.pentesting/1.4.footprinting/11.Oracle-TNS/Oracle-TNS' },
+                    { text: 'IPMI', link: '/notas/cheatsheet/1.pentesting/1.4.footprinting/12.IPMI/IPMI' },
+                    { text: 'Linux Remote Management Protocols', link: '/notas/cheatsheet/1.pentesting/1.4.footprinting/13.Linux-Remote-Management-Protocols/Linux-Remote-Management-Protocols' },
+                    { text: 'Windows Remote Management Protocols', link: '/notas/cheatsheet/1.pentesting/1.4.footprinting/14.Windows-Remote-Management-Protocols/Windows-Remote-Management-Protocols' },
+                  ],
+                  },
+                  { text: 'Buffer', link: '/notas/cheatsheet/1.pentesting/1.5.buffer/BufferOverFlow' },
+                  { text: 'Pivoting-tunneling-port-forwarning', 
+                    collapsed: true,
+                    items: [
+                      {text: 'Port Forwarning ssh', link: '/notas/cheatsheet/1.pentesting/1.6.pivoting-tunneling-port-forwarning/1.Port-forwarning-ssh'},
+                      {text: 'Pivoting Metasploit', link: '/notas/cheatsheet/1.pentesting/1.6.pivoting-tunneling-port-forwarning/2.Pivoting-Metasploit'},
+                      {text: 'Socat Redirection with Reverse Shell', link: '/notas/cheatsheet/1.pentesting/1.6.pivoting-tunneling-port-forwarning/3.Socat-Redirection-with-Reverse-Shell'},
+                      {text: 'Socat Redirection with a Bind Shell', link: '/notas/cheatsheet/1.pentesting/1.6.pivoting-tunneling-port-forwarning/4.Socat-Redirection-with-a-Bind-Shell'},
+                      {text: 'Others Tools', link: '/notas/cheatsheet/1.pentesting/1.6.pivoting-tunneling-port-forwarning/5.others-tools'}
+                    ],
+
+                  },
+                  { text: 'Transderencia de Archivos', 
+                    collapsed: true,
+                    items: [
+                      { text: 'Evading Detection', link: '/notas/cheatsheet/1.pentesting/1.7.transferencia-de-archivos/1.Evading-Detection/Evading-Detection' },
+                      { text: 'Linux File Transfer Methods', link: '/notas/cheatsheet/1.pentesting/1.7.transferencia-de-archivos/2.Linux-File-Transfer-Methods/Linux-File-Transfer-Methods' },
+                      { text: 'Miscellaneous File Transfer Methods', link: '/notas/cheatsheet/1.pentesting/1.7.transferencia-de-archivos/3.Miscellaneous-File-Transfer-Methods/Miscellaneous-File-Transfer-Methods' },
+                      { text: 'Transferring Files with Code', link: '/notas/cheatsheet/1.pentesting/1.7.transferencia-de-archivos/4.Transferring-Files-with-Code/Transferring-Files-with-Code' },
+                      { text: 'Windows-File-Transfer-Methods', link: '/notas/cheatsheet/1.pentesting/1.7.transferencia-de-archivos/5.Windows-File-Transfer-Methods/Windows-File-Transfer-Methods' },
+                      { text: 'Otros',
+                        collapsed: true,
+                        items: [
+                        { text: 'Usando ICMP', link: '/notas/cheatsheet/1.pentesting/1.7.transferencia-de-archivos/6.Otros-metodos/Usando-ICMP/ICMP' },
+                        { text: 'Usando Ncat y Tar', link: '/notas/cheatsheet/1.pentesting/1.7.transferencia-de-archivos/6.Otros-metodos/Usando-ncat-y-tar/ncat y tar' },
+                        ],
+                      }
+                    ]
+                   },
+                  { text: 'Shell Payloads', 
+                    collapsed: true,
+                    items: [
+                      { text: 'Spawning Interactive', link: '/notas/cheatsheet/1.pentesting/1.8.shell-payloads/1.Spawning-Interactive' },
+                      { text: 'Conection RDP', link: '/notas/cheatsheet/1.pentesting/1.8.shell-payloads/2.Conection-RDP' },
+                    ],
+
+                  },
+                  { text: 'Password Attacks', 
+                    collapsed: true,
+                    items: [
+                      {text: 'Cracking',  link: '/notas/cheatsheet/1.pentesting/1.9.password-attacks/1.Cracking'},
+                      {text: 'Windows Local Password Attacks',  link: '/notas/cheatsheet/1.pentesting/1.9.password-attacks/2.Windows-Local-Password-Attacks'},
+                      {text: 'Linux Local Password Attacks',  link: '/notas/cheatsheet/1.pentesting/1.9.password-attacks/3.Linux-Local-Password-Attacks'},
+                      {text: 'Windows-Lateral-Movement',  link: '/notas/cheatsheet/1.pentesting/1.9.password-attacks/4.Windows-Lateral-Movement'}
+                    ],
+
+                  },
+                  { text: 'Fuerza Bruta', link: '/notas/cheatsheet/1.pentesting/1.10.fuerza-bruta/1.10.fuerza-bruta' },
               ]
             },
-            { 
-              text: 'Pentesting Web', 
+            {
+              text: 'Pentesting Web',
               collapsed: true,
               items: [
-                { text: 'Item ', link: '/notas/pentesting-item1' },
-                { text: 'Item 2', link: '/notas/pentesting-item2' },
+                { text: 'Sqlmap',
+                  collapsed: true,
+                  items: [
+                    { text: 'Database Enumeration', link: '/notas/cheatsheet/2.pentesting_web/1.sqlmap/1.1.database-enumeration' },
+                    { text: 'SQLmap', link: '/notas/cheatsheet/2.pentesting_web/1.sqlmap/1.2.sql-map' }
+                  ],
+                },
+                { text: 'Cross Site Scripting', link: '/notas/cheatsheet/2.pentesting_web/2.cross-site-scripting/2.1.cross-site-scripting' },
+                { text: 'File Inclusion',
+                  collapsed: true,
+                  items: [
+                    {text: 'File Inclusion', link: '/notas/cheatsheet/2.pentesting_web/3.file-inclusion/3.1.file-inlusion'},
+                    {text: 'Remote File Inclusion', link: '/notas/cheatsheet/2.pentesting_web/3.file-inclusion/3.2.remote-file-inclusion'},
+                    {text: 'LFI y File Inclusion', link: '/notas/cheatsheet/2.pentesting_web/3.file-inclusion/3.3.lfi-and-file-inclusion'},
+                    {text: 'Escaneos Automáticos', link: '/notas/cheatsheet/2.pentesting_web/3.file-inclusion/3.4.escaneos-automatizados'}
+                  ]
+                
+                },
+                { text: 'Command Injections',
+                  collapsed: true,
+                  items: [
+                    {text: 'Command Injections',link: '/notas/cheatsheet/2.pentesting_web/4.command-injections/4.1.command-injections'},
+                    {text: 'Filter Evasion',link: '/notas/cheatsheet/2.pentesting_web/4.command-injections/4.2.filter-evasion'}
+                  ],
+                 },
+                { text: 'Web Attacks', 
+                  collapsed: true,
+                  items: [
+                    {text: 'Http Verb Tampering', link: '/notas/cheatsheet/2.pentesting_web/5.web-attacks/5.1.http-verb-tampering' },
+                    {text: 'IDOR', link: '/notas/cheatsheet/2.pentesting_web/5.web-attacks/5.2.insecure-direct-object-references-idor' },
+                    {text: 'XXE', link: '/notas/cheatsheet/2.pentesting_web/5.web-attacks/5.3.xml-external-entity-xxe' }
+                  ],
+                },
+                { text: 'Attacking Common Applications',
+                  collapsed:true,
+                  items: [
+                    {text: 'Enumeración web',link: '/notas/cheatsheet/2.pentesting_web/6.attacking.common-applications/6.1.enumeration-web'},
+                    {text: 'Wordpress',link: '/notas/cheatsheet/2.pentesting_web/6.attacking.common-applications/6.2.wordpress'},
+                    {text: 'Joomla',link: '/notas/cheatsheet/2.pentesting_web/6.attacking.common-applications/6.3.joomla'},
+                    {text: 'Drupal',link: '/notas/cheatsheet/2.pentesting_web/6.attacking.common-applications/6.4.drupal'},
+                    {text: 'Tomcat',link: '/notas/cheatsheet/2.pentesting_web/6.attacking.common-applications/6.5.tomcat'},
+                    {text: 'Jenkins',link: '/notas/cheatsheet/2.pentesting_web/6.attacking.common-applications/6.6.jenkins'}
+                  ],
+                },
               ]
             },
-            { 
-              text: 'Escalada de privilegios', 
+            {
+              text: 'Escalada de Privilegios',
               collapsed: true,
               items: [
-                { text: 'Item ', link: '/notas/pentesting-item1' },
-                { text: 'Item 2', link: '/notas/pentesting-item2' },
-              ]
-            },
-            { 
-              text: 'Red Team', 
-              collapsed: true,
-              items: [
-                { text: 'Item ', link: '/notas/pentesting-item1' },
-                { text: 'Item 2', link: '/notas/pentesting-item2' },
+                { text: 'Linux', 
+                  collapsed: true,
+                  items: [
+                    {text: 'Enumeración en Linux', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/1.1.enumeration-linux' },
+                    {text: 'Variables de entorno', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/1.2.environment-based' },
+                    {text: 'Permisos', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/1.3.permissions-based' },
+                    {text: 'Servicios', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/1.4.service-based' },
+                    {text: 'Linux Internal', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/1.5.linux-internals-based' },
+                    {text: 'Otros', 
+                      collapsed: true,
+                      items: [
+                        {text: 'Enumeración automatizada - Tools', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/otros/1.enumeracion-automatizada-tools' },
+                        {text: 'Kernel Exploit', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/otros/2.kernel-exploit' },
+                        {text: 'Sudo', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/otros/3.sudo' },
+                        {text: 'SUID', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/otros/4.suid' },
+                        {text: 'Capabilities', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/otros/5.capabilities' },
+                        {text: 'Cron Jobs', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/otros/6.cron-jobs' },
+                        {text: 'Path', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/otros/7.path' },
+                        {text: 'NFS', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/otros/8.nfs' }
+
+                      ],
+                    }
+                  ],
+                },
+                { text: 'Windows', 
+                  collapsed: true,
+                  items: [
+                    {text: 'Enumeracion en Windows', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.1.enumeration-windows' },
+                    {text: 'Windows User Privilege', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.2.windows-user-privileges' },
+                    {text: 'Windows Group Privilege', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.3.windows-group-privileges' },
+                    {text: 'Attacking the OS', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.4.attacking-the-os' },
+                    {text: 'Credetial Hunting', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.5.credentials-hunting' },
+                    {text: 'Otros', 
+                      collapsed: true,
+                      items: [
+                        {text: 'Enumeración automatizada - Tools',   link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/otros/1.enumeracion-automatizada-tools' },
+                        {text: 'Harvesting Passwords from Usual Spots',   link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/otros/2.harvesting-passwords-from-usual-spots' },
+                        {text: 'Other Quick Wins',   link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/otros/3.other-quick-wins' },
+                        {text: 'Abusing Service Misconfigurations',   link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/otros/4.abusing-service-misconfigurations' },
+                        {text: 'Abusing dangerous privileges',   link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/otros/5.abusing-dangerous-privileges' },
+                        {text: 'Abusing vulnerable software',   link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/otros/6.abusing-vulnerable-software' }
+                      ],
+                    }
+                  ],
+                },
               ]
             },
           ]
         },
         {
           text: 'GUIAS Y HERRAMIENTAS',
-          collapsed: true,
+          collapsed: false,
           items: [
             { 
               text: 'MetaSploit', 
               collapsed: true,
               items: [
-                { text: 'Item ', link: '/notas/pentesting-item1' },
-                { text: 'Item 2', link: '/notas/pentesting-item2' },
+                { text: 'Introducción', link: '/notas/guias-herramientas/1.metasploit/1.Introducción' },
+                { text: 'Modules', link: '/notas/guias-herramientas/1.metasploit/2.Modules' },
+                { text: 'Targets', link: '/notas/guias-herramientas/1.metasploit/3.Targets' },
+                { text: 'Payloads', link: '/notas/guias-herramientas/1.metasploit/4.Payloads' },
+                { text: 'Encoders', link: '/notas/guias-herramientas/1.metasploit/5.Encoders' },
+                { text: 'Sessions', link: '/notas/guias-herramientas/1.metasploit/6.Sessions' },
               ]
             },
-            { 
-              text: 'Nmap', 
+            { text: 'Nmap',link: '/notas/guias-herramientas/2.nmap/nmap' },
+            { text: 'Git', link: '/notas/guias-herramientas/3.git/1.git'},
+            {
+              text: 'Fortinet',
               collapsed: true,
               items: [
-                { text: 'Item ', link: '/notas/pentesting-item1' },
-                { text: 'Item 2', link: '/notas/pentesting-item2' },
+                { text: 'Configuracion Estatica de FW', link: '/notas/guias-herramientas/4.fortinet/1.ConfiguracionEstaticadeFW/ConfiguracionestaticadeFirewall' },
+                { text: 'Licenciadel Firewall', link: '/notas/guias-herramientas/4.fortinet/2.LicenciadelFirewall/Licencia' },
+                { text: 'Configuracion de Interfaces', link: '/notas/guias-herramientas/4.fortinet/3.Configuraciondeinterfaces/ConfiguraciondeInterfaces' },
+                { text: 'Creando Politicas', link: '/notas/guias-herramientas/4.fortinet/4.Creandopoliticas/PrimeraPolitica' },
+                { text: 'Rutas Estaticas', link: '/notas/guias-herramientas/4.fortinet/5.Rutasestaticas/RutasEstaticas' },
               ]
             },
-            { 
-              text: 'Git', 
-              collapsed: true,
-              items: [
-                { text: 'Item ', link: '/notas/pentesting-item1' },
-                { text: 'Item 2', link: '/notas/pentesting-item2' },
-              ]
-            },
-            { 
-              text: 'Fortinet', 
-              collapsed: true,
-              items: [
-                { text: 'Item ', link: '/notas/pentesting-item1' },
-                { text: 'Item 2', link: '/notas/pentesting-item2' },
-              ]
-            },
+
           ]
         }
       ],
