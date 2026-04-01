@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "b0ysie7e",
   base: '/',
+  ignoreDeadLinks: true,
   description: "Write ups y Notas de pentesting",
   themeConfig: {
     logo: 'https://avatars.githubusercontent.com/u/78715318',
