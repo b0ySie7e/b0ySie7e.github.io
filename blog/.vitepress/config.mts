@@ -713,6 +713,7 @@ export default defineConfig({
                 { text: 'Rutas Estaticas', link: '/notas/guias-herramientas/4.fortinet/5.Rutasestaticas/RutasEstaticas' },
               ]
             },
+            {text: 'Metodología', link : '/notas/guias-herramientas/5.Metodologia/1.metodologia'},
 
           ]
         }
