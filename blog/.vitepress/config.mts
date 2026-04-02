@@ -629,6 +629,50 @@ export default defineConfig({
                     {text: 'Jenkins',link: '/notas/cheatsheet/2.pentesting_web/6.attacking.common-applications/6.6.jenkins'}
                   ],
                 },
+                { text: 'Web Fuzzing',
+                  collapsed:true,
+                  items: [
+                    {text: 'Directory and File Fuzzing',link: '/notas/cheatsheet/2.pentesting_web/7.Web Fuzzing/1.Directory and File Fuzzing'}
+                  ],
+                },
+                { text: 'Server-side Attacks',
+                  collapsed:true,
+                  items: [
+                    {text: 'Server-side Request Forgery - SSRF',link: '/notas/cheatsheet/2.pentesting_web/8.Server-side Attacks/1.Server-side Request Forgery - SSRF'},
+                    {text: 'Server Side Template Injection - SSTI',link: '/notas/cheatsheet/2.pentesting_web/8.Server-side Attacks/2.Server Side Template Injection - SSTI'},
+                    {text: 'Server-Side Includes - SSI',link: '/notas/cheatsheet/2.pentesting_web/8.Server-side Attacks/3.Server-Side Includes - SSI'},
+                    {text: 'XSLT Injection',link: '/notas/cheatsheet/2.pentesting_web/8.Server-side Attacks/4.XSLT Injection'}
+                  ],
+                },
+                { text: 'Broken Authentication',
+                  collapsed:true,
+                  items: [
+                    {text: 'Broken Authentication',link: '/notas/cheatsheet/2.pentesting_web/9.Broken Authentication/1.Broken Authentication'}
+                  ],
+                },
+                { text: 'Attacking GraphQL',
+                  collapsed:true,
+                  items: [
+                    {text: 'Information Disclosure',link: '/notas/cheatsheet/2.pentesting_web/10.Attacking GraphQL/1.Information Disclosure'},
+                    {text: 'Insecure Direct Object Reference',link: '/notas/cheatsheet/2.pentesting_web/10.Attacking GraphQL/2.Insecure Direct Object Reference'},
+                    {text: 'Injection Attacks',link: '/notas/cheatsheet/2.pentesting_web/10.Attacking GraphQL/3.Injection Attacks'}
+                  ],
+                },
+                { text: 'API',
+                  collapsed:true,
+                  items: [
+                    {text: 'Broken Object Level Authorization',link: '/notas/cheatsheet/2.pentesting_web/11.API/1.Broken Object Level Authorization'},
+                    {text: 'Broken Authentication',link: '/notas/cheatsheet/2.pentesting_web/11.API/2.Broken Authentication'},
+                    {text: 'Broken Object Property Level Authorization',link: '/notas/cheatsheet/2.pentesting_web/11.API/3.Broken Object Property Level Authorization'},
+                    {text: 'Unrestricted Resource Consumption',link: '/notas/cheatsheet/2.pentesting_web/11.API/4.Unrestricted Resource Consumption'},
+                    {text: 'Broken Function Level Authorization',link: '/notas/cheatsheet/2.pentesting_web/11.API/5.Broken Function Level Authorization'},
+                    {text: 'Unrestricted Access to Sensitive Business Flows',link: '/notas/cheatsheet/2.pentesting_web/11.API/6.Unrestricted Access to Sensitive Business Flows'},
+                    {text: 'Server Side Request Forgery',link: '/notas/cheatsheet/2.pentesting_web/11.API/7.Server Side Request Forgery'},
+                    {text: 'Security Misconfiguration',link: '/notas/cheatsheet/2.pentesting_web/11.API/8.Security Misconfiguration'},
+                    {text: 'Improper Inventory Management',link: '/notas/cheatsheet/2.pentesting_web/11.API/9.Improper Inventory Management'},
+                    {text: 'Unsafe Consumption of APIs',link: '/notas/cheatsheet/2.pentesting_web/11.API/10.Unsafe Consumption of APIs'}
+                  ],
+                },
               ]
             },
             {
