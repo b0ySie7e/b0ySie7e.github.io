@@ -225,6 +225,7 @@ export default defineConfig({
                     { text: 'Lab - 5 : Blind SSRF with out-of-band detection', link: '/notas/PortSwigger/6.SSRF/5.Blind SSRF with out-of-band detection/5.Blind SSRF with out-of-band detection' },
                   ]
                 },
+
                 {
                   text: 'CORS',
                   collapsed: true,
@@ -233,6 +234,22 @@ export default defineConfig({
                     { text: 'Lab - 2 : CORS vulnerability with trusted null origin', link: '/notas/PortSwigger/7.CORS/2.CORS vulnerability with trusted null origin/2.CORS vulnerability with trusted null origin' },
                     { text: 'Lab - 3 : CORS vulnerability with trusted insecure protocols', link: '/notas/PortSwigger/7.CORS/3.CORS vulnerability with trusted insecure protocols/3.CORS vulnerability with trusted insecure protocols' },
                   ]
+                },
+                {
+                  text: 'Web Cache Poisoning',
+                  collapsed: true,
+                  items: [
+                    {text:'Web cache poisoning with an unkeyed header' , link:'/notas/PortSwigger/8.Web cache poisoning/1.Web cache poisoning with an unkeyed header/1.Web cache poisoning with an unkeyed header' },
+                    {text:'Web cache poisoning with an unkeyed cookie' , link:'/notas/PortSwigger/8.Web cache poisoning/2.Web cache poisoning with an unkeyed cookie/2.Web cache poisoning with an unkeyed cookie' },
+                    {text:'Web cache poisoning with multiple headers' , link:'/notas/PortSwigger/8.Web cache poisoning/3.Web cache poisoning with multiple headers/3.Web cache poisoning with multiple headers' },
+                    {text:'Targeted web cache poisoning using an unknown header' , link:'/notas/PortSwigger/8.Web cache poisoning/4.Targeted web cache poisoning using an unknown header/4.Targeted web cache poisoning using an unknown header' },
+                    {text:'Web cache poisoning via an unkeyed query string' , link:'/notas/PortSwigger/8.Web cache poisoning/5.Web cache poisoning via an unkeyed query string/5.Web cache poisoning via an unkeyed query string' },
+                    {text:'Web cache poisoning via an unkeyed query parameter' , link:'/notas/PortSwigger/8.Web cache poisoning/6.Web cache poisoning via an unkeyed query parameter/6.Web cache poisoning via an unkeyed query parameter' },
+                    {text:'Parameter cloaking' , link:'/notas/PortSwigger/8.Web cache poisoning/7.Parameter cloaking/7.Parameter cloaking' },
+                    {text:'Web cache poisoning via a fat GET request' , link:'/notas/PortSwigger/8.Web cache poisoning/8.Web cache poisoning via a fat GET request/8.Web cache poisoning via a fat GET request' },
+                    {text:'URL normalization' , link:'/notas/PortSwigger/8.Web cache poisoning/9.URL normalization/9.URL normalization' },
+                  ],
+
                 },
                 {
                   text: 'Clickjacking',
