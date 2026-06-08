@@ -5,11 +5,18 @@ export default defineConfig({
   base: '/',
   ignoreDeadLinks: true,
   description: "Write ups y Notas de pentesting",
+  vite: {
+    build: {
+      rollupOptions: {
+        external: ['/pagefind/pagefind-ui.js']
+      }
+    }
+  },
   themeConfig: {
     logo: 'https://avatars.githubusercontent.com/u/78715318',
-    search: {
-      provider: 'local'
-    },
+//    search: {
+//      provider: 'local'
+//    },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Notas', link: '/notas/pentesting' },

@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a}from"./chunks/framework.DIUhWiTt.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"notas/dockerlabs/README.md","filePath":"notas/dockerlabs/README.md"}'),o={name:"notas/dockerlabs/README.md"};function s(r,c,n,d,p,_){return t(),a("div")}const m=e(o,[["render",s]]);export{l as __pageData,m as default};
