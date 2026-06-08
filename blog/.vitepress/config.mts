@@ -743,7 +743,31 @@ export default defineConfig({
                 },
               ]
             },
+          
+              {
+                text: 'Active Directory',
+                collapsed: false,
+                items: [
+                  {
+                    text: 'Active Directory - Enumeracion y Ataques',
+                    collapsed: true,
+                    items: [
+                      {text: 'Enumeración', link: '/notas/activedirectory/activedirectoryEnumerationAttacks/1.InitialEnumeration'},
+                      {text: 'SniffingoutFoothold', link: '/notas/activedirectory/activedirectoryEnumerationAttacks/2.SniffingoutFoothold'},
+                      {text: 'Hunting For A User — Password Policy & Spraying', link: '/notas/activedirectory/activedirectoryEnumerationAttacks/3.HuntingForAUser'},
+                      {text: 'Enumerating Security Controls & Credentialed Enumeration', link: '/notas/activedirectory/activedirectoryEnumerationAttacks/4.EnumeratingSecurityControls'},
+                      {text: 'Kerberoasting', link: '/notas/activedirectory/activedirectoryEnumerationAttacks/5.Kerberoasting'},
+                      {text: 'AccessControlEntries_ Abuse(ACL)', link: '/notas/activedirectory/activedirectoryEnumerationAttacks/6.AccessControlEntries__AbuseACL'},
+                      {text: 'Post Exploitation DCSync Attack & NTDS Extraction', link: '/notas/activedirectory/activedirectoryEnumerationAttacks/7.Post_Exploitation_DCSync_Attack__NTDS_Extraction'},
+                      {text: 'Attacking Domain Trusts — Child → Parent', link: '/notas/activedirectory/activedirectoryEnumerationAttacks/8.Attacking_Domain_Trusts_Child_Parent'},
+                      {text: 'Attacking Domain Trusts — Cross-Forest Trust Abuse', link: '/notas/activedirectory/activedirectoryEnumerationAttacks/9.Attacking_Domain_Trusts_Cross-Forest_Trust_Abuse'},
+                    ]
+                  },
+                ]
+              },
+          
           ]
+        
         },
         {
           text: 'GUIAS Y HERRAMIENTAS',
