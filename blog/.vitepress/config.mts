@@ -746,7 +746,7 @@ export default defineConfig({
           
               {
                 text: 'Active Directory',
-                collapsed: false,
+                collapsed: true,
                 items: [
                   {
                     text: 'Active Directory - Enumeracion y Ataques',
