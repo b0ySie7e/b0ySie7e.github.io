@@ -1,0 +1,27 @@
+# Dependencias
+node_modules/
+
+# Build output
+blog/.vitepress/dist
+blog/.vitepress/cache
+
+# Pagefind (se genera en el build)
+blog/.vitepress/dist/pagefind
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Variables de entorno
+.env
+.env.local
