@@ -759,18 +759,56 @@ export default defineConfig({
                     text: 'Active Directory - Enumeracion y Ataques',
                     collapsed: true,
                     items: [
-                      {text: 'Enumeración', link: '/notas/activedirectory/activedirectoryEnumerationAttacks/1.InitialEnumeration'},
-                      {text: 'SniffingoutFoothold', link: '/notas/activedirectory/activedirectoryEnumerationAttacks/2.SniffingoutFoothold'},
-                      {text: 'Hunting For A User — Password Policy & Spraying', link: '/notas/activedirectory/activedirectoryEnumerationAttacks/3.HuntingForAUser'},
-                      {text: 'Enumerating Security Controls & Credentialed Enumeration', link: '/notas/activedirectory/activedirectoryEnumerationAttacks/4.EnumeratingSecurityControls'},
-                      {text: 'Kerberoasting', link: '/notas/activedirectory/activedirectoryEnumerationAttacks/5.Kerberoasting'},
-                      {text: 'AccessControlEntries_ Abuse(ACL)', link: '/notas/activedirectory/activedirectoryEnumerationAttacks/6.AccessControlEntries__AbuseACL'},
-                      {text: 'Post Exploitation DCSync Attack & NTDS Extraction', link: '/notas/activedirectory/activedirectoryEnumerationAttacks/7.Post_Exploitation_DCSync_Attack__NTDS_Extraction'},
-                      {text: 'Attacking Domain Trusts — Child → Parent', link: '/notas/activedirectory/activedirectoryEnumerationAttacks/8.Attacking_Domain_Trusts_Child_Parent'},
-                      {text: 'Attacking Domain Trusts — Cross-Forest Trust Abuse', link: '/notas/activedirectory/activedirectoryEnumerationAttacks/9.Attacking_Domain_Trusts_Cross-Forest_Trust_Abuse'},
+                      {text: 'Enumeración', link: '/notas/activedirectory/1.activedirectoryEnumerationAttacks/1.InitialEnumeration'},
+                      {text: 'SniffingoutFoothold', link: '/notas/activedirectory/1.activedirectoryEnumerationAttacks/2.SniffingoutFoothold'},
+                      {text: 'Hunting For A User — Password Policy & Spraying', link: '/notas/activedirectory/1.activedirectoryEnumerationAttacks/3.HuntingForAUser'},
+                      {text: 'Enumerating Security Controls & Credentialed Enumeration', link: '/notas/activedirectory/1.activedirectoryEnumerationAttacks/4.EnumeratingSecurityControls'},
+                      {text: 'Kerberoasting', link: '/notas/activedirectory/1.activedirectoryEnumerationAttacks/5.Kerberoasting'},
+                      {text: 'AccessControlEntries_ Abuse(ACL)', link: '/notas/activedirectory/1.activedirectoryEnumerationAttacks/6.AccessControlEntries__AbuseACL'},
+                      {text: 'Post Exploitation DCSync Attack & NTDS Extraction', link: '/notas/activedirectory/1.activedirectoryEnumerationAttacks/7.Post_Exploitation_DCSync_Attack__NTDS_Extraction'},
+                      {text: 'Attacking Domain Trusts — Child → Parent', link: '/notas/activedirectory/1.activedirectoryEnumerationAttacks/8.Attacking_Domain_Trusts_Child_Parent'},
+                      {text: 'Attacking Domain Trusts — Cross-Forest Trust Abuse', link: '/notas/activedirectory/1.activedirectoryEnumerationAttacks/9.Attacking_Domain_Trusts_Cross-Forest_Trust_Abuse'},
                     ]
                   },
+                  {
+                    text: 'LDAP',
+                    collapsed: true,
+                    items:[
+                      {text: 'LDAP - Introduccion', link: '/notas/activedirectory/2.LDAP/1.LDAP - Introduccion'},
+                      {text: 'Search Filters', link: '/notas/activedirectory/2.LDAP/2.Search Filters'},
+                      {text: 'Enumeracion de LDAP', link: '/notas/activedirectory/2.LDAP/3.Enumeracion de LDAP'}
+                    ]
+                  },
+                  {
+                    text: 'PowerView',
+                    collapsed: true,
+                    items:[
+                      {text: 'PowerView & SharpView', link: '/notas/activedirectory/3.PowerView/1.PowerView & SharpView'},
+                      {text: 'PowerView — Enumerating AD Users', link: '/notas/activedirectory/3.PowerView/2.PowerView — Enumerating AD Users'},
+                      {text: 'PowerView — Enumerating AD Groups', link: '/notas/activedirectory/3.PowerView/3.PowerView — Enumerating AD Groups'},
+                      {text: 'PowerView — Enumerating AD Computers', link: '/notas/activedirectory/3.PowerView/4.PowerView — Enumerating AD Computers'},
+                      {text: 'PowerView — Enumerating Domain ACLs', link: '/notas/activedirectory/3.PowerView/5.PowerView — Enumerating Domain ACLs'},
+                      {text: 'PowerView — Enumerating Group Policy Objects (GPOs)', link: '/notas/activedirectory/3.PowerView/6.PowerView — Enumerating Group Policy Objects (GPOs)'},
+                      {text: 'PowerView — Enumerating AD Trusts', link: '/notas/activedirectory/3.PowerView/7.PowerView — Enumerating AD Trusts'}
+
+                    ]
+                  },
+                  {
+                    text: 'BloodHound',
+                    collapsed: true,
+                    items:[
+                      {text: 'BloodHound — Overview & Setup', link: '/notas/activedirectory/4.BloodHound/1.BloodHound — Overview & Setup'},
+                      {text: 'BloodHound — SharpHound Data Collection (Windows)', link: '/notas/activedirectory/4.BloodHound/2.BloodHound — SharpHound Data Collection (Windows)'},
+                      {text: 'BloodHound — BloodHound.py Data Collection (Linux)', link: '/notas/activedirectory/4.BloodHound/3.BloodHound — BloodHound.py Data Collection (Linux)'},
+                      {text: 'BloodHound - Data', link: '/notas/activedirectory/4.BloodHound/4.BloodHound - Data'},
+                      {text: 'BloodHound — Blue Team Usage', link: '/notas/activedirectory/4.BloodHound/5.BloodHound — Blue Team Usage'},
+                      {text: 'AzureHound', link: '/notas/activedirectory/4.BloodHound/6.AzureHound'}
+
+                    ]
+                  }
+
                 ]
+                
               },
           
           ]
