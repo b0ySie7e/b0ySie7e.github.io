@@ -862,12 +862,24 @@ export default defineConfig({
           ]
         }
       ],
+
       // Seccion de notas de dev malware
       '/malware/': [
         {
-          text: 'Dev Malware',
+          text: 'Assembly',
           items: [
-            { text: 'Keylogger', link: '/malware/keylogger' },
+            { 
+              text: 'ASM Ofensivo x86_64 — Fundamentos y Shellcoding',
+              collapsed: true,
+              items: [
+                {text: 'Registros x86_64', link: '/malware/assembly/1.registros'},
+                {text: 'Instrucciones Básicas', link: '/malware/assembly/2.Instrucciones'},
+                {text: 'Control de Flujo', link: '/malware/assembly/3.control-flujo'},
+                {text: 'Stack, Syscalls y Funciones', link: '/malware/assembly/4.stack-funciones'},
+                {text: 'Shellcoding', link: '/malware/assembly/5.shellcoding'},
+                {text: 'GDB / GEF', link: '/malware/assembly/6.gdb'}
+              ]
+            },
           ]
         },
         {
