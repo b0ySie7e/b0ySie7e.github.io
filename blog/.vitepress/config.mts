@@ -5,6 +5,20 @@ export default defineConfig({
   base: '/',
   ignoreDeadLinks: true,
   description: "Write ups y Notas de pentesting",
+  head: [
+    [
+      'script',
+      { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-22EPEZJKXV' }
+    ],
+    [
+      'script',
+      {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-22EPEZJKXV');`
+    ]
+  ],
   vite: {
     build: {
       rollupOptions: {
