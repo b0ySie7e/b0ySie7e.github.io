@@ -1,0 +1,10 @@
+.vp-code-group,
+div[class*='language-'] {
+  overflow-x: visible !important;
+}
+
+div[class*='language-'] pre {
+  overflow-x: visible !important;
+  white-space: pre-wrap !important;
+  word-break: break-all !important;
+}
