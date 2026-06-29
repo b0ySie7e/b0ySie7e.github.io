@@ -819,7 +819,23 @@ export default defineConfig({
                       {text: 'AzureHound', link: '/notas/activedirectory/4.BloodHound/6.AzureHound'}
 
                     ]
-                  }
+                  },
+                  {
+                    text: 'Windows Lateral Movement',
+                    collapsed: true,
+                    items:[
+                      {text: 'Windows Lateral Movement — Introduction', link: '/notas/activedirectory/5.WindowsLateralMovement/1.Windows Lateral Movement — Introduction'},
+                      {text: 'Remote Desktop Protocol (RDP)', link: '/notas/activedirectory/5.WindowsLateralMovement/2.Remote Desktop Protocol (RDP)'},
+                      {text: 'Server Message Block (SMB)', link: '/notas/activedirectory/5.WindowsLateralMovement/3.Server Message Block (SMB)'},
+                      {text: 'Windows Management Instrumentation (WMI)', link: '/notas/activedirectory/5.WindowsLateralMovement/4.Windows Management Instrumentation (WMI)'},
+                      {text: 'Windows Remote Management (WinRM)', link: '/notas/activedirectory/5.WindowsLateralMovement/5.Windows Remote Management (WinRM)'},
+                      {text: 'Distributed Component Object Model (DCOM)', link: '/notas/activedirectory/5.WindowsLateralMovement/6.Distributed Component Object Model (DCOM)'},
+                      {text: 'Secure Shell (SSH)', link: '/notas/activedirectory/5.WindowsLateralMovement/7.Secure Shell (SSH)'},
+                      {text: 'Remote Management Tools', link: '/notas/activedirectory/5.WindowsLateralMovement/8.Remote Management Tools'},
+                      {text: 'Otros', link: '/notas/activedirectory/5.WindowsLateralMovement/9.Otros'}
+
+                    ]
+                  },
 
                 ]
                 
