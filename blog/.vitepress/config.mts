@@ -854,14 +854,14 @@ export default defineConfig({
                     text: 'Kerberos Attack',
                     collapsed: true,
                     items:[
-                      {text: '', link: ''},
-                      {text: '', link: ''},
-                      {text: '', link: ''},
-                      {text: '', link: ''},
-                      {text: '', link: ''},
-                      {text: '', link: ''},
-                      {text: '', link: ''},
-                      {text: '', link: ''},
+                      {text: 'Fundamentos Protocolo Autenticación y Ataques', link: '/notas/activedirectory/7.Kerberos Attack/1.Fundamentos Protocolo Autenticación y Ataques'},
+                      {text: 'Roasting Attacks ASREPRoasting & Kerberoasting', link: '/notas/activedirectory/7.Kerberos Attack/2.Roasting Attacks ASREPRoasting & Kerberoasting'},
+                      {text: 'Kerberos Delegations', link: '/notas/activedirectory/7.Kerberos Attack/3.Kerberos Delegations'},
+                      {text: 'Unconstrained Delegation', link: '/notas/activedirectory/7.Kerberos Attack/4.Unconstrained Delegation'},
+                      {text: 'Constrained Delegation', link: '/notas/activedirectory/7.Kerberos Attack/5.Constrained Delegation'},
+                      {text: 'Resource-Based Constrained Delegation', link: '/notas/activedirectory/7.Kerberos Attack/6.Resource-Based Constrained Delegation'},
+                      {text: 'Ticket Abuse', link: '/notas/activedirectory/7.Kerberos Attack/7.Ticket Abuse'},
+                      {text: 'Kerberos - Enumeración, Hardening y Detección', link: '/notas/activedirectory/7.Kerberos Attack/8.Kerberos - Enumeración, Hardening y Detección'},
 
                     ]
                   },
