@@ -836,7 +836,35 @@ export default defineConfig({
 
                     ]
                   },
+                  {
+                    text: 'CrackMapExec - NetExec',
+                    collapsed: true,
+                    items:[
+                      {text: 'Introducción, Instalación y Targets', link: '/notas/activedirectory/6.CrackMapExec/1.Introducción, Instalación y Targets'},
+                      {text: 'Gathering Information Anonymously', link: '/notas/activedirectory/6.CrackMapExec/2.Gathering Information Anonymously'},
+                      {text: 'Gathering Information with an Account', link: '/notas/activedirectory/6.CrackMapExec/3.Gathering Information with an Account'},
+                      {text: 'PostCompromise Enumeration & Credential Extraction', link: '/notas/activedirectory/6.CrackMapExec/4.CME-NXC  PostCompromise Enumeration & Credential Extraction'},
+                      {text: 'C2 Integration & Post-Exploitation Automation', link: '/notas/activedirectory/6.CrackMapExec/5.CME-NXC - C2 Integration & Post-Exploitation Automation'},
+                      {text: 'Modules -Enumeration Vulnerability Scanning & Development', link: '/notas/activedirectory/6.CrackMapExec/6.CME-NXC - Modules -Enumeration Vulnerability Scanning & Development'},
+                      {text: 'Miscellaneous Audit Mode IPv6 & Kerberos Authentication', link: '/notas/activedirectory/6.CrackMapExec/7.CME-NXC - Miscellaneous Audit Mode IPv6 & Kerberos Authentication'},
+                    ]
+                  },
+                  
+                  {
+                    text: 'Kerberos Attack',
+                    collapsed: true,
+                    items:[
+                      {text: '', link: ''},
+                      {text: '', link: ''},
+                      {text: '', link: ''},
+                      {text: '', link: ''},
+                      {text: '', link: ''},
+                      {text: '', link: ''},
+                      {text: '', link: ''},
+                      {text: '', link: ''},
 
+                    ]
+                  },
                 ]
                 
               },
