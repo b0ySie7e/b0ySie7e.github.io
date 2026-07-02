@@ -8,3 +8,27 @@ div[class*='language-'] pre {
   white-space: pre-wrap !important;
   word-break: break-all !important;
 }
+/* Jerarquía en el índice "On this page" */
+.VPDocOutlineItem a {
+  display: block !important;
+}
+
+/* H2 - sin indentación */
+.VPDocOutlineItem.level-2 > a {
+  padding-left: 0px !important;
+  font-weight: 600 !important;
+}
+
+/* H3 - indentado */
+.VPDocOutlineItem.level-3 > a {
+  padding-left: 16px !important;
+  font-size: 0.9em !important;
+  color: var(--vp-c-text-2) !important;
+}
+
+/* H4 - más indentado */
+.VPDocOutlineItem.level-4 > a {
+  padding-left: 32px !important;
+  font-size: 0.85em !important;
+  color: var(--vp-c-text-3) !important;
+}
