@@ -725,24 +725,11 @@ export default defineConfig({
                   collapsed: true,
                   items: [
                     {text: 'Enumeración en Linux', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/1.1.enumeration-linux' },
-                    {text: 'Variables de entorno', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/1.2.environment-based' },
-                    {text: 'Permisos', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/1.3.permissions-based' },
-                    {text: 'Servicios', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/1.4.service-based' },
-                    {text: 'Linux Internal', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/1.5.linux-internals-based' },
-                    {text: 'Otros', 
-                      collapsed: true,
-                      items: [
-                        {text: 'Enumeración automatizada - Tools', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/otros/1.enumeracion-automatizada-tools' },
-                        {text: 'Kernel Exploit', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/otros/2.kernel-exploit' },
-                        {text: 'Sudo', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/otros/3.sudo' },
-                        {text: 'SUID', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/otros/4.suid' },
-                        {text: 'Capabilities', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/otros/5.capabilities' },
-                        {text: 'Cron Jobs', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/otros/6.cron-jobs' },
-                        {text: 'Path', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/otros/7.path' },
-                        {text: 'NFS', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/otros/8.nfs' }
-
-                      ],
-                    }
+                    {text: 'Búsqueda de Credenciales e Información Sensible', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/1.2.busqueda-de-credenciales' },
+                    {text: 'Escalación de Privilegios - Permisos SUID, Capabilities y Grupos Privilegiados', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/1.3.permisos suid-capabilities' },
+                    {text: 'Explotación de Servicios, CRON, PATH y NFS', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/1.4.service-based' },
+                    {text: 'Exploits de Kernel, Protecciones del Sistema y Post-Explotación', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/1.5.linux-internals-based' },
+                    {text: 'Herramientas', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/1.6.herramientas' },
                   ],
                 },
                 { text: 'Windows', 
@@ -752,7 +739,8 @@ export default defineConfig({
                     {text: 'Explotación de Privilegios y Grupos Especiales', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.2.privilegios-y-grupos' },
                     {text: 'Explotación de Servicios, Tareas Programadas y MSI Elevation', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.3.servicios-y-tareas' },
                     {text: 'Attacking the OS', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.4.attacking-the-os' },
-                    {text: 'Credetial Hunting', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.5.credentials-hunting' },
+                    {text: 'Búsqueda de Credenciales e Información Sensible', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.5.credentials-hunting' },
+                    {text: 'Herramientas', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.6.herramientas' }
                   ],
                 },
               ]
