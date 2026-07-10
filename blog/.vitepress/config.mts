@@ -749,21 +749,10 @@ export default defineConfig({
                   collapsed: true,
                   items: [
                     {text: 'Enumeracion en Windows', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.1.enumeration-windows' },
-                    {text: 'Windows User Privilege', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.2.windows-user-privileges' },
-                    {text: 'Windows Group Privilege', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.3.windows-group-privileges' },
+                    {text: 'Explotación de Privilegios y Grupos Especiales', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.2.privilegios-y-grupos' },
+                    {text: 'Explotación de Servicios, Tareas Programadas y MSI Elevation', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.3.servicios-y-tareas' },
                     {text: 'Attacking the OS', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.4.attacking-the-os' },
                     {text: 'Credetial Hunting', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.5.credentials-hunting' },
-                    {text: 'Otros', 
-                      collapsed: true,
-                      items: [
-                        {text: 'Enumeración automatizada - Tools',   link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/otros/1.enumeracion-automatizada-tools' },
-                        {text: 'Harvesting Passwords from Usual Spots',   link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/otros/2.harvesting-passwords-from-usual-spots' },
-                        {text: 'Other Quick Wins',   link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/otros/3.other-quick-wins' },
-                        {text: 'Abusing Service Misconfigurations',   link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/otros/4.abusing-service-misconfigurations' },
-                        {text: 'Abusing dangerous privileges',   link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/otros/5.abusing-dangerous-privileges' },
-                        {text: 'Abusing vulnerable software',   link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/otros/6.abusing-vulnerable-software' }
-                      ],
-                    }
                   ],
                 },
               ]
