@@ -836,7 +836,7 @@ export default defineConfig({
                     collapsed: true,
                     items:[
                       {text: 'Fundamentos Protocolo Autenticación y Ataques', link: '/notas/activedirectory/7.KerberosAttack/1.Fundamentos Protocolo Autenticación y Ataques'},
-                      {text: 'RoastingAttacks ASREPRoasting & Kerberoasting', link: '/notas/activedirectory/7.KerberosAttack/2.RoastingAttacks ASREPRoasting & Kerberoasting'},
+                      {text: 'RoastingAttacks ASREPRoasting & Kerberoasting', link: '/notas/activedirectory/7.KerberosAttack/2.Roasting Attacks ASREPRoastingKerberoasting'},
                       {text: 'Kerberos Delegations', link: '/notas/activedirectory/7.KerberosAttack/3.Kerberos Delegations'},
                       {text: 'Unconstrained Delegation', link: '/notas/activedirectory/7.KerberosAttack/4.Unconstrained Delegation'},
                       {text: 'Constrained Delegation', link: '/notas/activedirectory/7.KerberosAttack/5.Constrained Delegation'},
