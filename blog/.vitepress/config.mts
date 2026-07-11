@@ -779,12 +779,12 @@ export default defineConfig({
                     collapsed: true,
                     items:[
                       {text: 'PowerView & SharpView', link: '/notas/activedirectory/3.PowerView/1.PowerView & SharpView'},
-                      {text: 'PowerView — Enumerating AD Users', link: '/notas/activedirectory/3.PowerView/2.PowerView — Enumerating AD Users'},
-                      {text: 'PowerView — Enumerating AD Groups', link: '/notas/activedirectory/3.PowerView/3.PowerView — Enumerating AD Groups'},
-                      {text: 'PowerView — Enumerating AD Computers', link: '/notas/activedirectory/3.PowerView/4.PowerView — Enumerating AD Computers'},
-                      {text: 'PowerView — Enumerating Domain ACLs', link: '/notas/activedirectory/3.PowerView/5.PowerView — Enumerating Domain ACLs'},
-                      {text: 'PowerView — Enumerating Group Policy Objects (GPOs)', link: '/notas/activedirectory/3.PowerView/6.PowerView — Enumerating Group Policy Objects (GPOs)'},
-                      {text: 'PowerView — Enumerating AD Trusts', link: '/notas/activedirectory/3.PowerView/7.PowerView — Enumerating AD Trusts'}
+                      {text: 'PowerView — Enumerating AD Users', link: '/notas/activedirectory/3.PowerView/2.PowerViewEnumerating AD Users'},
+                      {text: 'PowerView — Enumerating AD Groups', link: '/notas/activedirectory/3.PowerView/3.PowerViewEnumerating AD Groups'},
+                      {text: 'PowerView — Enumerating AD Computers', link: '/notas/activedirectory/3.PowerView/4.PowerViewEnumerating AD Computers'},
+                      {text: 'PowerView — Enumerating Domain ACLs', link: '/notas/activedirectory/3.PowerView/5.PowerViewEnumerating Domain ACLs'},
+                      {text: 'PowerView — Enumerating Group Policy Objects (GPOs)', link: '/notas/activedirectory/3.PowerView/6.PowerViewEnumerating AD Trusts'},
+                      {text: 'PowerView — Enumerating AD Trusts', link: '/notas/activedirectory/3.PowerView/7.PowerViewEnumerating Group Policy Objects (GPOs)'}
 
                     ]
                   },
