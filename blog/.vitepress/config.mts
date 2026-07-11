@@ -132,6 +132,12 @@ export default defineConfig({
                 { text: 'Inject', link: '/notas/hackthebox/28.Inject/2024-08-02-Inject' },
                 { text: 'Titanic', link: '/notas/hackthebox/29.Titanic/2025-08-31-Titanic' },
                 { text: 'LinkVortex', link: '/notas/hackthebox/30.LinkVortex/3.LinkVortex' },
+                { text: 'Sauna', link: '/notas/hackthebox/31.Sauna/sauna' },
+                { text: 'Sea', link: '/notas/hackthebox/32.Sea/Sea' },
+                { text: 'Markup', link: '/notas/hackthebox/33.Markup/Markup' },
+                { text: 'Active', link: '/notas/hackthebox/34.Active/Active' },
+                { text: 'Jerry', link: '/notas/hackthebox/35.Jerry/Jerry' },
+                { text: 'Forest', link: '/notas/hackthebox/36.Forest/Forest' },
               ]
             },
             { 
