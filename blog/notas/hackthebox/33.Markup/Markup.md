@@ -1,5 +1,7 @@
 # Markup - Writeup HTB
 
+![20260617210719.png](20260617210719.png)
+
 **Dificultad:** Very Easy | **SO:** Windows | **XP:** 250
 
 ---
@@ -7,8 +9,6 @@
 ## Reconocimiento
 
 ### Escaneo de puertos
-
-![20260617210719.png](20260617210719.png)
 
 ```bash
 ❯ nmap -p- --open --min-rate 1000 -Pn -n 10.129.95.192 -v -oG allportsScan

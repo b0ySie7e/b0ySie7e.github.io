@@ -1,6 +1,7 @@
 # Forest - Writeup HTB
 
 ![20260711162053.png](20260711162053.png)
+
 ## Introducción
 
 Forest es una máquina de dificultad media que simula un ambiente de Active Directory (AD) de Windows Server 2016. La máquina explota vulnerabilidades en la configuración de Kerberos y permisos de grupo para escalar privilegios y comprometer completamente el dominio.
