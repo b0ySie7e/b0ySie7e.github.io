@@ -651,6 +651,7 @@ export default defineConfig({
                   ]
                 
                 },
+                { text: 'File Upload Attacks', link: '/notas/cheatsheet/2.pentesting_web/12.FileUpload/FileUploadAttacks' },
                 { text: 'Command Injections',
                   collapsed: true,
                   items: [
