@@ -633,11 +633,14 @@ export default defineConfig({
               text: 'Pentesting Web',
               collapsed: true,
               items: [
-                { text: 'Sqlmap',
+                { text: 'SQL Injection',
                   collapsed: true,
                   items: [
-                    { text: 'Database Enumeration', link: '/notas/cheatsheet/2.pentesting_web/1.sqlmap/1.1.database-enumeration' },
-                    { text: 'SQLmap', link: '/notas/cheatsheet/2.pentesting_web/1.sqlmap/1.2.sql-map' }
+                    { text: 'Database Enumeration', link: '/notas/cheatsheet/2.pentesting_web/1.sqlinjection/1.1.database-enumeration' },
+                    { text: 'SQL Injection Basics', link: '/notas/cheatsheet/2.pentesting_web/1.sqlinjection/1.3.fundamentos' },
+                    { text: 'SQL Injections & Exploitation', link: '/notas/cheatsheet/2.pentesting_web/1.sqlinjection/1.4.ataque' },
+                    { text: 'DEFENSA - Mitigations & Theory', link: '/notas/cheatsheet/2.pentesting_web/1.sqlinjection/1.5.defensa' },
+                    { text: 'SQLmap', link: '/notas/cheatsheet/2.pentesting_web/1.sqlinjection/1.2.sql-map' }
                   ],
                 },
                 { text: 'Cross Site Scripting', link: '/notas/cheatsheet/2.pentesting_web/2.cross-site-scripting/2.1.cross-site-scripting' },

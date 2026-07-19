@@ -36,6 +36,8 @@ jobs:
 
       - name: Build with VitePress
         run: npm run docs:build
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096
 
       - name: Index with Pagefind
         run: npx pagefind --site blog/.vitepress/dist
