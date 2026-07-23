@@ -748,9 +748,11 @@ export default defineConfig({
                     {text: 'Enumeracion en Windows', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.1.enumeration-windows' },
                     {text: 'Explotación de Privilegios y Grupos Especiales', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.2.privilegios-y-grupos' },
                     {text: 'Explotación de Servicios, Tareas Programadas y MSI Elevation', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.3.servicios-y-tareas' },
+                    {text: 'Logs del Sistema', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.7.Logs' },
                     {text: 'Attacking the OS', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.4.attacking-the-os' },
                     {text: 'Búsqueda de Credenciales e Información Sensible', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.5.credentials-hunting' },
                     {text: 'Herramientas', link: '/notas/cheatsheet/3.escalada_de_privilegios/2.windows/2.6.herramientas' }
+
                   ],
                 },
               ]
