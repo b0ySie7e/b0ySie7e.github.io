@@ -32,7 +32,7 @@ export default defineConfig({
 //      provider: 'local'
 //    },
     outline: {
-      level: [2,4],
+      level: [1,6],
       label: 'On this page'
     },
     nav: [
