@@ -587,7 +587,8 @@ export default defineConfig({
                       {text: 'Pivoting Metasploit', link: '/notas/cheatsheet/1.pentesting/1.6.pivoting-tunneling-port-forwarning/2.Pivoting-Metasploit'},
                       {text: 'Socat Redirection with Reverse Shell', link: '/notas/cheatsheet/1.pentesting/1.6.pivoting-tunneling-port-forwarning/3.Socat-Redirection-with-Reverse-Shell'},
                       {text: 'Socat Redirection with a Bind Shell', link: '/notas/cheatsheet/1.pentesting/1.6.pivoting-tunneling-port-forwarning/4.Socat-Redirection-with-a-Bind-Shell'},
-                      {text: 'Others Tools', link: '/notas/cheatsheet/1.pentesting/1.6.pivoting-tunneling-port-forwarning/5.others-tools'}
+                      {text: 'Others Tools', link: '/notas/cheatsheet/1.pentesting/1.6.pivoting-tunneling-port-forwarning/5.others-tools'},
+                      {text: 'Laboratorio de Pivoting', link: '/notas/cheatsheet/1.pentesting/1.6.pivoting-tunneling-port-forwarning/6.lab-pivoting/Pivoting'}
                     ],
 
                   },
