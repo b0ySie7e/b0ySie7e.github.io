@@ -741,6 +741,7 @@ export default defineConfig({
                     {text: 'Explotación de Servicios, CRON, PATH y NFS', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/1.4.service-based' },
                     {text: 'Exploits de Kernel, Protecciones del Sistema y Post-Explotación', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/1.5.linux-internals-based' },
                     {text: 'Herramientas', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/1.6.herramientas' },
+                    {text: 'Persistencia', link: '/notas/cheatsheet/3.escalada_de_privilegios/1.linux/1.7.Persistencia' }
                   ],
                 },
                 { text: 'Windows', 
